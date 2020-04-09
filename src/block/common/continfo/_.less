@@ -1,0 +1,170 @@
+.continfo__{
+	&block{
+		&.is--email-tel{
+			margin-bottom: 30px;
+			.media-breakpoint-down(@md; {
+				font-size: 16px;
+			});
+			.media-breakpoint-up(@md; {
+				margin-bottom: 55px;
+			});			
+		}
+		&.is--office{
+			&-main{
+				background-color: @white;
+				box-shadow: 0 12px 24px 0 rgba(0,52,156,0.25);
+				padding: 27px 23px;
+				.media-breakpoint-down(@md; {
+					font-size: 16px;
+				});
+				.media-breakpoint-up(@md; {
+					padding: 50px 40px;
+				});
+			}
+			&-card{
+				max-width: 340px;
+			}
+		}
+	}
+	&header{
+		&.is--office{
+			&-main{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 20px;
+				.media-breakpoint-down(@md; {
+					font-size: 18px;
+					margin-bottom: 10px;
+				});
+			}
+			&-card{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 5px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 15px;
+				});
+			}
+		}
+	}
+	&heading{
+		&.is--office{
+			&-card{
+				font-size: 1.77em;
+				line-height: 1.5em;
+				padding-right: 15px;
+			}
+		}
+	}
+	&link{
+		&.is--office{
+			&-main{
+				font-size: 0.77em;
+				a{
+					color: @success;					
+					&:hover{
+						color: @success-h;
+					}
+					&:active{
+						color: @success-a;
+					}	
+				}
+			}
+			&-card{
+				font-size: 0.77em;
+				a{
+					color: @success;					
+					&:hover{
+						color: @success-h;
+					}
+					&:active{
+						color: @success-a;
+					}	
+				}
+			}
+		}
+	}
+	&card{
+		&.is--email-tel{
+			margin-bottom: 10px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 40px;
+			});	
+			&:last-child{
+				margin-bottom: 0px;
+			}		
+		}
+		&.is--office{
+			&-main{
+				font-weight: 700;
+				margin-bottom: 5px;
+				color: @default;
+				a{;
+					color: @default;
+				}
+				&.is--address{
+					font-weight: 400;
+					margin-bottom: 40px;
+				}
+				.media-breakpoint-down(@md; {
+					&.is--address{
+						font-size: 0.88em
+					}
+				});
+				.media-breakpoint-up(@md; {
+					margin-bottom: 20px;
+					&.is--address{
+						margin-bottom: 4vw;
+					}
+				});
+			}
+			&-card{
+				margin-bottom: 5px;
+				line-height: 1.5em;
+				color: @default;
+				a{;
+					color: @default;
+				}
+				.media-breakpoint-up(@md; {
+					font-weight: 700;
+					margin-bottom: 10px;					
+					&.is--address{
+						font-weight: 400;
+						margin-bottom: 15px;
+					}
+				});
+			}
+		}
+	}
+	&item{
+		&.is--email-tel{
+			display: inline-block;
+			.heading2();
+			font-weight: 700;
+			color: @default;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 10px;
+			});			
+		}
+
+		/*&.is--office{
+			&-main{
+				color: @default;
+			}
+			&-card{
+				color: @default;
+			}
+		}*/
+	}
+	&label{
+		&.is--email-tel{
+			.media-breakpoint-down(@md; {
+				font-size: 0.88em
+			});
+		}
+	}
+}

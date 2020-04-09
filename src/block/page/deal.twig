@@ -1,0 +1,27 @@
+{% if view == "deal_block" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">				{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/table/tpl.twig" with {
+			 	view: "deal_list", 
+			 	mod:"is--deal-list", 
+			 	list:list
+			} %}
+			<div class="{{content_prefix}}link  {{content_mod}}">				
+				{% include "../common/button/btn.twig" with {
+					view:"link",
+					prefix:"link__", 
+					arrow: "true",
+					icon: "arrow-next",
+					mod:"is--arrow  is--success", 
+					link:page.calculation, 
+					name:"Все расчеты" 
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}

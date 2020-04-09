@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Главная страница"}  %}
+	</head>
+	{# <body class="is--index-page"> #}
+    <body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+
+        <main class="content-block__panel">            
+            {% include "../block/page/index.twig" with {
+                view:"index_header", 
+                content_prefix:"content-block__", 
+                content_mod:"is--index-header",
+                heading_mod:"fw--700  is--index-header", 
+                heading_level:"h1", 
+                heading:"Создавать лизинговый расчет стало просто!",
+                note:"<p>С&nbsp;помощью Личного кабинета «Элемент Лизинг» вы&nbsp;можете самостоятельно сделать лизинговый расчет без подписания документов и&nbsp;оформления лизингового договора.</p><p>Если наши условия вас устраивают, вы&nbsp;можете заключить лизинговый договор в&nbsp;любое удобное для вас время.</p>",  
+                preview:[path.img,"/default/index-header.svg"].join(""),              
+            } %}           
+
+            {% include "../block/page/calculation.twig" with {
+                view:"calc_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--block-calc",
+                heading_mod:"is--h2  fw--700  is--block-calc", 
+                heading_level:"h2", 
+                heading:"Мои расчеты",
+                link_add:"#",
+                list:[
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"Заявка отправлена",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--success",
+                        tooltip:"",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"",
+                    }
+                ],             
+            } %}          
+
+            {% include "../block/page/deal.twig" with {
+                view:"deal_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--block-deal",
+                heading_mod:"is--h2  fw--700  is--block-deal", 
+                heading_level:"h2", 
+                heading:"Мои сделки",
+                link_add:"#",
+                list:[
+                    {
+                        link:"#",
+                        id:"РАС-622532", 
+                        num:"АХ_ЭЛ/Влд-91286/ДЛ",
+                        status:"Подписание<br> клиентом",
+                        date:"21.02.2020",
+                        model:"ГАЗ-A31 NEXT",
+                        cost:"2 000 690 ₽",
+                        paid:"0 ₽",
+                    },
+                    {
+                        link:"#",
+                        id:"РАС-622532", 
+                        num:"АХ_ЭЛ/Влд-91286/ДЛ",
+                        status:"Подписание<br> клиентом",
+                        date:"21.02.2020",
+                        model:"ГАЗ-A31 NEXT",
+                        cost:"2 000 690 ₽",
+                        paid:"0 ₽",
+                    },
+                    {
+                        link:"#",
+                        id:"РАС-622532", 
+                        num:"АХ_ЭЛ/Влд-91286/ДЛ",
+                        status:"Подписание<br> клиентом",
+                        date:"21.02.2020",
+                        model:"ГАЗ-A31 NEXT",
+                        cost:"2 000 690 ₽",
+                        paid:"0 ₽",
+                    },
+                ],             
+            } %}
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

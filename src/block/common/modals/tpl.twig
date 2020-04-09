@@ -1,0 +1,36 @@
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}" >
+			<button type="button" class="{{prefix}}btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			<div class="{{prefix}}content  {{mod}}">
+				{% if ID == "modal-leasing" %}
+					{% include "../form/form.twig" with {
+						view: 			"leasing_order", 
+						prefix:			"form__", 
+						open:			"true", 
+						group:			"  ", 
+						mod:			"is--leasing-order", 
+						color:			"is--primary-light", 
+						ID: 			"fm_leasing-order",  
+
+						heading:		"Заявка на лизинг", 
+						heading_level:	"h3", 
+						heading_group:	"", 
+						heading_mod:	"is--h3  fw--700  is--form-leasing-order",
+						heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+						heading_sm_level:"p", 
+						heading_sm_mod:	"is--h6  fw--100  is--form-leasing-order-xs",
+						heading_r:		"Спасибо!<br> Заявка отправлена", 
+						heading_r_level:"h3", 
+						heading_r_mod:	"is--h2 fw--700  is--form-leasing-order-result",
+						heading_r_sm:	"После получения вашей заявки, наш консультант перезвонит вам, расскажет подробнее об условиях приобретении нужной вам техники, а также пришлет всю информацию на почту.", 
+						heading_r_sm_level:	"p", 
+						heading_r_sm_mod:	"fw--100     is--form-leasing-order-result-note"
+					} %}
+				{% endif %}	
+			</div> 
+		</div>
+	</div>
+</div>

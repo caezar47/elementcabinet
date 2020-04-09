@@ -1,0 +1,219 @@
+{% if view == "index_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div data-grid-note>					
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					<div class="text__block  {{content_mod}}">
+						{{note}}
+					</div>
+				</div>	
+				<picture data-grid-preview>
+					<img src="{{preview}}" class="img-responsive" alt="">
+				</picture>
+				<div data-grid-btn>
+					{% include "../common/button/btn.twig" with {
+						view:"link",
+						prefix:"btn__", 
+						arrow: "true",
+						icon: "arrow-next",
+						group:content_mod, 
+						mod:"is--success", 
+						link:page.index, 
+						name:"Сделать первый расчет" 
+					} %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+
+{# old #}
+{# {% if view == "index_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">	
+			<div class="{{content_prefix}}slider   {{content_mod}}">
+				<div id="{{carousel_id}}" class="{{prefix.card}}carousel  carousel slide  {{content_mod}}" data-ride="carousel" {% if carousel_count == "true" %}data-carousel-count{% endif %}>
+					<div class="{{prefix.card}}carousel-inner  {{content_mod}}  carousel-inner" role="listbox">
+						{% for value in list %}
+						<div class="item  {{value.status}}">
+							<div class="{{prefix.card}}item  {{content_mod}}">
+								<div class="{{prefix.card}}wrap  {{content_mod}}">
+									<div class="{{prefix.card}}preview  {{content_mod}}">
+										<img src="{{value.preview}}" alt="" class="img-responsive">
+									</div>
+									<div>
+										<p class="{{prefix.card}}heading  {{content_mod}}">{{value.name}}</p>
+										<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}						
+					</div>
+					{% if carousel_indicators=="true" %}
+						<ol class="{{prefix.card}}carousel-indicators  {{content_mod}} carousel-indicators">
+							{% set i = 0 %}
+							{% for value in list %}
+							<li data-target="#{{carousel_id}}" data-slide-to="{{i}}" class="{{value.status}}"></li>
+							{% set i = i + 1 %}
+							{% endfor %}
+						</ol>
+					{% endif %}
+					{% if carousel_count == "true" %}
+						<div class="{{prefix.card}}carousel-count  {{content_mod}}" data-count></div>
+					{% endif %}					
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--left" href="#{{carousel_id}}" role="button" data-slide="prev"><span class="sr-only">Предыдущий слайд</span></a>
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--right" href="#{{carousel_id}}" role="button" data-slide="next"><span class="sr-only">Следующий слайд</span></a>
+				</div>
+				{% include "../common/social/tpl.twig" with {
+					prefix:"social__",
+					group:"is--index-header", 
+					mod:"is--index-header", 
+					list:[
+						{name:"soc-vk", link:soc.vk},
+						{name:"soc-inst", link:soc.inst},
+						{name:"soc-fb", link:soc.fb}
+					]} 
+				%}
+			</div>
+		</div>
+	</section>
+{% endif %}
+ #}
+
+{% if view == "index_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  {{block_mod}}"  data-slick-adv>
+				{% for value in list %}
+				<div class="{{content_prefix}}slider-slide  {{block_mod}}" data-thumb="{{value.name}}">
+					<div class="text__block  {{block_mod}}">
+						{{value.note}}
+					</div>
+					{% if value.preview %}
+					<div class="{{content_prefix}}gallery  {{block_mod}}  row  is--cols-3  is--gutter">
+						{% for val in value.preview %}
+						<div class="cols">
+							<img src="{{val.preview}}" class="img-responsive" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+					
+			</div>
+			
+		</div>
+	</section>
+{% endif %}
+
+{# {% if view == "index_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/tabs/tpl.twig" with {
+				view:"index_adv",
+				content_prefix:content_prefix,
+				content_mod:block_mod,
+				tabs:"leasing_", 
+				prefix:prefix.tabs,
+				mod:"is--default  is--column",
+				group:content_mod,
+				list:list
+			} %}
+		</div>
+	</section>
+{% endif %} #}
+
+{% if view == "index_order" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div>
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_n_mod,
+						level:heading_n_level, 
+						heading:heading_n
+					} %}
+					<a href="#" class="btn__item  is--arrow  is--md  is--success">Отправить заявку</a>
+				</div>
+				<div {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_v_mod,
+						level:heading_v_level, 
+						heading:heading_v
+					} %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "index_products" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div class="{{prefix}}preview  {{content_mod}}">
+					<img src="{{preview}}" class="img-responsive" alt="">
+				</div>
+				{% if list %}
+				<div class="panel-group" id="{{list_group}}" role="tablist" aria-multiselectable="true">
+					{% for value in list %}
+					<div class="{{prefix}}item  {{content_mod}}  panel">
+						<div class="{{prefix}}heading  {{content_mod}}" role="tab" id="{{value.h_id}}">
+							<a role="button" data-toggle="collapse" data-parent="#{{list_group}}" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+								<p class="{{prefix}}icon  {{content_mod}}">
+									{% include "../common/svg-sprite/svg.twig" with {icon:value.icon} %} 
+								</p>
+								<span>{{value.name}}</span>
+							</a>
+						</div>
+						<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %}>
+							<div class="{{prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{content_mod}}">
+								<div class="text__block  {{content_mod}}">
+							        {{value.note}}
+							    </div>
+							    <a class="link__item  is--next  is--success-white" href="{{value.link}}">Подробнее</a>						    
+						    </div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+{% endif %}

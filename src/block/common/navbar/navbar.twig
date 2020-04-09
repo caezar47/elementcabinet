@@ -1,0 +1,79 @@
+<nav class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="{{navbar_prefix}}container container  is--header">
+			<div class="{{navbar_prefix}}header-row row">
+				<div class="{{navbar_prefix}}header-cols cols  is--logotip">
+					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+						{% include "../svg-sprite/svg.twig" with {icon:"logotip"} %}
+					</a>
+				</div>
+				<div class="{{navbar_prefix}}header-cols cols  is--hamb">
+					<button class="{{navbar_prefix}}hamburger" data-name="Меню" data-hamburger>
+						<span class="{{navbar_prefix}}hamburger-icon">
+							<span class="{{navbar_prefix}}hamburger-line  is--left"></span>
+							<span class="{{navbar_prefix}}hamburger-line  is--center"></span>
+							<span class="{{navbar_prefix}}hamburger-line  is--right"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">	
+			<div class="{{navbar_prefix}}container  container  is--collapse">
+				<div class="{{navbar_prefix}}collapse-row">
+					<div class="{{navbar_prefix}}collapse-cols" data-grid-logotip>
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							{% include "../svg-sprite/svg.twig" with {icon:"logotip"} %}
+						</a>
+					</div>
+					<div class="{{navbar_prefix}}collapse-cols" data-grid-btn>
+						<div class="{{navbar_prefix}}icon-row  row">
+							<div class="cols">
+								<a href="{{page.profile}}" class="{{navbar_prefix}}icon-group">
+									<span class="{{navbar_prefix}}icon-name">
+										Константинов К. К.
+									</span>
+									<span class="{{navbar_prefix}}icon">
+										{% include "../svg-sprite/svg.twig" with {icon:"profile"} %}
+									</span>
+								</a>
+							</div>
+							<div class="cols">
+								<a href="{{page.notice}}" class="{{navbar_prefix}}icon  is--notice">
+									{% include "../svg-sprite/svg.twig" with {icon:"notice"} %}
+									<span class="{{navbar_prefix}}icon-notice">2</span>
+								</a>
+							</div> 
+							<div class="cols">
+								<a href="#" class="{{navbar_prefix}}icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
+							</div>
+						</div>
+					</div>
+					<div class="{{navbar_prefix}}collapse-cols"  data-grid-navbar>
+						<ul class="{{navbar_prefix}}nav">
+							{% set navbar = [
+								{"name":"Создать расчет", "link":page.calculation_add,"mod":""},
+								{"name":"Мои расчеты", "link":page.calculation,"mod":""},
+								{"name":"Мои сделки", "link":page.deal,"mod":""},
+								{"name":"Вопросы и ответы", "link":page.faq,"mod":""}
+							] %}
+						    {% for value in navbar %}
+							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
+						    {% endfor %}
+							<li class="{{navbar_prefix}}nav-item">
+								<button type="button" class="{{navbar_prefix}}nav-btn">
+									Обратный звонок
+									<span class="{{navbar_prefix}}nav-btn-icon">
+										{% include "../svg-sprite/svg.twig" with {icon:"phone"} %}
+									</span>
+								</button> 
+							</li>
+						</ul>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

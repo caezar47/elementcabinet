@@ -1,0 +1,53 @@
+{% if view == "calc_block" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">				{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% if list %}
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-calc-block>
+					{% include "../common/card/card.twig" with {
+					 	view: "add_card", 
+					 	prefix:prefix.card, 
+					 	mod:"is--add-card", 
+					 	link:link_add
+					} %}
+					{% include "../common/card/card.twig" with {
+					 	view: "calc_card", 
+					 	prefix:prefix.card, 
+					 	mod:"is--calc-card", 
+					 	list:list
+					} %}
+				</div>
+				<div class="{{content_prefix}}link  {{content_mod}}">				
+					{% include "../common/button/btn.twig" with {
+						view:"link",
+						prefix:"link__", 
+						arrow: "true",
+						icon: "arrow-next",
+						mod:"is--arrow  is--success", 
+						link:page.calculation, 
+						name:"Все расчеты" 
+					} %}
+				</div>
+			{% else %}
+				<div class="{{content_prefix}}row  {{content_mod}}" data-note="{{heading_not}}">
+				{% include "../common/card/card.twig" with {
+				 	view: "add_card", 
+				 	prefix:prefix.card, 
+				 	mod:"is--add-card", 
+				 	link:link_add
+				} %}
+				{% include "../common/card/card.twig" with {
+				 	view: "calc_null", 
+				 	prefix:prefix.card, 
+				 	mod:"is--calc-null", 
+				 	list:listnot
+				} %}
+			</div>
+			{% endif %}
+		</div>
+	</section>
+{% endif %}

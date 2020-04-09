@@ -1,0 +1,83 @@
+{% if view == "deal_list" %}
+<table class="table  {{mod}}">
+	<thead>
+		<tr>
+			<th>№ КП</th>
+			<th>№ ДЛ</th>
+			<th>Статус</th>
+			<th>Дата КП</th>
+			<th>Марка, модель</th>
+			<th>Общая сумма</th>
+			<th>Выплачено</th>
+		</tr>
+	</thead> 
+	<tbody> 
+		{% for value in list %}	
+		<tr onclick="window.location.href='{{value.link}}'; return false"> 
+			<td data-grid-id>{{value.id}}</td> 
+			<td class="is--hidden">{{value.num}}</td> 
+			<td class="is--hidden">{{value.status}}</td> 
+			<td data-grid-date>{{value.date}}</td> 
+			<td class="is--hidden">{{value.model}}</td> 
+			<td data-grid-cost>{{value.cost}}</td> 
+			<td class="is--hidden">{{value.paid}}</td> 
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+
+
+{# old #}
+{% if view == "vacancies" %}
+<table class="table  {{mod}}">
+	<thead>
+		<tr>
+			<th>Вакансия</th>
+			<th>Город</th>
+		</tr>
+	</thead> 
+	<tbody> 
+		{% for value in list %}	
+		<tr> 
+			<td><a href="{{value.link}}">{{value.name}}</a></td>
+			<td>{{value.city}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+{% if view == "test" %}
+<div class="{{prefix}}panel">
+	<div class="{{prefix}}card">
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Название услуги</th>
+						<th class="is--right">Стоимость</th>
+					</tr>
+				</thead> 
+				<tbody> 
+					<tr> 
+						<td>Замена глухого окна на поворотно-откидную створку</td>
+						<td class="is--right">8 000 — 12 000 ₽</td>
+					</tr>
+					<tr> 
+						<td>Замена глухого окна на поворотно-откидную створку</td>
+						<td class="is--right">8 000 — 12 000 ₽</td>
+					</tr>
+					<tr> 
+						<td>Замена глухого окна на поворотно-откидную створку</td>
+						<td class="is--right">8 000 — 12 000 ₽</td>
+					</tr>
+					<tr> 
+						<td>Замена глухого окна на поворотно-откидную створку</td>
+						<td class="is--right">8 000 — 12 000 ₽</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+	</div>
+</div>
+{% endif %}

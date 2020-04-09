@@ -1,0 +1,1287 @@
+{% if view == "index_adv" %}
+	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+		<ul class="{{prefix}}nav  {{mod}}  {{content_mod}}">
+			{% for value in list %}
+			<li class="{{prefix}}item  {{mod}} {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>	
+		<div>
+			<div class="{{prefix}}controls  {{content_mod}}">
+				<button type="button" class="{{prefix}}controls-btn  is--prev  {{mod}}" id="prev"></button>		
+				<button type="button" class="{{prefix}}controls-btn  is--next  {{mod}}" id="next"></button>
+			</div>			
+			<div>		
+				{% for value in list %}
+				<div class="{{prefix}}pane  {{value.status}}  {{content_mod}}" id="{{tabs}}{{value.id}}">
+					<div class="text__block  {{content_mod}}">
+						{{value.note}}
+					</div>
+					{% if value.preview %}
+					<div class="{{prefix}}gallery  {{content_mod}}  row  is--cols-3  is--gutter">
+						{% for val in value.preview %}
+						<div class="cols">
+							<img src="{{val.preview}}" class="img-responsive" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endif %}
+{# {% if view == "index_adv" %}
+	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+		<ul class="{{prefix}}nav  {{mod}}  {{content_mod}}">
+			{% for value in list %}
+			<li class="{{prefix}}item  {{mod}} {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>	
+		<div>
+			<div class="{{prefix}}controls  {{content_mod}}">
+				<button type="button" class="{{prefix}}controls-btn  is--prev  {{mod}}" id="prev"></button>		
+				<button type="button" class="{{prefix}}controls-btn  is--next  {{mod}}" id="next"></button>
+			</div>			
+			<div>		
+				{% for value in list %}
+				<div class="{{prefix}}pane  {{value.status}}  {{content_mod}}" id="{{tabs}}{{value.id}}">
+					<div class="text__block  {{content_mod}}">
+						{{value.note}}
+					</div>
+					{% if value.preview %}
+					<div class="{{prefix}}gallery  {{content_mod}}  row  is--cols-3  is--gutter">
+						{% for val in value.preview %}
+						<div class="cols">
+							<img src="{{val.preview}}" class="img-responsive" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endif %} #}
+
+{% if view == "map" %}
+	<div class="{{prefix}}panel  {{mod}}">
+		<ul class="{{prefix}}nav  {{mod}}">
+			<li class="{{prefix}}item  {{mod}} active">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}a" data-toggle="tab">А</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}b" data-toggle="tab">Б</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}v" data-toggle="tab">В</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}d" data-toggle="tab">Д</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}e" data-toggle="tab">Е</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}i" data-toggle="tab">И</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}iy" data-toggle="tab">Й</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}k" data-toggle="tab">К</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}l" data-toggle="tab">Л</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}m" data-toggle="tab">М</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}n" data-toggle="tab">H</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}o" data-toggle="tab">О</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}p" data-toggle="tab">П</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}r" data-toggle="tab">Р</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}s" data-toggle="tab">С</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}t" data-toggle="tab">Т</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}u" data-toggle="tab">У</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}x" data-toggle="tab">Х</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}ch" data-toggle="tab">Ч</a>
+			</li>
+			<li class="{{prefix}}item  {{mod}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}ya" data-toggle="tab">Я</a>
+			</li>
+		</ul>
+		<div class="{{prefix}}pane  active  {{mod}}" id="{{tabs}}a">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Абакан", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 					 
+					address:"655017, ул. Вяткина, д. 39, каб. № 209-А", 
+					phone:"+7 (3902) 298-798", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.726016 91.446205",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Архангельск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"163000, ул. Поморская, 5, оф. 313", 
+					phone:"+7 (8182) 20-03-50", 
+					email:"element29@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"64.534954 40.524161",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Астрахань", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте",
+					address:"414000, ул. Кирова, № 55 а, оф. 303", 
+					phone:"+7 (8512) 21-03-93", 
+					email:"element30@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной", 
+					coord:"46.3406411 48.0382481",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}b">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Барнаул", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"656049, ул. Интернациональная, 122, оф. 609", 
+					phone:"+7 (3852) 56-75-97", 
+					email:"element22@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.33413732 83.77748136",
+					scrollto:"true" 
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Белгород", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"308015, Народный б-р, 111, офис 205", 
+					phone:"+7 (4722) 40-08-06", 
+					email:"element31@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"50.602172 36.573263",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Благовещенск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"675011, ул. Калинина, д. 10", 
+					phone:"+7 (4162) 31-31-53", 
+					email:"element28@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"50.260089 127.518641", 
+					coord_label:"",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Брянск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"241035, ул. Институтская, д. 15", 
+					phone:"+7 (4162) 31-31-53", 
+					email:"element32@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.305039 34.30313", 
+					coord_label:"",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}v">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Великий Новгород", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"173002, ул. Германа, д. 21А", 
+					phone:"+7 (8162) 222-333", 
+					email:"element22@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"58.531966 31.259319",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Владивосток", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"690091, ул. Суханова, 3а, офис 500", 
+					phone:"+7 (423) 239-07-37", 
+					email:"element25@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"43.117451 131.893965",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Владимир", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"600017, ул. Мира, 34, офис 4/2", 
+					phone:"+7 (4922) 47-01-61", 
+					email:"element33@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"50.260089 127.518641",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Волгоград", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"400005, ул. Коммунистическая, 19д, 3 этаж, офис 329", 
+					phone:"+7 (905) 334-43-30", 
+					email:"element34@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"48.715782 44.522823",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Вологда", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"160009, ул. Челюскинцев д. 32, оф.333", 
+					phone:"+7 (8172) 78-70-94", 
+					email:"element35@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"59.220455 39.906914",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Воронеж", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"394026, Московский просп., 4, оф. 511", 
+					phone:"+7 (4732) 50-20-61", 
+					email:"element36@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.678638 39.185761",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}d">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Димитровград", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"433511, ул. Куйбышева, 243А", 
+					phone:"+7 (927) 271-2035", 
+					email:"SvetlanaVB@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.226428 49.615306",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}e">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Екатеринбург", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"620100, ул. Ткачей, 25, оф. 304", 
+					phone:"+7 (343) 380-04-80", 
+					email:"element66@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.816804 60.631027",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}i">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Иваново", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"153000, ул. Богдана Хмельницкого, 30, оф. 11", 
+					phone:"+7 (4932) 59-13-67", 
+					email:"element37@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.990052 40.969789",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Ижевск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"426034, ул. Удмуртская, д. 304, оф. 406", 
+					phone:"+7 (3412) 95-89-13", 
+					email:"element18@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.858676 53.222845",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Иркутск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"ул. Чкалова, д. 15, оф. 306", 
+					phone:"+7 (3952) 79-88-20", 
+					email:"element38@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"52.288172 104.273240",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}iy">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Йошкар-Ола", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"424004, ул. Волкова, 60, оф. 217", 
+					phone:"+7 (8362) 38-39-93", 
+					email:"element12@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.645678 47.901845",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}k">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Казань", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"420012, ул. Вишневского, д.8, офис 7", 
+					phone:"+7 (843) 210-28-68", 
+					email:"element16@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.78037 49.131387",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Калининград", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"Младшего лейтенанта Ротко ул, дом № 2", 
+					phone:"+7 (4012) 97-14-17", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.698091 20.506927",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Калуга", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"248001, ул. Кирова, 15/43, оф. 26", 
+					phone:"+7 (4842) 77-44-99", 
+					email:"element40@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.515304 36.251163",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Кемерово", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"650036, ул. Терешковой, д.41, каб. № 509", 
+					phone:"+7 (3842) 44-11-96", 
+					email:"element42@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.325426 86.148768",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Киров", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"249440, ул.Профсоюзная д.1, офис 306-1", 
+					phone:"+7 (833) 241-60-88", 
+					email:"element43@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"58.615792 49.684049",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Краснодар", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"350063, ул. Кубанская Набережная, 45", 
+					phone:"+7 (861) 210-24-21", 
+					email:"element23@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"58.615792 49.684049",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Красноярск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"660048, ул. 2-ая Брянская, зд. 4, пом. 1, 6 эт., оф. № 6-04", 
+					phone:"+7 (391) 274-51-46", 
+					email:"element23@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.038785 92.842804",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Курск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"305018, пр-кт Кулакова 24,  2 эт. оф. 214", 
+					phone:"+7 (4712) 77-05-10", 
+					email:"element46@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.664740 36.135793",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Кызыл", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"667010, Московская ул, 2, офис 15", 
+					phone:"+7 (39422) 3-78-78", 
+					email:"ShuglurAD@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.705247 94.405741",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}l">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Липецк", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"398024, проспект Победы, д. 29, офис 62", 
+					phone:"+7 (4742) 56-04-33", 
+					email:"element48@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"52.596793 39.567563",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}m">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Магнитогорск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"455017, Советская ул, 32,1", 
+					phone:"+7 (922) 744-64-02", 
+					email:"NatalyaAM@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.421547 58.959792",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Миасс", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"456313, Тургоякское шоссе, 5/9А", 
+					phone:"+7 (351) 326-68-90", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.421547 58.959792",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Москва", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"121170, Кутузовский просп., 36, стр. 41", 
+					phone:"+7 (495) 937-27-80", 
+					email:"element@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.74260176 37.52784544",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Мурманск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"Кольский пр-кт, дом № 110А", 
+					phone:"+7 (8152) 99-91-10", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"68.921057 33.099787",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}n">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Набережные Челны", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"Машиностроительная ул., д. 8", 
+					phone:"+7 (922) 744-64-02", 
+					email:"element16nc@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.704397 52.396269",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Нижневартовск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"628609, ул. Индустриальная, д. 20", 
+					phone:"+7 (346) 649-19-15", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"60.944393 76.527694",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Нижний Новгород", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"603116, ул. Маршала Казакова, 3а, оф. 10", 
+					phone:"+7 (831) 233-02-54", 
+					email:"element52@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.322624 43.929567",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Новокузнецк", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"654005, ул. Орджоникидзе, 28а, оф. 5", 
+					phone:"+7 (3843) 92-50-52", 
+					email:"element42@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.762908 87.111223",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Новосибирск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"630099, ул. Ленина, д. 12, офис 701а", 
+					phone:"+7 (383) 319-57-09", 
+					email:"RomanMM@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.029766 82.913414",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Новый Уренгой", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"629307, проспект Губкина, дом 6", 
+					phone:"+7 (922) 094-56-77", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"66.092562 76.679847",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}o">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Омск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"644010, ул. Маршала Жукова 72/1 оф. 401", 
+					phone:"+7 (381) 291-99-45", 
+					email:"element55@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.975522 73.387867",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Орел", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"302005, Карачевское шоссе, 79, 2й подъезд, офис 320", 
+					phone:"+7 (346) 649-19-15", 
+					email:"element57@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"52.946450 36.027236",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Оренбург", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"460005, ул. Орская, дом 174 А, кабинет №202", 
+					phone:"+7 (3532) 45-23-53", 
+					email:"element56@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.786346 55.112169",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}p">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Пенза", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"440000, ул. Чкалова, 32а, оф. 306", 
+					phone:"+7 (8412) 99-13-15", 
+					email:"element58@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.178579 45.013106",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Пермь", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"614045, ул. Монастырская, 61, ДЦ Серго, оф. 201", 
+					phone:"+7 (342) 217-91-72", 
+					email:"element59@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"58.014255 56.229165",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Пятигорск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"357500, ул. Крайнего, д. 56", 
+					phone:"+7(8793) 40-70-71", 
+					email:"element126@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"44.036763 43.070993",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}r">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Ростов-на-Дону", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"344002, ул. Города Волос, 6, оф. 412", 
+					phone:"+7 (863) 310-95-16", 
+					email:"element61@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"47.227316 39.706066",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Рязань", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"390000, ул. Радищева, 61, оф. 31", 
+					phone:"+7 (4912) 29-34-25", 
+					email:"element62@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.626031 39.74552",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}s">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Самара", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"443069, ул. Авроры, 110, корп.1, оф. 408", 
+					phone:"+7 (846) 229-55-05", 
+					email:"element63@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.193558 50.189207",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Санкт-Петербург", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"197342, ул. Белоостровская, д. 17, к. 2, лит. А, офис 401-1", 
+					phone:"+7 (812) 611-02-99", 
+					email:"element78@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"59.986911 30.321189",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Саранск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"430001, ул.Строительная, д.1", 
+					phone:"+7 (8342) 33-33-03", 
+					email:"element13@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.204746 45.179195",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Саратов", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"410004, 2-й Станционный проезд (территория Автоцентр-СаратовЮг, 2-й этаж)", 
+					phone:"+7 (845) 249-60-07", 
+					email:"element64@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.518095 45.988523",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Смоленск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"214006, ул. Кутузова д.50 (территория дилерского центра ГАЗ", 
+					phone:"+7 (4812) 20-17-25", 
+					email:"element67@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.741675 32.085783",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Ставрополь", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"214006, ул. Кутузова д.50 (территория дилерского центра ГАЗ", 
+					phone:"+7 (8652) 53-23-53", 
+					email:"element26@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"45.004952 41.925919",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Сургут", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"ул. Маяковского, дом 14Б, офис 22", 
+					phone:"+7 (3462) 38-86-01", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"61.255495 73.420500",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Сыктывкар", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"167000, Сысольское ш., 1/3, оф. 4", 
+					phone:"+7 (8212) 28-87-80", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"61.658723 50.834458",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}t">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Тамбов", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"392030, Моршанское ш., д.23 А", 
+					phone:"+7 (4752) 55-95-22", 
+					email:"element68@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"52.754852 41.470440",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Тверь", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"170017, Б. Перемерки д.17", 
+					phone:"+7 (4822) 57-89-01", 
+					email:"crm@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.823897 35.975336",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Тольятти", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"445044, ул. Ворошилова, 17, оф. 310а", 
+					phone:"+7 (8482) 37-92-39", 
+					email:"element63t@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"53.537263 49.316458",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Томск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"634021, ул.Енисейская, 37, оф. 209", 
+					phone:"+7 (3822) 78-20-71", 
+					email:"element70@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.470775 84.989286",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Тула", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"300005, ул. Павшинский мост, 2, «ГК Виста»", 
+					phone:"+7 (4872) 25-05-05", 
+					email:"element67@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.741675 32.085783",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Тюмень", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"ул. 30 лет Победы д.38а, оф.33, БЦ «Индиго»", 
+					phone:"+7 (3452) 398-388", 
+					email:"element72@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"57.125682 65.567698",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}u">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Улан-Удэ", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"670034, ул. Хоца Намсараева, 7а, оф. 318/2", 
+					phone:"+7 (3012) 29-60-29", 
+					email:"ChingisOC@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"51.843423 107.598866",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Ульяновск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"432001, просп. Нариманова, 1, корп.3, оф. 212", 
+					phone:"+7 (8422) 27-47-12", 
+					email:"element73@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.333788 48.384061",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Уфа", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"450061, Интернациональная ул, 20, офис 306 А", 
+					phone:"+7 (347) 246-47-40", 
+					email:"element02@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"54.809941 56.080862",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}x">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Хабаровск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"680021, ул. Владивостокская, д. 16", 
+					phone:"+7 (4212) 91-07-14", 
+					email:"element27@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"48.490811 135.081852",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}ch">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Чебоксары", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"428000, ул. Карла Маркса, 52, корп.3, оф. 311", 
+					phone:"+7 (8352) 23-90-02", 
+					email:"element21@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"56.133367 47.244117",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Челябинск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"454080, г. Челябинск, пр. Ленина, д. 89, офис 422", 
+					phone:"+7 (351) 723-02-28", 
+					email:"element74@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"55.158174 61.363477",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Чита", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"672007, г. Чита, ул. Чкалова, д. 158, пом. 41, офис 42", 
+					phone:"+7 (3022) 21-78-10", 
+					email:"", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"52.040068 113.495953",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+		<div class="{{prefix}}pane  {{mod}}" id="{{tabs}}ya">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Якутск", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"677000, г. Якутск, Покровский тракт, 6 км., 1б", 
+					phone:"+7 (914) 270-32-91", 
+					email:"NikolayNS@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"62.028098 129.732555",
+					scrollto:"true"
+				} %}
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-card", 
+					title:"Ярославль", 
+					title_mod:"fw--700", 
+					link:"#", 
+					link_name:"На карте", 
+					address:"150001, ул. Наумова, 65/1, оф. 211", 
+					phone:"+7 (4852) 28-71-21", 
+					email:"element76@ulh.ru", 
+					clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+					coord:"57.607484 39.864546",
+					scrollto:"true"
+				} %}
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% if view == "leasing_formaliz" %}
+	<div class="{{prefix}}panel  {{mod}}">
+		<ul class="{{prefix}}nav  {{mod}}">
+			{% for value in list %}
+			<li class="{{prefix}}item  {{mod}} {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% for value in list %}
+		<div class="{{prefix}}pane  {{value.status}}  {{mod}}" id="{{tabs}}{{value.id}}">
+			<div class="text__block  {{group}}">
+				{{value.note}}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+{% endif %}

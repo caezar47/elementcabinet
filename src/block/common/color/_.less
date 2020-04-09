@@ -1,0 +1,39 @@
+.color-card__{
+	&view{
+		width: 100px;
+		height: 100px;
+		margin-bottom: 10px;
+		border: 1px solid;
+		border-radius: @b_rad; 
+	}
+	&name{ 
+		font-size: @b-fs - 4;
+		line-height: @b-lh - 4;
+	}
+}
+.color--{
+	&white 			{color: @white!important}
+	&white-f6 		{color: @white-6f!important}
+	&white-c0 		{color: @white-c0!important}
+	&black 			{color: @black!important}
+	&blue-08 		{color: @blue-08!important}
+	&black-54 		{color: @black-54!important}
+	&default 		{color: @default!important}
+	&primary 		{color: @primary!important}
+	&primary-l 		{color: @primary-l!important}
+	&success 		{color: @success!important}
+	&info 			{color: @info!important}
+	&warning 		{color: @warning!important}
+	&danger 		{color: @danger!important}
+
+	&bg-{
+		&white 		{background-color: @white}
+		&black 		{background-color: @black}
+		&default 	{background-color: @default}
+		&primary 	{background-color: @primary}	
+		&success 	{background-color: @success}	
+		&info 		{background-color: @info}
+		&warning 	{background-color: @warning}
+		&danger 	{background-color: @danger}
+	}
+}

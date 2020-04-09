@@ -1,0 +1,17 @@
+{% include "elem-tpl.twig" with {view:"checkbox", prefix:prefix, mod:mod, color:color, list: [
+	{"id":"r1", "form_id":ID, "name":"Чексбокс", "label":"Имя"},
+	{"id":"r2", "form_id":ID, "name":"Радио кнопки", "label":"Фамилия"},
+	{"id":"r3", "form_id":ID, "name":"Радио кнопки", "label":"Отчество"},
+	{"id":"r3", "form_id":ID, "name":"Радио кнопки", "label":"Отчество", "status":"disabled"}
+] } %}
+
+
+<div style="margin-bottom: 100px; max-width: 450px;">
+	{% include "../../common/form/form.twig" with {view: "default", prefix:"form__", mod:"", ID: "f_default", heading:"Оставить отзыв", heading_mod:"is--h4", level:"h4", heading_sm_level:"div", heading_sm:"Свяжитесь с нами", bread:null, btn_name:"Отправить" } %}
+</div>
+<div style="margin-bottom: 100px; max-width: 1000px;">
+	{% include "../../common/form/form.twig" with {view: "reviews", prefix:"form__", mod:"is--reviews", ID: "f_reviews", heading:"Оставить отзыв", heading_mod:"is--h4", level:"h4", heading_sm_level:"div", heading_sm:"Свяжитесь с нами", bread:null, btn_name:"Отправить" } %}
+</div>
+<div style="margin-bottom: 100px; max-width: 450px;">
+	{% include "../../common/form/form.twig" with {view: "call", prefix:"form__", mod:"", ID: "f_call", heading:"Заказать обратный звонок", heading_mod:"is--h4", level:"h4", heading_sm_level:"div", heading_sm:"Свяжитесь с нами", bread:null, btn_name:"Отправить" } %}
+</div>

@@ -1,0 +1,12 @@
+<div class="{{prefix}}card  dropdown  {{group}}">
+	<a href="#" class="{{prefix}}toggle  dropdown-toggle  {{color}}" data-toggle="dropdown"><span>{{label}}</span></a>
+	<div class="{{prefix}}nav  dropdown-menu  {{color}}">			
+		<ul class="{{prefix}}nav-list  {{color}}">			    
+		{% for value in list %}
+			<li class="{{prefix}}nav-item">
+				<a href="#" class="{{prefix}}nav-link  {{color}}">{{value.name}}</a>
+			</li>
+		{% endfor %} 
+		</ul>
+	</div>
+</div>	

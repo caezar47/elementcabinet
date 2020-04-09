@@ -1,0 +1,143 @@
+.card__{
+	&item{
+		&.is--calc{
+			&-card{
+				position: relative;
+				background: @white;
+				box-shadow: 0px 1px 7px rgba(130, 130, 130, 0.25);
+				font-size: @b-fs;
+				padding: 20px 35px 30px 25px;
+				.media-breakpoint-up(@lg; {
+					padding-top: 27px;
+				});
+				.media-breakpoint-down(@md; {
+					min-width: 255px;
+				});
+			}
+			&-null{
+				border: 1px solid @white-e9;
+				height: 100%;
+				min-height: 340px;
+			}
+		}
+		&.is--add{
+			&-card{
+				position: relative;
+				background: @white;
+				box-shadow: 0px 1px 7px rgba(130, 130, 130, 0.25);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				width: 100%;
+				.media-breakpoint-down(@sm; {
+					min-width: 255px;
+				});
+			}
+		}
+	}
+	&group{
+		&.is--add{
+			&-card{
+				.media-breakpoint-down(@lg; {
+					display: none;
+				});
+			}
+		}
+	}
+	&wrap{
+	}
+	&preview{
+		display: block;
+		position: relative;
+		svg{display: block;}
+		&.is--add{
+			&-card{
+				width: 67px;
+				height: 67px;
+				color: @green-a6;
+				transition: @trs-site;
+				.card__item:hover &{
+					color: @success;
+				}
+			}
+		}
+	}
+	&icon {
+	}
+	&heading{
+		transition: @trs-site;
+		&.is--calc{
+			&-card{
+			    font-size: 1.33em;
+    			line-height: 1em;
+				font-weight: 700;
+				margin-bottom: 25px;
+			}
+		}
+	}
+	&label{
+		&.is--calc{
+			&-card{
+				margin-bottom: 10px;
+				font-size: 0.88em;
+				line-height: 1em;
+				&.is--status{
+					display: flex;
+					align-items: center;					
+				}
+			}
+		}
+	}
+	&value{
+		&.is--calc{
+			&-card{
+				font-weight: 100;
+				font-size: 0.88em;
+				line-height: 1.12em;
+				margin-bottom: 25px;
+			}
+		}
+	}
+	&status{
+		&.is--calc{
+			&-card{
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				display: inline-block;
+				margin-left: 15px;
+				&.is--fail{
+					background-color: @danger;
+				}
+				&.is--success{
+					background-color: @green;
+				}
+			}
+		}
+	}
+	&note{
+	}
+	&date{
+	}
+	&btn{
+		&.is--calc{
+			&-card{
+				position: absolute;
+			    top: 19px;
+			    right: 14px;
+				width: 32px;
+				height: 32px;
+				padding: 8px;
+				color: @default;
+				.media-breakpoint-up(@lg; {
+					top: 25px;
+					right: 10px;
+				});
+				&:hover{
+					color: @success;
+				}
+			}
+		}
+	}
+}

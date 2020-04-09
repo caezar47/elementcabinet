@@ -1,0 +1,56 @@
+{
+	"contacts":{
+		"name":"lk.ulh",
+		"domain":"lk.ulh.ru",
+		"domain_link":"https://lk.ulh.ru/",
+		"color":"#F24F00",
+		"agreement_page":"agreement",
+		"copyright":"elementleasing",
+		"email":"element@ulh.ru",
+		"phone":"+7 495 937 27 80",  
+		"phone_tel":"+74959372780",   
+		"clock":"С 10 до 19:00, без выходных",  
+		"address":"121170, Кутузовский проспект, 36, стр. 41",
+		"map_center":"52.97067, 36.084622",
+		"map_center_coord":"[52.97067, 36.084622]",
+		"map_zoom":"17",
+		"map_point_coord":"[52.97067, 36.084622]",
+		"map_point_heading":"Мы здесь!"
+	},
+	"soc":{
+		"vk":"https://vk.com/pro_leasing",
+		"fb":"https://www.facebook.com/ElementLeasing/",
+		"inst":"https://www.instagram.com/elementleasing"
+	},
+
+	"page":{
+		"index":"./",
+		"notice":"./notice.html",
+		"profile":"./profile.html",
+		"faq":"./faq.html",
+		"calculation":"./calculation.html",
+		"calculation_add":"./calculation-add.html",
+		"deal":"./deal.html"
+	},
+	"prefix":{
+		"content":"content-block__",
+		"heading":"page-header__",
+		"form":"form__",
+		"card":"card__",
+		"table":"table__",
+		"btn":"btn__",
+		"tabs":"tabs__",
+		"map":"map__",
+		"link":"link__",
+		"breadcrumb":"breadcrumb__",
+		"pagination":"pagination__",
+		"btn-icon":"btn-icon__"
+	},
+	"path":{		                  
+		"css":"./css",
+		"img":"./img",
+		"js":"./js",
+		"favicon":"./favicon",
+		"docs":"./docs" 
+	}
+}
