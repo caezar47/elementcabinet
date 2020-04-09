@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>  
+        {% include "../block/common/head/head.twig" with {title:"Вопросы и ответы"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+        <main class="content-block__panel">
+            {% include "../block/page/faq.twig" with {
+                view:"faq_page", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-faq", 
+                heading_mod:"is--h2  fw--700  is--page-faq",  
+                heading_level:"h1", 
+                heading:"Общая информация", 
+                bread_mod:"",
+                bread:[
+                    {name:"Главная", link:page.index},
+                    {name:"Вопросы и ответы"}
+                ],
+                card_prefix:prefix.card,
+                card_mod:"is--faq",
+                list_group: "faq",
+                list: [
+                    {
+                        "status":"",
+                        "h_id":"heading_item1",
+                        "id":"item1",
+                        "name":"Уведомление по увеличению НДС",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item1",
+                        "id":"item2",
+                        "name":"Приглашение к обмену электронными документами",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item1",
+                        "id":"item3",
+                        "name":"Рекомендации ЭЛ по учету субсидий Лизингополучателем",
+                        "note":"",
+                    },
+                    {
+                        "status":"active",
+                        "h_id":"heading_item1",
+                        "id":"item4",
+                        "name":"Шаблоны документов",
+                        "note":"",
+                        "docs":[
+                            {
+                                "name":"Договор лизинга",
+                                "link":"#",
+                            },
+                            {
+                                "name":"Договор поручительства",
+                                "link":"#",
+                            },
+                            {
+                                "name":"Договор купли-продажи",
+                                "link":"#",
+                            },
+                            {
+                                "name":"Правила к Договору лизинга",
+                                "link":"#",
+                            },
+                            {
+                                "name":"Анкета иностранного публичного должностного лица",
+                                "link":"#",
+                            },
+                            {
+                                "name":"Согласие на обработку персональных данных",
+                                "link":"#",
+                            }
+                        ]
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item1",
+                        "id":"item5",
+                        "name":"Список документов для оформления лизинга",
+                        "note":"",
+                    },
+                ],
+                list2: [
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-1",
+                        "name":"Что такое лизинг?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-2",
+                        "name":"Кто основные участники лизинговой сделки?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-3",
+                        "name":"Какова минимальная стоимость предмета лизинга?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-4",
+                        "name":"Возможно ли досрочное погашение лизинговых платежей?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-5",
+                        "name":"Какие налоговые выгоды подразумевает лизинг?",
+                        "note":"",
+                    },
+                    {
+                        "status":"active",
+                        "h_id":"heading_item2",
+                        "id":"item2-6",
+                        "name":"Кто в процессе сделки вправе выбирать предмет лизинга и поставщика?",
+                        "note":"<p>Лизингополучатель вправе определять предмет лизинга и выбирать поставщика, полагаясь в первую очередь на свой опыт и суждение. Лизингодатель в этом случае не несет ответственности за выбор предмета лизинга и продавца.</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-7",
+                        "name":"Какие платежи оплачивает Лизингополучатель, если Предмет лизинга не выкуплен (или не возвращен) после прекращения или расторжения Договора лизинга?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-8",
+                        "name":"В чьей собственности находится предмет лизинга до момента завершения сделки?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-9",
+                        "name":"Возможно ли изменение предмета лизинга (дооборудование, системы слежения и т.д.)?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-10",
+                        "name":"Возможен ли досрочный выкуп лизингового имущества?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-11",
+                        "name":"Имеется ли в вашей компании возвратный лизинг?",
+                        "note":"",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2-12",
+                        "name":"Можно ли получить повторное финансирование до окончания заключенного договора лизинга?",
+                        "note":"",
+                    },
+                ],
+                list3: [
+                    {
+                        "status":"",
+                        "h_id":"heading_item3",
+                        "id":"item3-1",
+                        "name":"Положение о конфиденциальности информации (коммерческой тайне)",
+                        "note":"",
+                    }
+                ],
+            } %}
+        </main>
+        
+        
+        {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+        {% include "../block/common/script/script.twig"%}
+    </body>
+</html>

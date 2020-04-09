@@ -1,0 +1,126 @@
+{% if view == "faq_page"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+
+			<div class="{{card_prefix}}group  {{card_mod}}  panel-group" id="{{list_group}}" role="tablist" aria-multiselectable="true">
+				{% for value in list %}
+				<div class="{{card_prefix}}item  {{card_mod}}  panel">
+					<div class="{{card_prefix}}heading  {{card_mod}}" role="tab" id="{{value.h_id}}">
+						<a role="button" data-toggle="collapse" data-parent="#{{list_group}}" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+							{{value.name}}
+						</a>
+					</div>
+					<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}">
+						<div class="{{card_prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{card_mod}}">
+							{% for doc in value.docs %}
+								<div class="{{card_prefix}}item  is--docs">
+									<a href="{{doc.link}}" class="{{card_prefix}}heading  is--docs">
+										<span class="{{card_prefix}}icon  is--docs">
+											{% include "../common/svg-sprite/svg.twig" with {icon:"download"} %}
+										</span>
+										{{doc.name}}
+									</a>
+								</div>
+							{% endfor %}
+							{% if value.note %}
+							<div class="text__block  {{card_mod}}">
+						        {{value.note}}								
+						    </div>
+						    {% endif %}
+					    </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:"h2", 
+				heading:"О лизинге"
+			} %}
+
+			<div class="{{card_prefix}}group  {{card_mod}}  panel-group" id="{{list_group}}2" role="tablist" aria-multiselectable="true">
+				{% for value in list2 %}
+				<div class="{{card_prefix}}item  {{card_mod}}  panel">
+					<div class="{{card_prefix}}heading  {{card_mod}}" role="tab" id="{{value.h_id}}">
+						<a role="button" data-toggle="collapse" data-parent="#{{list_group}}1" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+							{{value.name}}
+						</a>
+					</div>
+					<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}">
+						<div class="{{card_prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{card_mod}}">
+							{% for doc in value.docs %}
+								<div class="{{card_prefix}}item  is--docs">
+									<a href="{{doc.link}}" class="{{card_prefix}}heading  is--docs">
+										<span class="{{card_prefix}}icon  is--docs">
+											{% include "../common/svg-sprite/svg.twig" with {icon:"download"} %}
+										</span>
+										{{doc.name}}
+									</a>
+								</div>
+							{% endfor %}
+							{% if value.note %}
+							<div class="text__block  {{card_mod}}">
+						        {{value.note}}								
+						    </div>
+						    {% endif %}
+					    </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:"h2", 
+				heading:"Дополнительно"
+			} %}
+
+			<div class="{{card_prefix}}group  {{card_mod}}  panel-group" id="{{list_group}}3" role="tablist" aria-multiselectable="true">
+				{% for value in list3 %}
+				<div class="{{card_prefix}}item  {{card_mod}}  panel">
+					<div class="{{card_prefix}}heading  {{card_mod}}" role="tab" id="{{value.h_id}}">
+						<a role="button" data-toggle="collapse" data-parent="#{{list_group}}1" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+							{{value.name}}
+						</a>
+					</div>
+					<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}">
+						<div class="{{card_prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{card_mod}}">
+							{% for doc in value.docs %}
+								<div class="{{card_prefix}}item  is--docs">
+									<a href="{{doc.link}}" class="{{card_prefix}}heading  is--docs">
+										<span class="{{card_prefix}}icon  is--docs">
+											{% include "../common/svg-sprite/svg.twig" with {icon:"download"} %}
+										</span>
+										{{doc.name}}
+									</a>
+								</div>
+							{% endfor %}
+							{% if value.note %}
+							<div class="text__block  {{card_mod}}">
+						        {{value.note}}								
+						    </div>
+						    {% endif %}
+					    </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+				
+				
+		</div>
+	</section>
+{% endif %}

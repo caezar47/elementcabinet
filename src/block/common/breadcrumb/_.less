@@ -1,5 +1,5 @@
 .breadcrumb__{
-	@gutter: 9px;
+	@gutter: 10px;
 	@gutter_top: 5px;
 	&list{
 		list-style: none;
@@ -9,12 +9,13 @@
 		margin-top: -(@gutter_top);		
 		margin-left: -@gutter;
 		margin-right: -@gutter;	
-		margin-bottom: 15px;	
-		.media-breakpoint-down(@md; {
-			font-size: 16px;
+		margin-bottom: 15px;
+		.media-breakpoint-up(@lg; {
+			margin-left: -@gutter - 5px;
+			margin-right: -@gutter - 5px;	
 		});
 		.media-breakpoint-up(@xl; {
-			margin-bottom: 25px;
+			margin-bottom: 30px;
 		});
 	} 
 	&list-item{
@@ -25,7 +26,11 @@
 		color: @bread_color;
 		font-size: 0.77em;
 		line-height: 1.33em;
-		font-weight: 100;		
+		font-weight: 100;	
+		.media-breakpoint-up(@lg; {
+			padding-left: @gutter + 5px;
+			padding-right: @gutter + 5px;	
+		});	
 		&:after{
 			content: '/'; 
 			position: absolute;
