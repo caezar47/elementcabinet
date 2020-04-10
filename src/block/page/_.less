@@ -18,6 +18,18 @@
 				background-color: @white-f8;
 			}
 		}
+		&.is--page{
+			&-profile{
+				.media-breakpoint-down(@md; {
+					.breadcrumb__list{
+						display: none;
+					}
+					.page-header__heading{
+						display: none;
+					}
+				});
+			}
+		}
 	}
 	&container{	
 		@media print{padding: 0!important}		
@@ -96,6 +108,19 @@
 			}
 		}
 		&.is--page{
+			&-profile{
+				.media-breakpoint-up(@md; {
+					grid-gap: 32px;
+					grid-template-columns: 3.49fr 8.51fr;
+					& > [data-grid-tabs]{
+						display: none;
+					}
+					& > [data-grid-info]{
+						grid-column: 2;
+						grid-row: ~"1/3";
+					}
+				});
+			}
 		}
 		&.is--block{
 			&-calc{

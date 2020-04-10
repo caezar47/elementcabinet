@@ -6,6 +6,24 @@ form_visible.on('click', function(e) {
 	e.preventDefault();
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');
 });
+/*/рубль
+function addRub (val) {
+	return val + " ₽";
+}
+function removeRub (val) {
+	val = val.replace(" ₽", "");
+    val = val.replace("₽", "");
+    val = val.replace(" ", "");
+    return val;
+}
+$("input[data-rub]").on("input", function () {
+	var $this = $(this);
+    var val = $this.prop("value");
+    var newVal = removeRub(val);
+    newVal = addRub(newVal);
+    $this.prop("value", newVal); 
+});*/
+
 
 //сброс функции кнопки submit
 /*$('form button[type="submit"]').on('click', function(e) {

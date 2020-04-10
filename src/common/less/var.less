@@ -36,6 +36,7 @@
 @black-33 					: 	#333;
 @black-41 					: 	#414141;
 @black-54 					: 	#545454;
+@black-5a 					:	#5a5a5a;
 @black-63 					: 	#636363;
 @black-87 					: 	#878787; 
 @black-97 					: 	#979797; 
@@ -46,7 +47,9 @@
 
 @white-f0 					:	#F0F0F0;
 @white-f2 					:	#F2F2F2;
+@white-f7 					:	#F7F7F7;
 @white-f9 					:	#F9F9F9;
+@white-5f 					:	#5f5f5f;
 @white-6f 					:	#6F6F6F;
 @white-e9 					:	#E9E9E9;
 @white-e8 					:	#E8E8E8;
@@ -286,33 +289,31 @@
 
 //===== form  =====//
 //=== input ===
-@input_label				: 	@default;
 @input_bg					:	@white;
+@input_height_xs			:	32px;
 @input_height				:	48px;
 @input_height_textarea		:	65px;
 @input_radius				:	0px;
-@input_border_color			:	@white;
+@input_border_color			:	@white-e9;
 @input_border_width			:	1px;
 
 //= focus =
 @input_focus_bg				:	@white;
-@input_focus_border_color	:	@primary;
+@input_focus_border_color	:	@default;
 
+//== input label ==
+@input_label				: 	@black-98;
+@input_label_fs				:	0.88em;
+@input_label_lh				:	1em;
 //== input text ==
 @input_t_color				:	@default;
-@input_t_fs					:	@b-fs;
-@input_t_lh					:	@b-lh;
-//= focus =
-@input_focus_t_color		:	@default;
+@input_t_fs					:	0.88em;
+@input_t_lh					:	1em;
 
 //== placeholder ==
-@input_plh_color			:	@black-87;
-//@input_plh_fs				:	@b-fs - 2;
-//@input_plh_lh				:	@b-lh - 2;
-@input_plh_fs				:	@b-fs;
-@input_plh_lh				:	@b-fs;
-//= focus =
-@input_focus_plh_color		:	@b-color;
+@input_plh_color			:	@black-98;
+@input_plh_fs				:	0.88em;
+@input_plh_lh				:	1em;
 
 //== white ==
 @input_w_bg					:	fadeout(@white, 100%);

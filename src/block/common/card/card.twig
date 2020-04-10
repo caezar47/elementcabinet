@@ -1,3 +1,53 @@
+{% if view == "profile_card" %}
+	<div class="{{prefix}}item  {{mod}}">
+		<p class="{{prefix}}preview  {{mod}}">
+			<img src="{{preview}}" class="img-responsive" alt="">
+		</p>
+		<label class="{{prefix}}btn  {{mod}}">
+			Изменить фото
+			<input type="file">
+		</label>
+		<hr class="{{prefix}}line  {{mod}}">
+
+		<p class="{{prefix}}heading  {{mod}}">
+			{{heading}}
+		</p>
+		<p class="{{prefix}}value  is--form  {{mod}}">
+			{{form}}
+			<a href="#" class="{{prefix}}btn  {{mod}}-xs">{% include "../svg-sprite/svg.twig" with {icon:"edit"} %}</a>
+		</p>
+		{% if comp %}
+		<p class="{{prefix}}value  {{mod}}">
+			{{comp}}
+		</p>
+		{% endif %}
+		<p class="{{prefix}}link  {{mod}}">
+			<a href="#">Изменить правовую форму</a>
+		</p>
+	</div> 
+{% endif %}
+{% if view == "manager_card" %}
+	<div class="{{prefix}}item  {{mod}}">
+		<p class="{{prefix}}label  {{mod}}">Ваш менеджер</p>
+		<p class="{{prefix}}preview  {{mod}}">
+			<img src="{{preview}}" class="img-responsive" alt="">
+		</p>
+		<p class="{{prefix}}heading  {{mod}}">
+			{{heading}}
+		</p>
+		<p class="{{prefix}}value  {{mod}}">
+			{{post}}
+		</p>
+		<p class="{{prefix}}tel  {{mod}}">
+			<a href="tel:{{phone_tel}}">{{phone}}</a>
+		</p>
+		<p class="{{prefix}}email  {{mod}}">
+			<a href="mailto:{{email}}">{{email}}</a>
+		</p>
+		<hr class="{{prefix}}line  {{mod}}">
+	</div> 
+{% endif %}
+
 {% if view == "calc_card" %}
 	{% for value in list %}
 	<div class="{{prefix}}group  {{mod}}">

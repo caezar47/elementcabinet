@@ -1,0 +1,57 @@
+{% if view == "profile_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">	
+				<div data-grid-card>					
+					{% include "../common/card/card.twig" with {
+					 	view: "profile_card", 
+					 	prefix:prefix.card,
+					 	mod:"is--profile-card",
+					 	heading:"Константинов К. К.",
+                		preview:[path.img,"/default/avatar-lock.png"].join(""),  
+					 	form:"Юридическое лицо",
+					 	comp:"Umbrella Corporation",
+					} %}
+				</div>
+				<div data-grid-tabs></div>
+				<div data-grid-info>
+					{% include "../common/form/form.twig" with {
+						view: 			"profile_info", 
+						prefix:			prefix.form, 
+						mod:			"is--profile-info", 
+						color:			"", 
+						ID: 			"f_leasing", 
+						heading:		"Нужна техника в лизинг?", 
+						heading_level:	"h3", 
+						heading_mod:	"is--h1  color--white  fw--700  is--form-leasing"
+					} %}
+				</div>
+				<div data-grid-manager>
+					{% include "../common/card/card.twig" with {
+					 	view: "manager_card", 
+					 	prefix:prefix.card,
+					 	mod:"is--manager-card",
+                		preview:[path.img,"/default/avatar-lock.png"].join(""),  
+					 	heading:"Иванов<br> Роман Петрович",
+					 	post:"Старший менеджер <br>лизингового отдела <br>лизинговых проектов ",
+					 	phone:"+7 423 239 07 37",
+					 	phone_tel:"+74232390737",
+					 	email:"ivanovroman@ulh.ru",
+					} %}
+				</div>
+			</div>
+			
+		</div>
+	</section>
+{% endif %}

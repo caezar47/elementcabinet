@@ -6,7 +6,7 @@
 		.btn-clearfix();
 		font-size: @btn_fs;
 		line-height: @btn_lh;
-		font-weight: 400;
+		font-weight: 100;
 		position: relative;	
 		display: inline-block; 	
 		background-color: @btn_bg_color; 
@@ -48,7 +48,6 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			font-weight: 100;
 			text-align: center;
 			width: 100%;
 			padding: 12px 13px;
@@ -68,6 +67,21 @@
 					border-color: @success-h;
 				}
 				&:active{
+					background-color: @success-a;
+					border-color: @success-a;
+				}
+			}
+			&-white{
+				background-color: @white;
+				border-color: @success;
+				color: @default;
+				&:hover{
+					color: @white;
+					background-color: @success-h;
+					border-color: @success-h;
+				}
+				&:active{
+					color: @white;
 					background-color: @success-a;
 					border-color: @success-a;
 				}

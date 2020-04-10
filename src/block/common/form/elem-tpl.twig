@@ -1,23 +1,25 @@
 {% if view == "input" %}
 	{% for value in list %}	
-	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+	<label class="{{prefix}}item  {{mod}}  {{value.group}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+		{% if value.label %}
+		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>	
+		{% endif %}
 		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
-		{# <input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}> #}
-	</p>
+	</label>
 	{% endfor %}
 {% endif %}
 
 {% if view == "select" %}
-	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+	<label class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
 		{% if label %}
-		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		<p class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</p>
 		{% endif %}
 		<select class="{{prefix}}control  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  {{attr}}  {{required}}>
 			{% for value in list %}
 				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
 			{% endfor %}	
 		</select>
-	</p>
+	</label>
 {% endif %}
 
 {% if view == "radio" %}

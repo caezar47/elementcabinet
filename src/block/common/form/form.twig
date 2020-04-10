@@ -1,3 +1,89 @@
+{% if view=="profile_info" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}">
+		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+			{
+				"type":"text", 
+				"required":"", 
+				"label":"Контактное лицо", 
+				"placeholder":"Контактное лицо",
+				"group":"is--inline"
+			},
+			{
+				"type":"tel", 
+				"required":"", 
+				"label":"Телефон", 
+				"placeholder":"Телефон",
+				"group":"is--inline"
+			},
+			{
+				"type":"email", 
+				"required":"", 
+				"label":"E-mail", 
+				"placeholder":"E-mail",
+				"group":"is--inline"
+			}
+		]} %}
+		<hr class="{{prefix}}line  {{mod}}">
+		{% include "elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			required:"",
+			label:"Ближайший город", 
+			color:color, 
+			attr:"data-select-default",
+			group:"is--inline", 
+			list: [
+				{"name": "Ближайший город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
+		} %}
+		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+			{
+				"type":"date", 
+				"required":"", 
+				"label":"Дата регистрации ИП", 
+				"placeholder":"Дата регистрации ИП",
+				"group":"is--inline"
+			},
+			{
+				"type":"number", 
+				"required":"", 
+				"label":"Ежемесячная выручка", 
+				"placeholder":"Ежемесячная выручка",
+				"group":"is--inline",
+				"ruble":"true"
+			},
+		]} %}
+		<div>
+			{% include "../button/btn.twig" with {
+				view:"btn",
+				prefix:"btn__", 
+				type:"submit", 
+				mod:"is--success-white", 
+				link:"#", 
+				name:"Сохранить изменения" 
+			} %}
+		</div>
+	</form>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+{# old #}
 {% if view=="login" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		{% include "../../common/page-header/tpl.twig" with {heading_view:heading_view, prefix:"page-header__", mod:heading_mod, group:heading_group, level:heading_level, heading:heading} %}
