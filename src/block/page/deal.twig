@@ -1,3 +1,44 @@
+{% if view == "deal_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/table/tpl.twig" with {
+			 	view: "deal_list", 
+			 	mod:"is--deal-list", 
+			 	list:list
+			} %}
+			<div class="{{content_prefix}}link  {{content_mod}}">				
+				{% include "../common/button/btn.twig" with {
+					view:"link",
+					prefix:"btn__", 
+					icon: "pdf",
+					mod:"is--export  is--success-white-f8", 
+					link:"#", 
+					name:"Экспорт PDF" 
+				} %}			
+				{% include "../common/button/btn.twig" with {
+					view:"link",
+					prefix:"btn__", 
+					icon: "xls",
+					mod:"is--export  is--success-white-f8", 
+					link:"#", 
+					name:"Экспорт Exсel" 
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
 {% if view == "deal_block" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">				{% include "../common/page-header/tpl.twig" with {

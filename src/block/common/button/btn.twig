@@ -3,13 +3,15 @@
 {% endif %}
 
 {% if view == "btn" %}
-<button type="{{type}}" class="{{prefix}}item  {{mod}}" {% if heading_view == "modal" %}data-btn-heading{% endif %}>{{name}}</button>
+<button type="{{type}}" class="{{prefix}}item  {{mod}}">
+	{{name}}
+</button>
 {% endif %}
 
 {% if view == "link" %}
 <a href="{{link}}" class="{{prefix}}item  {{mod}}  {{group}}">
 	<span>{{name}}</span>
-	{% if arrow == "true" %}
+	{% if icon %}
 		<span class="{{prefix}}icon  {{mod}}  {{group}}">{% include "../svg-sprite/svg.twig" with {icon:icon} %}</span>
 	{% endif %}
 </a>  

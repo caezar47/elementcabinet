@@ -5,6 +5,7 @@
     </head>
     <body>
         {% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+        
         <main class="content-block__panel">
             {% include "../block/page/faq.twig" with {
                 view:"faq_page", 
@@ -180,8 +181,7 @@
                     }
                 ],
             } %}
-        </main>
-        
+        </main>       
         
         {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
