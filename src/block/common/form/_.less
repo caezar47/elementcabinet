@@ -11,14 +11,21 @@
 				grid-gap: 8px;
 				margin-left: -15px;
 				margin-right: -15px;
-				padding-top: 35px;
-				padding-left: 15px;
-				padding-right: 15px;
+				padding: 35px 15px 50px;
+				& > [data-grid-submit]{
+					margin-top: 22px;
+				}
 				.media-breakpoint-up(@md; {
 					margin: 0;
-					padding: 70px 65px;
     				grid-gap: 30px;
+    				padding: 35px 30px;
 					box-shadow: 0px 1px 7px fadeout(@white-5f, 75%);
+				});
+				.media-breakpoint-up(@xl; {
+					padding: 70px 65px;	
+					& > [data-grid-submit]{
+						margin-top: 55px;
+					}				
 				});
 			}
 		}
@@ -342,6 +349,11 @@
 
 		&.is--profile{
 			&-info{
+				.media-breakpoint-down(@md; {
+					.question__icon{
+						display: none;
+					}
+				});
 				.select2-container{
 					width: 100%!important;
 					max-width: 200px;
@@ -409,15 +421,44 @@
 				padding-right: 20px;
 				.media-breakpoint-up(@md; {
 					flex-basis: 225px;
+				   	min-width: 225px;
     				padding-right: 30px;
 				});
 			}
 		}
 	}
+	&control-wrap{	
+		position: relative;	 
+		&.is--profile{
+			&-info{
+				flex-basis: 200px;
+				.media-breakpoint-up(@md; {
+					flex-basis: 390px;
+					margin-right: 20px;
+				});
+			}
+		}
+	}
+	&control-ruble{	
+		position: absolute;
+		display: flex;
+		align-items: center;
+		top: 0;
+		height: 100%;
+		left: 15px;
+		padding: 5px 0;
+		font-size: @input_t_fs;
+		line-height: @input_t_lh;
+		color: @input_plh_color;
+		.media-breakpoint-up(@md; {
+			padding: 10px 0;
+		});		
+	}
 	&control{
 		width: 100%;
 		font-size: @input_t_fs;
 		line-height: @input_t_lh;
+		color: @input_t_color;
 		font-weight: 100;
 		background: @input_bg;
 		border-width: @input_border_width;   
@@ -427,7 +468,6 @@
 		height: @input_height_xs;
 		padding: 5px 10px;
 		box-shadow: none;
-		color: @input_t_color;
 		transition: @trs-site;
 		&[type="text"]{
 			-webkit-appearance: none;
@@ -500,8 +540,19 @@
 				flex-basis: 200px;
 				.media-breakpoint-up(@md; {
 					flex-basis: 390px;
+					margin-right: 20px;
 				});
+				&.is--ruble{
+					flex-basis: 100%;
+					margin-right: 0;
+				}
 			}
+		}
+		&.is--ruble{
+			padding-left: 30px;
+			.media-breakpoint-up(@md; {
+				padding-left: 35px;
+			});
 		}
 		//old
 		&.is--primary{

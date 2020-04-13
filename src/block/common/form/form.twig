@@ -58,15 +58,24 @@
 				"label":"Ежемесячная выручка", 
 				"placeholder":"Ежемесячная выручка",
 				"group":"is--inline",
-				"ruble":"true"
+				"tooltip":"Данные, предоставленные в налоговую службу за последний отчетный период",
+				"tooltip_placement":"top",
+				"ruble":"is--ruble"
 			},
+			{
+				"type":"text", 
+				"required":"", 
+				"label":"Название организации", 
+				"placeholder":"Название организации",
+				"group":"is--inline"
+			}
 		]} %}
-		<div>
+		<div data-grid-submit>
 			{% include "../button/btn.twig" with {
 				view:"btn",
 				prefix:"btn__", 
 				type:"submit", 
-				mod:"is--success-white", 
+				mod:"is--success-white  is--size-md", 
 				link:"#", 
 				name:"Сохранить изменения" 
 			} %}

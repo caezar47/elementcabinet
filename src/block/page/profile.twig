@@ -24,8 +24,26 @@
 					 	comp:"Umbrella Corporation",
 					} %}
 				</div>
-				<div data-grid-tabs></div>
-				<div data-grid-info>
+				<div data-grid-tabs>
+					{% include "../common/tabs/tpl.twig" with {
+						view: 			"profile", 
+						prefix:			prefix.tabs, 
+						mod:			"is--profile",
+						list:[
+		                    {
+		                        id:"profile-tabs",
+		                        status:"active",
+		                        name:"Мой профиль",
+		                    },
+		                    {
+		                        id:"manager-tabs",
+		                        status:"",
+		                        name:"Мой менеджер"
+		                    }
+		                ],
+					} %}
+				</div>
+				<div data-grid-info  id="profile-tabs" class="{{prefix.tabs}}pane  active  {{content_mod}}">
 					{% include "../common/form/form.twig" with {
 						view: 			"profile_info", 
 						prefix:			prefix.form, 
@@ -37,7 +55,7 @@
 						heading_mod:	"is--h1  color--white  fw--700  is--form-leasing"
 					} %}
 				</div>
-				<div data-grid-manager>
+				<div data-grid-manager id="manager-tabs" class="{{prefix.tabs}}pane  {{content_mod}}">
 					{% include "../common/card/card.twig" with {
 					 	view: "manager_card", 
 					 	prefix:prefix.card,

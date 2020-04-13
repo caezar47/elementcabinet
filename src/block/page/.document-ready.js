@@ -1,4 +1,4 @@
-// $('[data-toggle="tooltip"]').tooltip('show');
+$('[data-toggle="tooltip"]').tooltip();
 /*var result = $("[data-count]"),
 	carousel = $('[data-carousel-count]'),
     count = $('.item', carousel).length,

@@ -2,7 +2,7 @@
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
     	<meta charset="utf-8">	
-<title>Мои сделки | lk.ulh.ru</title>
+<title>Мой профиль | lk.ulh.ru</title>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -165,23 +165,40 @@
 
 
 				</div>
-				<div data-grid-tabs></div>
-				<div data-grid-info>
+				<div data-grid-tabs>
+						<ul class="tabs__nav  is--profile">
+				<li class="tabs__item  is--profile active">
+			<a class="tabs__link  is--profile" href="#profile-tabs" data-toggle="tab">Мой профиль</a>
+		</li>
+				<li class="tabs__item  is--profile ">
+			<a class="tabs__link  is--profile" href="#manager-tabs" data-toggle="tab">Мой менеджер</a>
+		</li>
+			</ul>
+
+
+
+
+
+				</div>
+				<div data-grid-info  id="profile-tabs" class="tabs__pane  active  is--page-profile">
 						<form action="#" class="form__panel  is--profile-info">
 				
 	<label class="form__item  is--profile-info  is--inline"  >
 				<p class="form__label  is--profile-info">Контактное лицо</p>	
-				<input type="text" class="form__control    is--profile-info  "  placeholder="Контактное лицо" >
+						<input type="text" class="form__control    is--profile-info   "  placeholder="Контактное лицо"  >
+						
 	</label>
 		
 	<label class="form__item  is--profile-info  is--inline"  >
 				<p class="form__label  is--profile-info">Телефон</p>	
-				<input type="tel" class="form__control    is--profile-info  "  placeholder="Телефон" >
+						<input type="tel" class="form__control    is--profile-info   "  placeholder="Телефон"  >
+						
 	</label>
 		
 	<label class="form__item  is--profile-info  is--inline"  >
 				<p class="form__label  is--profile-info">E-mail</p>	
-				<input type="email" class="form__control    is--profile-info  "  placeholder="E-mail" >
+						<input type="email" class="form__control    is--profile-info   "  placeholder="E-mail"  >
+						
 	</label>
 	
 
@@ -221,12 +238,24 @@
 				
 	<label class="form__item  is--profile-info  is--inline"  >
 				<p class="form__label  is--profile-info">Дата регистрации ИП</p>	
-				<input type="date" class="form__control    is--profile-info  "  placeholder="Дата регистрации ИП" >
+						<input type="date" class="form__control    is--profile-info   "  placeholder="Дата регистрации ИП"  >
+						
 	</label>
 		
 	<label class="form__item  is--profile-info  is--inline"  >
 				<p class="form__label  is--profile-info">Ежемесячная выручка</p>	
-				<input type="number" class="form__control    is--profile-info  "  placeholder="Ежемесячная выручка" >
+						<div class="form__control-wrap  is--profile-info">
+			<p class="form__control-ruble  is--profile-info">₽</p>
+				<input type="number" class="form__control    is--profile-info   is--ruble"  placeholder="Ежемесячная выручка"  >
+				</div>
+							<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="top" title="Данные, предоставленные в налоговую службу за последний отчетный период">?</p>
+				
+	</label>
+		
+	<label class="form__item  is--profile-info  is--inline"  >
+				<p class="form__label  is--profile-info">Название организации</p>	
+						<input type="text" class="form__control    is--profile-info   "  placeholder="Название организации"  >
+						
 	</label>
 	
 
@@ -238,9 +267,9 @@
 
 
 
-		<div>
+		<div data-grid-submit>
 			
-<button type="submit" class="btn__item  is--success-white">
+<button type="submit" class="btn__item  is--success-white  is--size-md">
 	Сохранить изменения
 </button>
 
@@ -265,7 +294,7 @@
 
 
 				</div>
-				<div data-grid-manager>
+				<div data-grid-manager id="manager-tabs" class="tabs__pane  is--page-profile">
 						<div class="card__item  is--manager-card">
 		<p class="card__label  is--manager-card">Ваш менеджер</p>
 		<p class="card__preview  is--manager-card">

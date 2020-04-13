@@ -4,7 +4,18 @@
 		{% if value.label %}
 		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>	
 		{% endif %}
-		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
+		{% if value.ruble %}
+		<div class="{{prefix}}control-wrap  {{mod}}">
+			<p class="{{prefix}}control-ruble  {{mod}}">₽</p>
+		{% endif %}
+		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}} {{value.ruble}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %} >
+		{% if value.ruble %}
+		</div>
+		{% endif %}
+		{% if value.tooltip %}
+			<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="{{value.tooltip_placement}}" title="{{value.tooltip}}">?</p>
+		{% endif %}
+		
 	</label>
 	{% endfor %}
 {% endif %}

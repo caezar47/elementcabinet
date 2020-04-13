@@ -63,6 +63,13 @@
 				});
 			}
 		}
+		&.is--page{
+			&-profile{
+			.media-breakpoint-down(@md; {
+				padding-bottom: 0;
+			});	
+		}
+		}
 	}
 	&row{
 		&.is--index{
@@ -109,15 +116,31 @@
 		}
 		&.is--page{
 			&-profile{
+				grid-gap: 0px;
 				.media-breakpoint-up(@md; {
 					grid-gap: 32px;
-					grid-template-columns: 3.49fr 8.51fr;
+					grid-template-columns: repeat(2, 1fr);
 					& > [data-grid-tabs]{
 						display: none;
 					}
+					& > [data-grid-manager]{
+						grid-column: 2;
+						grid-row: 1;
+					}
+					& > [data-grid-info]{
+						grid-column: span 2;
+						grid-row: 2;
+					}
+				});
+				.media-breakpoint-up(@lg; {
+					grid-template-columns: 3.49fr 8.51fr;
 					& > [data-grid-info]{
 						grid-column: 2;
 						grid-row: ~"1/3";
+					}
+					& > [data-grid-manager]{
+						grid-column: 1;
+						grid-row: 2;
 					}
 				});
 			}

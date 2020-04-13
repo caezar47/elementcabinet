@@ -1,14 +1,21 @@
 //
 // Tooltips
 // --------------------------------------------------
-
+@tt_bg:				fadeout(@white-5f, 75%);
+@tt_color:			@default;
+@tt_fs:				0.88em;
+@tt_lh:				1.55em;
+@tt_zindex:			900;
+@tt_arrow_size:		30px;
+@tt_max_width:		250px;
+@tt_rad:			5px;
 
 // Base class
 .tooltip {
 	position: absolute;
-	z-index: @zindex-tooltip;
+	z-index: @tt_zindex;
 	display: block;
-	font-size: 16px;
+	font-size: @tt_fs;
 	// Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
 	// So reset our font and text properties to avoid inheriting weird values.
 	//.reset-text();
@@ -18,13 +25,8 @@
 
 	&.in     { .opacity(@tooltip-opacity); }
 	&.top    {
-		//margin-top:  -3px; 
-		//padding: @tooltip-arrow-width+25 0;
-		padding-bottom: 30px;
-		background-image: url("@{url-path-img}/default/bg-tooltip-top.svg"); 
-		background-position: 0 0;
-		background-repeat: no-repeat; 
-		background-size: contain;
+		margin-top: -3px;
+		padding-bottom: @tt_arrow_size;
 	}
 	&.right  { margin-left:  3px; padding: 0 @tooltip-arrow-width; }
 	&.bottom { margin-top:   3px; padding: @tooltip-arrow-width 0; }
@@ -34,17 +36,15 @@
 
 // Wrapper for the tooltip content
 .tooltip-inner {
-	max-width: @tooltip-max-width;
+	max-width: @tt_max_width;
 	padding: 15px 25px;
-	padding: 20px 30px;
-	color: @tooltip-color;
-	//text-align: center;
-	//background-color: @tooltip-bg;
-	//border-radius: @border-radius-base;
-	//background-color: @white;
+	color: @tt_color;
+	background-color: @tt_bg;
 	color: @default;
-	//box-shadow: 0px 1px 7px rgba(95, 95, 95, 0.25);
 	font-weight: 100;
+	.tooltip.top &{
+		border-radius: @tt_rad @tt_rad @tt_rad 0;
+	}
 }
 
 // Arrows
@@ -59,14 +59,11 @@
 .tooltip {
   &.top .tooltip-arrow {
   	//display: none;
-  	opacity: 0;
 	bottom: 0;
 	left: 50%;
 	//margin-left: -@tooltip-arrow-width;
-	border-width: 30px 20px 0 0;
-	//border-top-color: @tooltip-arrow-color;
-	border-top-color: @white;
-	//border-top-color: red;
+	border-width: @tt_arrow_size 20px 0 0;
+	border-top-color: @tt_bg;
   }
   &.top-left .tooltip-arrow {
 	bottom: 0;

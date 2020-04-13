@@ -242,16 +242,6 @@
 		}
 	}
 	&label{
-		&.is--manager{
-			&-card{
-				font-size: 0.8em;
-				line-height: 1em;
-				margin-bottom: 15px;
-				.media-breakpoint-up(@md; {
-					margin-bottom: 20px;
-				});
-			}
-		}
 		&.is--calc{
 			&-card{
 				margin-bottom: 10px;
@@ -261,6 +251,16 @@
 					display: flex;
 					align-items: center;					
 				}
+			}
+		}
+		&.is--manager{
+			&-card{
+				font-size: 0.8em;
+				line-height: 1em;
+				margin-bottom: 10px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 20px;
+				});
 			}
 		}
 	}
@@ -294,7 +294,7 @@
 				text-align: center;
 				font-size: 0.88em;
 				line-height: 1.5em;
-				margin-bottom: 15px;
+				margin-bottom: 20px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 25px;
 				});
