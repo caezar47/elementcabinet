@@ -58,6 +58,15 @@
 				height: 100%;
 				min-height: 340px;
 			}
+			&-list{
+				border-top: 1px solid @white-e9;
+				position: relative;
+				padding: 20px 40px 20px 0;
+				font-weight: 100;
+				&:last-child{
+					border-bottom: 1px solid @white-e9;
+				}
+			}
 		}
 		&.is--add{
 			&-card{
@@ -272,6 +281,12 @@
 				line-height: 1.12em;
 				margin-bottom: 25px;
 			}
+			&-list{
+				margin-bottom: 7px;
+				text-overflow: ellipsis;
+			    white-space: nowrap;
+			    overflow: hidden;
+			}
 		}
 		&.is--profile{
 			&-card{
@@ -314,6 +329,17 @@
 				}
 				&.is--success{
 					background-color: @green;
+				}
+			}
+			&-list{
+				font-size: 0.75em;
+				line-height: 1em;
+				margin-bottom: 7px;
+				&.is--fail{
+					color: @danger;
+				}
+				&.is--success{
+					color: @green;
 				}
 			}
 		}
@@ -408,6 +434,19 @@
 				&:hover{
 					color: @success;
 				}
+			}
+			&-list{
+				position: absolute;
+				top: 7px;
+				right: -8px;
+				width: 32px;
+				height: 32px;
+				padding: 8px;
+				color: @default;
+				&:hover{
+					color: @success;
+				}
+
 			}
 		}
 		&.is--profile{

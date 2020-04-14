@@ -29,12 +29,17 @@
 		"profile":"./profile.html",
 		"faq":"./faq.html",
 		"calculation":"./calculation.html",
+		"calculation":"#",
 		"calculation_add":"./calculation-add.html",
+		"calculation_add":"#",
+		"calc_form":"./calculation-form.html",
+		"calc_form":"#",
 		"deal":"./deal.html"
 	},
 	"prefix":{
 		"content":"content-block__",
 		"heading":"page-header__",
+		"dropdown":"dropdown__",
 		"form":"form__",
 		"card":"card__",
 		"table":"table__",

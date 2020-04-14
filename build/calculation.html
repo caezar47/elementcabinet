@@ -2,7 +2,7 @@
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
     	<meta charset="utf-8">	
-<title>Главная страница | lk.ulh.ru</title>
+<title>Мои расчеты | lk.ulh.ru</title>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,6 @@
 <meta name="theme-color" content="#ffffff">
 
 <link href="./css/style.css" rel="stylesheet">	</head>
-	
     <body>
     	<nav class="navbar__block  ">
 	<div class="navbar__header">
@@ -103,49 +102,51 @@
 		</div>
 	</div>
 </nav>
-        <main class="content-block__panel">            
-            	<section class="content-block__panel  is--index-header">
-		<div class="content-block__container container  is--index-header">
-			<div class="content-block__row  grid__row  is--index-header">
-				<div data-grid-note>					
-						
-	<h1 class="page-header__heading  fw--700  is--index-header  " >Создавать лизинговый расчет стало просто!</h1>
-					<div class="text__block  is--index-header">
-						<p>С&nbsp;помощью Личного кабинета «Элемент Лизинг» вы&nbsp;можете самостоятельно сделать лизинговый расчет без подписания документов и&nbsp;оформления лизингового договора.</p><p>Если наши условия вас устраивают, вы&nbsp;можете заключить лизинговый договор в&nbsp;любое удобное для вас время.</p>
-					</div>
-				</div>	
-				<picture data-grid-preview>
-					<img src="./img/default/index-header.svg" class="img-responsive" alt="">
-				</picture>
-				<div data-grid-btn>
+        <main class="content-block__panel  is--bg-dark">
+            	<section class="content-block__panel  is--page-calc">
+		<div class="content-block__container container  is--page-calc">
+			<ul class="breadcrumb__list  ">
+		
+		<li class="breadcrumb__list-item">
+		<a href="./" class="breadcrumb__list-link">Главная</a>
+	</li>
+			
+		<li class="breadcrumb__list-item is--active">Мои расчеты</li>
+		</ul>				
+	<h1 class="page-header__heading  is--h2  fw--700  is--page-calc  " >Мои расчеты</h1>
+			<div class="content-block__row  is--page-calc" data-slick-calc-block>
+				<div data-grid-btn>					
 					
+<button type="submit" class="btn__item  is--success-white  is--size-md">
+	Созать новый расчет
+</button>
 
-<a href="#" class="btn__item  is--success  is--index-header">
-	<span>Сделать первый расчет</span>
-			<span class="btn__icon  is--success  is--index-header"><svg class="icon-svg icon-arrow-next" role="img">
-	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
-</svg></span>
-	</a>  
 				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-
-
-
-
-
-           
-
-            	<section class="content-block__panel  is--block-calc">
-		<div class="content-block__container container  is--block-calc">					
-	<h2 class="page-header__heading  is--h2  fw--700  is--block-calc  " >Мои расчеты</h2>
-							<div class="content-block__slider  is--block-calc" data-slick-calc-block>
-					
+				<div data-grid-dropdown>
+					<div class="dropdown__card  dropdown  ">
+	<a href="#" class="dropdown__toggle  dropdown-toggle  " data-toggle="dropdown"><span>Карточками</span></a>
+	<div class="dropdown__nav  dropdown-menu  ">			
+		<ul class="dropdown__nav-list  ">			    
+					<li class="dropdown__nav-item">
+				<a href="#calc-view-card" 
+					class="dropdown__nav-link    is--active" 
+											data-toggle="tab" 
+						aria-expanded="true"					>Карточками</a>
+			</li>
+					<li class="dropdown__nav-item">
+				<a href="#calc-view-list" 
+					class="dropdown__nav-link    " 
+											data-toggle="tab" 
+											>Списком</a>
+			</li>
+		 
+		</ul>
+	</div>
+</div>						
+				</div>
+				<div id="calc-view-card" class="tabs__pane  active">		
+					<div class="content-block__slider  is--page-calc" data-slick-calc-block>		
+						
 
 	<div class="card__group  is--add-card">
 		<a href="#" class="card__item  is--add-card">
@@ -175,7 +176,7 @@
 
 
 
-					
+						
 		<div class="card__group  is--calc-card">
 		<div class="card__item  is--calc-card">
 			<a href="#" class="card__btn  is--calc-card  ">
@@ -257,6 +258,129 @@
 			</div>
 		</div> 
 	</div> 
+		<div class="card__group  is--calc-card">
+		<div class="card__item  is--calc-card">
+			<a href="#" class="card__btn  is--calc-card  ">
+				<svg class="icon-svg icon-file" role="img">
+	<use xlink:href="./img/svg/sprite.svg#file"></use>
+</svg>			</a>
+			<p class="card__heading  is--calc-card">РАС-622532</p>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Объект лизинга</p>
+				<p>ГАЗ-A31 NEXT</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Ежемесячный платеж</p>
+				<p>260 000 ₽</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Сумма по ДЛ</p>
+				<p>2 260 000 ₽</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card  is--status  is--fail">	
+					<span>Статус расчета</span>
+					<span class="card__status  is--calc-card  is--fail" ></span>
+				</p>
+			</div>
+		</div> 
+	</div> 
+		<div class="card__group  is--calc-card">
+		<div class="card__item  is--calc-card">
+			<a href="#" class="card__btn  is--calc-card  ">
+				<svg class="icon-svg icon-edit" role="img">
+	<use xlink:href="./img/svg/sprite.svg#edit"></use>
+</svg>			</a>
+			<p class="card__heading  is--calc-card">РАС-622532</p>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Объект лизинга</p>
+				<p>ГАЗ-A31 NEXT</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Ежемесячный платеж</p>
+				<p>260 000 ₽</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card">Сумма по ДЛ</p>
+				<p>2 260 000 ₽</p>
+			</div>
+			<div class="card__value  is--calc-card">
+				<p class="card__label  is--calc-card  is--status  is--fail">	
+					<span>Статус расчета</span>
+					<span class="card__status  is--calc-card  is--fail" ></span>
+				</p>
+			</div>
+		</div> 
+	</div> 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+				<div id="calc-view-list" data-grid-list class="tabs__pane">
+					
+		<div class="card__item  is--calc-list">
+		<a href="#" class="card__btn  is--calc-list  ">
+			<svg class="icon-svg icon-edit" role="img">
+	<use xlink:href="./img/svg/sprite.svg#edit"></use>
+</svg>		</a>
+		<p class="card__heading  is--calc-list">РАС-3567888</p>
+		<p class="card__value  is--calc-list">ГАЗ-A31 NEXT</p>
+		<p class="card__status  is--calc-list  is--success">	
+			Статус: на модерации
+		</p>
+	</div> 
+		<div class="card__item  is--calc-list">
+		<a href="#" class="card__btn  is--calc-list  ">
+			<svg class="icon-svg icon-edit" role="img">
+	<use xlink:href="./img/svg/sprite.svg#edit"></use>
+</svg>		</a>
+		<p class="card__heading  is--calc-list">РАС-622532</p>
+		<p class="card__value  is--calc-list">ГАЗ-A31 NEXT</p>
+		<p class="card__status  is--calc-list  is--fail">	
+			Статус: отказ
+		</p>
+	</div> 
+		<div class="card__item  is--calc-list">
+		<a href="#" class="card__btn  is--calc-list  ">
+			<svg class="icon-svg icon-edit" role="img">
+	<use xlink:href="./img/svg/sprite.svg#edit"></use>
+</svg>		</a>
+		<p class="card__heading  is--calc-list">РАС-3567888</p>
+		<p class="card__value  is--calc-list">ГАЗ-A31 NEXT</p>
+		<p class="card__status  is--calc-list  is--success">	
+			Статус: на модерации
+		</p>
+	</div> 
+		<div class="card__item  is--calc-list">
+		<a href="#" class="card__btn  is--calc-list  ">
+			<svg class="icon-svg icon-edit" role="img">
+	<use xlink:href="./img/svg/sprite.svg#edit"></use>
+</svg>		</a>
+		<p class="card__heading  is--calc-list">РАС-622532</p>
+		<p class="card__value  is--calc-list">ALMA LASERS - Аппарат многофункциональный</p>
+		<p class="card__status  is--calc-list  is--fail">	
+			Статус: отказ
+		</p>
+	</div> 
 	
 
 
@@ -279,81 +403,6 @@
 
 
 				</div>
-				<div class="content-block__link  is--block-calc">				
-					
-
-<a href="#" class="link__item  is--arrow  is--success  ">
-	<span>Все расчеты</span>
-			<span class="link__icon  is--arrow  is--success  "><svg class="icon-svg icon-arrow-next" role="img">
-	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
-</svg></span>
-	</a>  
-				</div>
-					</div>
-	</section>
-          
-
-            
-	<section class="content-block__panel  is--block-deal">
-		<div class="content-block__container container  is--block-deal">					
-	<h2 class="page-header__heading  is--h2  fw--700  is--block-deal  " >Мои сделки</h2>
-			<table class="table  is--deal-list">
-	<thead>
-		<tr>
-			<th>№ КП</th>
-			<th>№ ДЛ</th>
-			<th>Статус</th>
-			<th>Дата КП</th>
-			<th>Марка, модель</th>
-			<th>Общая сумма</th>
-			<th>Выплачено</th>
-		</tr>
-	</thead> 
-	<tbody> 
-			
-		<tr onclick="window.location.href='#'; return false"> 
-			<td data-grid-id>РАС-622532</td> 
-			<td class="is--hidden">АХ_ЭЛ/Влд-91286/ДЛ</td> 
-			<td class="is--hidden">Подписание<br> клиентом</td> 
-			<td data-grid-date>21.02.2020</td> 
-			<td class="is--hidden">ГАЗ-A31 NEXT</td> 
-			<td data-grid-cost>2 000 690 ₽</td> 
-			<td class="is--hidden">0 ₽</td> 
-		</tr>
-			
-		<tr onclick="window.location.href='#'; return false"> 
-			<td data-grid-id>РАС-622532</td> 
-			<td class="is--hidden">АХ_ЭЛ/Влд-91286/ДЛ</td> 
-			<td class="is--hidden">Подписание<br> клиентом</td> 
-			<td data-grid-date>21.02.2020</td> 
-			<td class="is--hidden">ГАЗ-A31 NEXT</td> 
-			<td data-grid-cost>2 000 690 ₽</td> 
-			<td class="is--hidden">0 ₽</td> 
-		</tr>
-			
-		<tr onclick="window.location.href='#'; return false"> 
-			<td data-grid-id>РАС-622532</td> 
-			<td class="is--hidden">АХ_ЭЛ/Влд-91286/ДЛ</td> 
-			<td class="is--hidden">Подписание<br> клиентом</td> 
-			<td data-grid-date>21.02.2020</td> 
-			<td class="is--hidden">ГАЗ-A31 NEXT</td> 
-			<td data-grid-cost>2 000 690 ₽</td> 
-			<td class="is--hidden">0 ₽</td> 
-		</tr>
-			</tbody>
-</table>
-
-
-
-			<div class="content-block__link  is--block-deal">				
-				
-
-<a href="./deal.html" class="link__item  is--arrow  is--success  ">
-	<span>Все сделки</span>
-			<span class="link__icon  is--arrow  is--success  "><svg class="icon-svg icon-arrow-next" role="img">
-	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
-</svg></span>
-	</a>  
 			</div>
 		</div>
 	</section>

@@ -16,7 +16,8 @@
                 heading_level:"h1", 
                 heading:"Создавать лизинговый расчет стало просто!",
                 note:"<p>С&nbsp;помощью Личного кабинета «Элемент Лизинг» вы&nbsp;можете самостоятельно сделать лизинговый расчет без подписания документов и&nbsp;оформления лизингового договора.</p><p>Если наши условия вас устраивают, вы&nbsp;можете заключить лизинговый договор в&nbsp;любое удобное для вас время.</p>",  
-                preview:[path.img,"/default/index-header.svg"].join(""),              
+                preview:[path.img,"/default/index-header.svg"].join(""),
+                link_add:page.calc_form,             
             } %}           
 
             {% include "../block/page/calculation.twig" with {
@@ -26,7 +27,7 @@
                 heading_mod:"is--h2  fw--700  is--block-calc", 
                 heading_level:"h2", 
                 heading:"Мои расчеты",
-                link_add:"#",
+                link_add:page.calc_form,
                 list:[
                     {
                         link:"#", 

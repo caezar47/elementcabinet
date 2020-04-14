@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Мои расчеты"}  %}
+	</head>
+    <body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+
+        <main class="content-block__panel  is--bg-dark">
+            {% include "../block/page/calculation.twig" with {
+                view:"calc_page", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-calc", 
+                heading_mod:"is--h2  fw--700  is--page-calc",  
+                heading_level:"h1", 
+                heading:"Мои расчеты", 
+                bread_mod:"",
+                bread:[
+                    {name:"Главная", link:page.index},
+                    {name:"Мои расчеты"}
+                ],
+                link_add:page.calc_form,
+                list_card:[
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"Заявка отправлена",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--success",
+                        tooltip:"",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"",
+                    },
+                    {
+                        link:"#", 
+                        icon:"file", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        cost:"260 000 ₽",
+                        sum:"2 260 000 ₽",
+                        status:"is--fail",
+                        tooltip:"",
+                    }
+                ],
+                list:[
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-3567888", 
+                        object:"ГАЗ-A31 NEXT",
+                        status_mod:"is--success",
+                        status:"на модерации",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ГАЗ-A31 NEXT",
+                        status_mod:"is--fail",
+                        status:"отказ",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-3567888", 
+                        object:"ГАЗ-A31 NEXT",
+                        status_mod:"is--success",
+                        status:"на модерации",
+                    },
+                    {
+                        link:"#", 
+                        icon:"edit", 
+                        name:"РАС-622532", 
+                        object:"ALMA LASERS - Аппарат многофункциональный",
+                        status_mod:"is--fail",
+                        status:"отказ",
+                    },
+                ],
+            } %}
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

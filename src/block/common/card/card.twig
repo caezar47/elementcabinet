@@ -78,6 +78,20 @@
 	</div> 
 	{% endfor %}
 {% endif %}
+{% if view == "calc_list" %}
+	{% for value in list %}
+	<div class="{{prefix}}item  {{mod}}">
+		<a href="{{value.link}}" class="{{prefix}}btn  {{mod}}  {{value.icon_mod}}">
+			{% include "../svg-sprite/svg.twig" with {icon:value.icon} %}
+		</a>
+		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+		<p class="{{prefix}}value  {{mod}}">{{value.object}}</p>
+		<p class="{{prefix}}status  {{mod}}  {{value.status_mod}}">	
+			Статус: {{value.status}}
+		</p>
+	</div> 
+	{% endfor %}
+{% endif %}
 
 {% if view == "add_card" %}
 	<div class="{{prefix}}group  {{mod}}">
