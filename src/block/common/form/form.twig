@@ -82,7 +82,6 @@
 		</div>
 	</form>
 {% endif %}
-
 {% if view == "signin" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		{% include "../page-header/tpl.twig" with {
@@ -123,19 +122,172 @@
 				Или вы можете <a href="{{page.signup}}">зарегистрироваться</a>
 			</div>
 		</div>
-		
-		{# {% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-			{"type":"text", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"},
-			{"type":"password", "id":"passoword", "form_id":ID, "name":"Пароль", "placeholder":"Пароль"}
-		]} %}
-		<div class="{{prefix}}text  {{mod}}"><a href="#">Забыли пароль?</a></div>
-		<div class="{{prefix}}btn  {{mod}}  tabs__pane  active" id="login-clients">
-			<button type="submit" class="btn__item  is--success  is--arrow  is--md">Войти в кабинет</button>
-			<a href="#" class="btn__item  is--black-29  is--arrow  is--md">Регистрация</a>
+	</form>
+{% endif %}
+{% if view=="signup" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}"  {{form_data}}>
+		<div class="{{prefix}}row  grid__row  {{mod}}  is--wrap">			
+			<ol class="{{prefix}}step  {{mod}}">
+				<li class="{{prefix}}step-item  {{mod}}">
+					<a href="#{{ID}}-step1" class="{{prefix}}step-link  {{mod}}  is--active">1. Контактная информация</a> 	
+				</li>
+				<li class="{{prefix}}step-item  {{mod}}">
+					<a href="#{{ID}}-step2" disabled class="{{prefix}}step-link  {{mod}}  {{active_two}}">2. Дополнительная информация</a> 	
+				</li>
+			</ol>
+			<div class="{{prefix}}wrap  {{mod}}">
+				<div class="{{prefix}}step-pane  {{mod}}  {{active_one}}" id="{{ID}}-step1">
+					<div class="{{prefix}}row  grid__row  is--step  {{mod}}">
+						<h2 class="page-header__heading  is--page-signup-sm  fw--100">Заполните контактные данные</h2>
+						<p data-grid-link>
+							<a href="#" class="{{prefix}}btn  {{mod}}">Пропустить регистрацию</a>
+						</p>
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"text", 
+								"id":"item", 
+								"form_id":ID,
+								"required": "required",
+								"name":"Имя", 
+								"placeholder":"Имя"
+							},
+							{
+								"type":"tel", 
+								"id":"item", 
+								"form_id":ID,
+								"required": "required",
+								"name":"Контактный телефон", 
+								"placeholder":"Контактный телефон"
+							},
+							{
+								"type":"email", 
+								"id":"item", 
+								"form_id":ID,
+								"required": "required",
+								"name":"E-mail", 
+								"placeholder":"E-mail"
+							},
+						]} %}
+						{% include "elem-tpl.twig" with {
+							view:"checkbox", 
+							prefix:prefix, 
+							mod:"is--sm  is--agreement", 
+							color:"", 
+							list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
+						<hr class="{{prefix}}line  {{mod}}">
+
+						<h2 class="page-header__heading  is--page-signup-sm  fw--100  is--full">Выберите правовую форму</h2>
+						<div class="is--full">
+							<ul class="tabs__nav  {{mod}}">
+								<li class="tabs__item  {{mod}}">
+									<a href="#signup-pane-fiz" class="tabs__link  {{mod}}" data-toggle="tab">Физ. лицо</a>
+								</li>
+								<li class="tabs__item  {{mod}}">
+									<a href="#signup-pane-legal" class="tabs__link  {{mod}}" data-toggle="tab">Юр. лицо</a>
+								</li>
+								<li class="tabs__item  {{mod}}">
+									<a href="#signup-pane-ip" class="tabs__link  {{mod}}" data-toggle="tab">ИП</a>
+								</li>
+							</ul>
+							
+						</div>
+						<p data-grid-btn>
+							<button type="button" class="btn__item" data-step-next>Продолжить</button>	
+						</p>
+					</div>
+				</div>
+				<div class="{{prefix}}step-pane  {{mod}}  {{active_two}}" id="{{ID}}-step2">			
+					<div class="{{prefix}}row  grid__row  {{mod}}">				
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"text", 
+								"id":"fio", 
+								"form_id":ID,
+								"required": "required", 
+								"name":"ФИО", 
+								"placeholder":"ФИО"
+							},
+							{
+								"type":"text", 
+								"id":"company", 
+								"form_id":ID, 
+								"required": "required", 
+								"name":"Название компании", 
+								"placeholder":"Название компании"
+							}
+						]} %} 
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							form_id:ID,
+							id:"legal", 
+							name:"", 
+							color:color, 
+							required: "required", 
+							attr:"data-select-primary-l",
+							list: [
+								{"name": "Правовая форма", "status":"disabled selected"},
+								{"name": "Юридическое лицо"},
+								{"name": "ИП"},
+								{"name": "Физическое лицо"}
+							]
+						} %}
+						<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
+					</div>
+				</div>
+				<div class="{{prefix}}step-pane  {{mod}}  {{active_three}}" id="{{ID}}-step3">		
+					<div class="{{prefix}}row  grid__row  {{mod}}">				
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"email", 
+								"id":"email", 
+								"form_id":ID, 
+								"required": "required", 
+								"name":"E-mail", 
+								"placeholder":"Ваш E-mail"
+							},
+							{
+								"type":"tel", 
+								"id":"tel",
+								"form_id":ID, 
+								"required": "required", 
+								"name":"Телефон", 
+								"placeholder":"Ваш телефон"
+							}
+						]} %} 
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							form_id:ID,
+							required: "required", 
+							id:"city", 
+							name:"", 
+							color:color, 
+							attr:"data-select-primary-l", 
+							list: [
+								{"name": "Ваш город", "status":"disabled selected"},
+								{"name": "Абакан"},
+								{"name": "Архангельск"},
+								{"name": "Астрахань"},
+								{"name": "Барнаул"},
+								{"name": "Белгород"},
+								{"name": "Благовещенск"},
+								{"name": "Брянск"}
+							]
+						} %}
+						<button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+						{% include "elem-tpl.twig" with {
+							view:"checkbox", 
+							prefix:prefix, 
+							mod:"is--sm  is--agreement", 
+							color:"is--success", 
+							list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="{{prefix}}btn  {{mod}}  tabs__pane" id="login-partners">
-			<button type="submit" class="btn__item  is--success  is--arrow  is--md">Войти в кабинет</button>
-		</div> #}
 	</form>
 {% endif %}
 

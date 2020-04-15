@@ -29,3 +29,23 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "signup_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">			
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/form/form.twig" with {
+				view: 			"signup", 
+				prefix:			prefix.form,
+				mod:			"is--signup", 
+				color:			"", 
+				ID: 			"f_signup", 
+				form_data: 		"data-step-form", 
+			} %}
+		</div>
+	</section>
+{% endif %}

@@ -34,6 +34,27 @@
 					margin-bottom: 28px;
 				});
 			}
+			&-signup{
+				margin-bottom: 17px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 30px;
+				});
+			}
+			&-signup-sm{
+				font-size: 1em;
+				line-height: 1em;
+				margin-bottom: 10px;
+				&:nth-of-type(2){
+					margin-bottom: 0;
+				}
+				.media-breakpoint-up(@md; {
+					font-size: 1.33em;
+					margin-bottom: 0;
+					&:nth-of-type(2){
+						margin-bottom: 8px;
+					}
+				});
+			}
 			&-profile{
 				margin-bottom: 35px;
 				.media-breakpoint-up(@lg; {

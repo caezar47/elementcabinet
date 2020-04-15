@@ -115,9 +115,9 @@ navListItems.click(function (e) {
 	    $item = $(this);
 
 	if (!$item.attr('disabled')) {
-		$item.closest('.form__wrap').find(navListItems).removeClass('is--active');
+		$item.closest('.form__panel').find(navListItems).removeClass('is--active');
 		$item.addClass('is--active');
-		$item.closest('.form__wrap').find(allWells).hide();
+		$item.closest('.form__panel').find(allWells).hide();
 		$target.show();
 		$target.find('input:eq(0)').focus();
 	}
