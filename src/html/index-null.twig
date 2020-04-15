@@ -5,7 +5,10 @@
 	</head>
 	{# <body class="is--index-page"> #}
     <body>
-    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:"navbar_enter",
+            navbar_prefix:"navbar__"
+        } %}
 
         <main class="content-block__panel">            
             {% include "../block/page/index.twig" with {

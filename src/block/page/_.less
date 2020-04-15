@@ -5,19 +5,6 @@
 		&.is--bg-dark{
 			background-color: @white-f8;			
 		}
-		&.is--index{
-			&-header{
-				background-color: @white-f8;
-			}
-		}
-		&.is--block{
-			&-calc{
-				background-color: @white-f8;
-			}
-			&-deal{
-				background-color: @white-f8;
-			}
-		}
 		&.is--page{
 			&-profile{
 				.media-breakpoint-down(@md; {
@@ -65,6 +52,18 @@
 			}
 		}
 		&.is--page{
+			&-signin{
+				.media-breakpoint-down(@lg; {
+					padding-top: 23px;
+
+				});	
+				.media-breakpoint-up(@md; {
+					min-height: ~"calc(100vh - @{navbar_device} - @{footer_device_sm_p})"
+				});
+				.media-breakpoint-up(@lg; {
+					min-height: 0;
+				});
+			}
 			&-profile{
 				.media-breakpoint-down(@md; {
 					padding-bottom: 0;
@@ -116,6 +115,23 @@
 			}
 		}
 		&.is--page{
+			&-signin{
+				grid-template-columns: 100%;
+				grid-gap: 40px;
+				.media-breakpoint-up(@md; {
+					grid-gap: 30px;
+					grid-template-columns: 6.5fr 5.5fr;	
+					& > [data-grid-note]{
+						max-width: 670px
+					}
+					& > [data-grid-form]{
+						margin-top: 15px;
+					}				
+				});
+				.media-breakpoint-up(@xl; {
+					grid-template-columns: 8fr 4fr;				
+				});
+			}
 			&-profile{
 				grid-gap: 0px;
 				.media-breakpoint-up(@md; {

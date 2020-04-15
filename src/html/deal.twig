@@ -4,7 +4,10 @@
     	{% include "../block/common/head/head.twig" with {title:"Мои сделки"}  %}
 	</head>
     <body>
-    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:"navbar_enter",
+            navbar_prefix:"navbar__"
+        } %}
 
         <main class="content-block__panel  is--bg-dark">
             {% include "../block/page/deal.twig" with {

@@ -1,3 +1,27 @@
+{% if view == 'navbar_signin' %}
+<nav class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header  {{navbar_mod}}">
+		<div class="{{navbar_prefix}}container container  is--header">
+			<div class="{{navbar_prefix}}header-row row">
+				<div class="{{navbar_prefix}}header-cols cols  is--logotip">
+					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+						{% include "../svg-sprite/svg.twig" with {icon:"logotip"} %}
+					</a>
+				</div>
+				<div class="{{navbar_prefix}}header-cols cols">
+					<button type="button" class="{{navbar_prefix}}nav-btn  {{navbar_mod}}">						
+						<span class="{{navbar_prefix}}nav-btn-name  {{navbar_mod}}">Обратный звонок</span>
+						<span class="{{navbar_prefix}}nav-btn-icon  {{navbar_mod}}">
+							{% include "../svg-sprite/svg.twig" with {icon:"phone"} %}
+						</span>
+					</button> 
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+{% endif %}
+{% if view == 'navbar_enter' %}
 <nav class="{{navbar_prefix}}block  {{navbar_mod}}">
 	<div class="{{navbar_prefix}}header">
 		<div class="{{navbar_prefix}}container container  is--header">
@@ -47,7 +71,7 @@
 								</a>
 							</div> 
 							<div class="cols">
-								<a href="#" class="{{navbar_prefix}}icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
+								<a href="{{page.signin}}" class="{{navbar_prefix}}icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
 							</div>
 						</div>
 					</div>
@@ -64,7 +88,7 @@
 						    {% endfor %}
 							<li class="{{navbar_prefix}}nav-item">
 								<button type="button" class="{{navbar_prefix}}nav-btn">
-									Обратный звонок
+									<span class="{{navbar_prefix}}nav-btn-name">Обратный звонок</span>
 									<span class="{{navbar_prefix}}nav-btn-icon">
 										{% include "../svg-sprite/svg.twig" with {icon:"phone"} %}
 									</span>
@@ -77,3 +101,4 @@
 		</div>
 	</div>
 </nav>
+{% endif %}

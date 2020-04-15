@@ -1,0 +1,31 @@
+{% if view == "signin_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div data-grid-note>					
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					<div class="text__block  {{content_mod}}">
+						{{note}}
+					</div>
+				</div>	
+				<div data-grid-form>
+					{% include "../common/form/form.twig" with {
+						view: 			"signin", 
+						prefix:			prefix.form, 
+						mod:			"is--signin", 
+						color:			"", 
+						ID: 			"f_signin", 
+						heading:		"Вход в&nbsp;личный&nbsp;кабинет", 
+						heading_level:	"h2", 
+						heading_mod:	"fw--700  is--form-signin"
+					} %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

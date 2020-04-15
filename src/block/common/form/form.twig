@@ -1,4 +1,4 @@
-{% if view=="profile_info" %}
+{% if view == "profile_info" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 			{
@@ -83,26 +83,48 @@
 	</form>
 {% endif %}
 
-
-
-
-
-
-
-
-
-
-{# old #}
-{% if view=="login" %}
+{% if view == "signin" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
-		{% include "../../common/page-header/tpl.twig" with {heading_view:heading_view, prefix:"page-header__", mod:heading_mod, group:heading_group, level:heading_level, heading:heading} %}
-		<ul class="{{prefix}}tabs  {{mod}}">
-			<li class="{{prefix}}tabs-item  {{mod}} active">
-				<a class="{{prefix}}tabs-link  {{mod}}" href="#login-clients" data-toggle="tab">Клиенту</a>
-			</li> 
-			<li class="{{prefix}}tabs-item  {{mod}}"><a class="{{prefix}}tabs-link  {{mod}}"  href="#login-partners" data-toggle="tab">Партнеру</a></li>
-		</ul>
-		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+		{% include "../page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
+
+		<div class="{{prefix}}row  grid__row  {{mod}}">
+			{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+				{
+					"type":"tel", 
+					"required":"", 
+					"placeholder":"Номер телефона",
+					"group":""
+				},
+				{
+					"type":"email", 
+					"required":"", 
+					"placeholder":"E-mail",
+					"group":""
+				}
+			]} %}
+			<div class="{{prefix}}btn  {{mod}}">
+				{% include "../button/btn.twig" with {
+					view:"btn",
+					prefix:"btn__", 
+					type:'submit', 
+					arrow: "true",
+					icon: "arrow-next",
+					group:content_mod, 
+					mod:"is--success  is--arrow-next", 
+					name:"Войти в личный кабинет" 
+				} %}
+			</div>
+			<div class="{{prefix}}btn  {{mod}}  is--text">
+				Или вы можете <a href="{{page.signup}}">зарегистрироваться</a>
+			</div>
+		</div>
+		
+		{# {% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 			{"type":"text", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"},
 			{"type":"password", "id":"passoword", "form_id":ID, "name":"Пароль", "placeholder":"Пароль"}
 		]} %}
@@ -113,9 +135,20 @@
 		</div>
 		<div class="{{prefix}}btn  {{mod}}  tabs__pane" id="login-partners">
 			<button type="submit" class="btn__item  is--success  is--arrow  is--md">Войти в кабинет</button>
-		</div>
+		</div> #}
 	</form>
 {% endif %}
+
+
+
+
+
+
+
+
+
+
+{# old #}
 
 {% if view=="leasing_base" %}
 	{% if open=="true" %}

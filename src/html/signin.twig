@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Главная страница"}  %}
+	</head>
+	<body class="is--signin">
+    	{% include "../block/common/navbar/navbar.twig" with {
+            view:"navbar_signin",
+            navbar_prefix:"navbar__",
+            navbar_mod:"is--signin"
+        } %}
+
+        <main class="content-block__panel  is--bg-dark">            
+            {% include "../block/page/signin.twig" with {
+                view:"signin_page", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-signin",
+                heading_mod:"is--h2  fw--700  is--page-signin", 
+                heading_level:"h1", 
+                heading:"Осуществляйте самостоятельный расчет с&nbsp;помощью личного кабинета",
+                note:"<ul><li>Узнайте реальный размер лизингового платежа</li><li>Получите расчет и одобрение онлайн</li><li>Заключите договор лизинга тогда, когда вам это удобно</li></ul>",  
+                preview:[path.img,"/default/index-header.svg"].join(""),
+                link_add:page.calc_form,             
+            } %}  
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

@@ -25,7 +25,11 @@
 
 	"page":{
 		"index":"./",
+		"signin":"./signin.html",
+		"signin":"#",
+		"signup":"./signup.html",
 		"notice":"./notice.html",
+		"notice":"#",
 		"profile":"./profile.html",
 		"faq":"./faq.html",
 		"calculation":"./calculation.html",

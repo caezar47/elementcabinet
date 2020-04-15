@@ -2,6 +2,21 @@
 	&block{
 	}
 	&panel{
+		&.is--signin{
+			background-color: @white;
+			//box-shadow: 0px 1px 7px fadeout(@black, 75%);
+		    padding: 30px 55px 63px;
+		    .media-breakpoint-up(@sm; {
+		    	max-width: 385px;
+		    });
+		    .media-breakpoint-up(@md; {
+				box-shadow: 0px 1px 7px fadeout(@black-82, 75%);
+		    	padding: 38px 45px 55px;
+		    });
+		    .media-breakpoint-up(@xl; {
+		    	padding: 38px 65px 55px;
+		    });
+		}
 		&.is--profile{
 			&-info{
 				background: @white;
@@ -28,116 +43,6 @@
 					}				
 				});
 			}
-		}
-
-		//old
-		&.is--leasing{
-			&{
-				position: relative;
-				background-color: @primary;
-				padding-top: 20px;
-				padding-bottom: 40px;
-				.media-breakpoint-down(@md; {
-					font-size: 14px;
-				});
-				.media-breakpoint-up(@md; {
-				    padding-top: 2.9vw;
-	    			padding-bottom: 6.66vw;
-				});
-			}
-			&-base{	
-				position: relative;
-				z-index: 1;	
-				padding: 25px 55px;
-				//overflow: hidden;
-				&::before{
-					content: '';
-					position: absolute;
-					z-index: -1;
-					top: 0;
-					left: 0px;
-					right: 0px;
-					bottom: 0px;
-					background-color: @primary;
-					clip-path: polygon(0 7%,100% 0%,100% 93%,0% 100%);
-					transition: @trs-site;
-				}
-				.media-breakpoint-down(@md; {
-					&.is--md-open{
-						padding:0;
-						display: none;
-						position: absolute;
-						top: 0;
-						left: 0;	
-						right: 0px;
-						bottom: 0%;
-						&.is--visible{
-							display: block;
-						}
-						&::before{display: none;}					
-					}
-				});
-				.media-breakpoint-down(@lg; {
-					font-size: 16px;
-					max-width: 375px;
-					.card__wrap.is--seo &{
-						display: none;
-					}
-				});	
-				.media-breakpoint-up(@lg; {		
-					padding: 40px 0 60px 100px;
-					&::before{
-						left: 30px;
-						right: 70px;
-					}
-					/*&:hover{
-						&::before{
-							clip-path: polygon(0 0,100% 7%,100% 100%,0% 93%);
-						}
-					}*/
-				});
-			}
-			&-order{
-				position: relative;
-				background-color: @white;
-				padding: 16px 16px 25px;
-				background-color: @white-f9;
-  				box-shadow: 0 6px 14px 0 rgba(0,52,156,0.5);
-
-				.media-breakpoint-up(@lg; {	
-					background-color: @white;				
-					min-height: 370px;
-					padding: 20px 25px 25px;
-					box-shadow: 0 12px 34px 0 rgba(0,52,156,0.25);
-				});
-			}
-		}
-		&.is--vacancies{
-			background-color: @primary;
-			.media-breakpoint-down(@md; {
-				font-size: 16px;
-				padding-top: 25px;
-				padding-bottom: 25px;
-				.page-header__heading{
-					text-align: center;
-					&:nth-child(2){
-						font-size: 14px;
-						line-height: 1.5em;
-					}
-				}
-			});
-			.media-breakpoint-up(@md; {
-			    padding-top: 2.9vw;
-    			padding-bottom: 4.1vw;
-				padding-left: 15px;
-				padding-right: 15px;
-			});
-		}
-		&.is--partners{
-			margin-bottom: 40px;
-			.media-breakpoint-up(@lg; {
-				margin-bottom: 73px;
-			});
 		}
 	}
 	&tabs{
@@ -201,6 +106,9 @@
 		}
 	}
 	&row{
+		&.is--signin{
+			grid-gap: 15px;
+		}
 		//old
 		&.is--leasing{
 			&{
@@ -653,18 +561,18 @@
 		}
 	}*/
 	&btn{
-		&.is--login{
-			.btn__item{
-				width: 100%;
-				& + * {
-					margin-top: 15px;
-				}
+		&.is--signin{
+			margin-top: 10px;
+			&.is--text{
+				color: @custom;
+				font-weight: 100;
+				font-size: 0.88em;
+				line-height: 1em;
+				margin-top: 15px;		
+				.media-breakpoint-up(@md; {
+					line-height: 1.25em;
+				});		
 			}
-		}
-		&.is--search{
-			.media-breakpoint-down(@lg; {
-				display: none;
-			});
 		}
 	}
 	&text{

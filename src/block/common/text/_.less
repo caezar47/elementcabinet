@@ -67,8 +67,8 @@
 		ul{
 			& > li{margin-bottom: 15px}
 			&.is--styled{
-				padding-left: 0;
-				margin-left: 0;
+				padding: 0;
+				margin: 0;
 				list-style: none;
 				& > li{
 					position: relative;
@@ -121,6 +121,49 @@
 			}
 		}
 		&.is--page{
+			&-signin{
+				font-weight: 100;
+				line-height: 1.56em;				
+				ul{
+					& > li{
+						position: relative;
+						z-index: 1;
+						padding-left: 30px;
+						margin-bottom: 8px;
+						&::before{
+							content: '';
+							position: absolute;
+							top: 0.6em;
+							left: 0px;
+							width: 18px;
+							height: 1px;
+							background-color: @default;
+							border-radius: 0%;	
+						}
+					}
+				}
+				.media-breakpoint-up(@md; {
+					ul{
+						& > li{
+							padding-left: 35px;
+							margin-bottom: 20px;
+							&::before{
+								width: 24px;
+								background-color: @black-97;
+							}
+						}
+					}
+				});
+				.media-breakpoint-up(@lg; {
+					font-size: 1.33em;
+					line-height: 1.54em;
+				});
+				.media-breakpoint-up(@xxl; {
+					ul{
+						margin-left: -35px;						
+					}
+				});
+			}
 			&-calc-add{
 				font-weight: 100;
 				line-height: 1.56em;

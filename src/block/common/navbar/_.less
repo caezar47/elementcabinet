@@ -11,18 +11,24 @@
 		//@media print{display: none;}
 	}
 	//header
-	&header{
-		position: relative;
-		z-index: 1;
-		background-color: @navbar_header_bg;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		.media-breakpoint-down(@xl; {
-			box-shadow: 0 2px 4px 0 rgba(0,52,156,0.25);
-		});
-		.media-breakpoint-up(@xl; {
-			display: none;
-		});	
+	&header{	
+		&{
+			position: relative;
+			z-index: 1;
+			background-color: @navbar_header_bg;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			.media-breakpoint-down(@xl; {
+				box-shadow: 0 2px 4px 0 rgba(0,52,156,0.25);
+			});
+			.media-breakpoint-up(@xl; {
+				display: none;
+				&.is--signin{
+					display: block;
+					padding: 31.5px 0;
+				}
+			});
+		}
 		&-row{
 			align-items: center;
 			justify-content: space-between;
@@ -320,12 +326,29 @@
 				&:hover{
 					border-color: @success;
 				}
+				&.is--signin{
+					.media-breakpoint-down(@xl; {
+						padding: 7px;
+					});
+				}
 			}
 			&-icon{
 				min-width: 16px;
 				width: 16px;
 				height: 16px;
 				margin-left: 25px;
+				&.is--signin{
+					.media-breakpoint-down(@xl; {
+						margin-left: 0;
+					});
+				}
+			}
+			&-name{
+				&.is--signin{
+					.media-breakpoint-down(@xl; {
+						display: none;
+					});
+				}
 			}
 		}
 		/*&-dropdown{
