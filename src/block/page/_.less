@@ -65,10 +65,13 @@
 				});
 			}
 			&-signup{
-				.media-breakpoint-down(@lg; {
+				.media-breakpoint-down(@md; {
 					padding-top: 23px;
 					padding-bottom: 0;
 				});	
+				.media-breakpoint-up(@md; {
+					min-height: ~"calc(100vh - @{navbar_device} - @{footer_device_sm_p})"
+				});
 			}
 			&-profile{
 				.media-breakpoint-down(@md; {

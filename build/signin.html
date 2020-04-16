@@ -63,13 +63,13 @@
 
 		<div class="form__row  grid__row  is--signin">
 					
-	<label class="form__item  is--signin  "  >
-						<input type="tel" class="form__control    is--signin   "  placeholder="Номер телефона"  >
+	<label class="form__item  is--signin  "  data-error="Обязательно к заполнению">
+						<input type="tel" class="form__control    is--signin   " required placeholder="Номер телефона"  >
 						
 	</label>
 		
-	<label class="form__item  is--signin  "  >
-						<input type="email" class="form__control    is--signin   "  placeholder="E-mail"  >
+	<label class="form__item  is--signin  "  data-error="Обязательно к заполнению">
+						<input type="email" class="form__control    is--signin   " required placeholder="E-mail"  >
 						
 	</label>
 	
@@ -84,7 +84,7 @@
 
 			<div class="form__btn  is--signin">
 				
-<button type="submit" class="btn__item  is--success  is--arrow-next  is--page-signin">
+<button type="submit" onsubmit="return false" data-location="./" class="btn__item  is--success  is--arrow-next  is--page-signin">
 	<span>Войти в личный кабинет</span>
 			<span class="btn__icon  is--success  is--arrow-next  is--page-signin"><svg class="icon-svg icon-arrow-next" role="img">
 	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
@@ -97,6 +97,8 @@
 			</div>
 		</div>
 	</form>
+
+
 
 
 

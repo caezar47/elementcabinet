@@ -106,7 +106,7 @@ var navListItems = $('.form__step-link'),
     allWells = $('.form__step-pane'),
     allNextBtn = $('[data-step-next]'),
     allResetBtn = $('[data-step-reset]'),
-    allResultBtn = $('[data-step-finish]');
+    allResultBtn = $('[onsubmit="return false"]');
 
 allWells.hide();
 navListItems.click(function (e) {
@@ -127,23 +127,49 @@ allNextBtn.click(function(){
 	var curStep = $(this).closest(".form__step-pane"),
 		curStepBtn = curStep.attr("id"),
 		nextStepWizard = $('.form__step-link[href="#' + curStepBtn + '"]').parent().next().children("a"),
+		stepWizard = $('.form__step-link[href="#' + curStepBtn + '"]'),
 		curInputs = curStep.find("input,select"),
-		isValid = true;
+		curTabs = curStep.find(".tabs__link"),
+		isValid = true,
+		isValidTabs = true;
 
 	$(".form__item").removeClass("is--error");
+	$(".tabs__nav").removeClass("is--error");
 	for(var i=0; i<curInputs.length; i++){
 		if (!curInputs[i].validity.valid){
 			isValid = false;
 			$(curInputs[i]).closest(".form__item").addClass("is--error");
 		}		
 	}
-	if (isValid)
-		nextStepWizard.removeAttr('disabled').trigger('click');
+	if(curTabs.length > 0){
+		for(var i=0; i<curTabs.length; i++){
+			if ($(curTabs[i]).attr("aria-expanded") === 'false'){
+				isValidTabs = false;
+				$(curTabs[i]).closest('.tabs__nav').addClass("is--error");
+			} else {
+				isValidTabs = true;
+				$(curTabs[i]).closest('.tabs__nav').removeClass("is--error");
+				break;
+			}	
+		}
+	}
+
+	if(curTabs.length > 0){
+		if (isValid && isValidTabs){
+			nextStepWizard.removeAttr('disabled').trigger('click');
+			stepWizard.addClass('is--checked');
+		}
+	} else {
+		if (isValid){
+			nextStepWizard.removeAttr('disabled').trigger('click');
+			stepWizard.addClass('is--checked');
+		}	
+	}
 });
-allResultBtn.click(function(){
-	var curStep = $(this).closest(".form__step-pane"),
-		curStepBtn = curStep.attr("id"),
-		nextStepWizard = $('.form__step-link[href="#' + curStepBtn + '"]').parent().next().children("a"),
+allResultBtn.click(function(e){
+	e.preventDefault();
+	var curStep = $(this).closest(".form__row"),
+		link = $(this).data("location"),
 		curInputs = curStep.find("input,select"),
 		isValid = true;
 
@@ -155,10 +181,9 @@ allResultBtn.click(function(){
 		}		
 	}
 	if (isValid){
-		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
-		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
-		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+		location.href = link;
 	}
+	
 });
 allResetBtn.click(function(e){
 	e.preventDefault();

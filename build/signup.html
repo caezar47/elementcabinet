@@ -50,7 +50,8 @@
 		<div class="content-block__container container  is--page-signup">			
 				
 	<h1 class="page-header__heading  is--h2  fw--700  is--page-signup  " >Регистрация в два шага</h1>
-				<form action="#" class="form__panel  is--signup"  data-step-form>
+			
+	<form action="#" class="form__panel  is--signup"  data-step-form>
 		<div class="form__row  grid__row  is--signup  is--wrap">			
 			<ol class="form__step  is--signup">
 				<li class="form__step-item  is--signup">
@@ -113,15 +114,15 @@
 
 						<h2 class="page-header__heading  is--page-signup-sm  fw--100  is--full">Выберите правовую форму</h2>
 						<div class="is--full">
-							<ul class="tabs__nav  is--signup">
+							<ul class="tabs__nav  is--signup" data-error="Выберите один из вариантов">
 								<li class="tabs__item  is--signup">
-									<a href="#signup-pane-fiz" class="tabs__link  is--signup" data-toggle="tab">Физ. лицо</a>
+									<a href="#signup-pane-fiz" aria-expanded="false" class="tabs__link  is--signup" data-toggle="tab">Физ. лицо</a>
 								</li>
 								<li class="tabs__item  is--signup">
-									<a href="#signup-pane-legal" class="tabs__link  is--signup" data-toggle="tab">Юр. лицо</a>
+									<a href="#signup-pane-legal" aria-expanded="false" class="tabs__link  is--signup" data-toggle="tab">Юр. лицо</a>
 								</li>
 								<li class="tabs__item  is--signup">
-									<a href="#signup-pane-ip" class="tabs__link  is--signup" data-toggle="tab">ИП</a>
+									<a href="#signup-pane-ip" aria-expanded="false" class="tabs__link  is--signup" data-toggle="tab">ИП</a>
 								</li>
 							</ul>
 							
@@ -131,36 +132,21 @@
 						</p>
 					</div>
 				</div>
-				<div class="form__step-pane  is--signup  " id="f_signup-step2">			
-					<div class="form__row  grid__row  is--signup">				
-								
-	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
-						<input type="text" class="form__control    is--signup   " required placeholder="ФИО"  >
-						
-	</label>
-		
-	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
-						<input type="text" class="form__control    is--signup   " required placeholder="Название компании"  >
-						
-	</label>
-	
-
-
-
-
-
-
-
-
-
- 
-						
+				<div class="form__step-pane  is--signup  " id="f_signup-step2">		
+					<div id="signup-pane-fiz" class="tabs__pane">				
+						<div class="form__row  grid__row  is--step  is--signup">
+							<h2 class="page-header__heading  is--page-signup-sm  fw--100  is--full  is--mb">Информация о физическом лице</h2>
+							
 	<label class="form__item  is--signup    "  data-error="Обязательно к заполнению">
-				<select class="form__control  is--signup  " id="f_signup[legal]" name="f[]"  data-select-primary-l  required>
-							<option value="" disabled selected>Правовая форма</option>
-							<option value="" >Юридическое лицо</option>
-							<option value="" >ИП</option>
-							<option value="" >Физическое лицо</option>
+				<select class="form__control  is--signup  " id="f_signup[city-fiz]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Ближайший город</option>
+							<option value="" >Абакан</option>
+							<option value="" >Архангельск</option>
+							<option value="" >Астрахань</option>
+							<option value="" >Барнаул</option>
+							<option value="" >Белгород</option>
+							<option value="" >Благовещенск</option>
+							<option value="" >Брянск</option>
 				
 		</select>
 	</label>
@@ -173,8 +159,165 @@
 
 
 
-						<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
-					</div>
+									
+	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
+						<div class="form__control-wrap  is--signup">
+			<p class="form__control-ruble  is--signup">₽</p>
+				<input type="number" class="form__control    is--signup   is--ruble" required placeholder="Ежемесячный доход"  >
+				</div>
+						
+	</label>
+	
+
+
+
+
+
+
+
+
+
+							<p data-grid-btn class="is--step-2">
+								
+<button type="submit" onsubmit="return false" data-location="./profile.html" class="btn__item  is--success  is--arrow-next  is--page-signup">
+	<span>Войти в личный кабинет</span>
+			<span class="btn__icon  is--success  is--arrow-next  is--page-signup"><svg class="icon-svg icon-arrow-next" role="img">
+	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
+</svg></span>
+	</button>
+
+							</p>
+						</div>
+					</div>		
+					<div id="signup-pane-legal" class="tabs__pane">
+						<div class="form__row  grid__row  is--step  is--signup">
+							<h2 class="page-header__heading  is--page-signup-sm  fw--100  is--full  is--mb">Информация о юридическом лице</h2>
+							
+	<label class="form__item  is--signup    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--signup  " id="f_signup[city-legal]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Ближайший город</option>
+							<option value="" >Абакан</option>
+							<option value="" >Архангельск</option>
+							<option value="" >Астрахань</option>
+							<option value="" >Барнаул</option>
+							<option value="" >Белгород</option>
+							<option value="" >Благовещенск</option>
+							<option value="" >Брянск</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+									
+	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
+						<input type="text" class="form__control    is--signup   " required placeholder="Дата регистрации ЮЛ" onfocus="(this.type='date')" >
+						
+	</label>
+		
+	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
+						<input type="text" class="form__control    is--signup   " required placeholder="Название организации"  >
+						
+	</label>
+		
+	<label class="form__item  is--signup  is--abs"  data-error="Обязательно к заполнению">
+						<div class="form__control-wrap  is--signup">
+			<p class="form__control-ruble  is--signup">₽</p>
+				<input type="number" class="form__control    is--signup   is--ruble" required placeholder="Ежемесячная выручка"  >
+				</div>
+							<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="top" title="Данные, предоставленные в налоговую службу за последний отчетный период">?</p>
+				
+	</label>
+	
+
+
+
+
+
+
+
+
+
+							<p data-grid-btn class="is--step-2">
+								
+<button type="submit" onsubmit="return false" data-location="./profile.html" class="btn__item  is--success  is--arrow-next  is--page-signup">
+	<span>Войти в личный кабинет</span>
+			<span class="btn__icon  is--success  is--arrow-next  is--page-signup"><svg class="icon-svg icon-arrow-next" role="img">
+	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
+</svg></span>
+	</button>
+
+							</p>
+						</div>
+					</div>	
+					<div id="signup-pane-ip" class="tabs__pane">
+						<div class="form__row  grid__row  is--step  is--signup">
+							<h2 class="page-header__heading  is--page-signup-sm  fw--100  is--full  is--mb">Информация об индивидуальном предпринимателе</h2>
+							
+	<label class="form__item  is--signup    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--signup  " id="f_signup[city-ip]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Ближайший город</option>
+							<option value="" >Абакан</option>
+							<option value="" >Архангельск</option>
+							<option value="" >Астрахань</option>
+							<option value="" >Барнаул</option>
+							<option value="" >Белгород</option>
+							<option value="" >Благовещенск</option>
+							<option value="" >Брянск</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+									
+	<label class="form__item  is--signup  is--abs"  data-error="Обязательно к заполнению">
+						<div class="form__control-wrap  is--signup">
+			<p class="form__control-ruble  is--signup">₽</p>
+				<input type="number" class="form__control    is--signup   is--ruble" required placeholder="Ежемесячная выручка"  >
+				</div>
+							<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="top" title="Данные, предоставленные в налоговую службу за последний отчетный период">?</p>
+				
+	</label>
+		
+	<label class="form__item  is--signup  "  data-error="Обязательно к заполнению">
+						<input type="text" class="form__control    is--signup   " required placeholder="Дата регистрации ИП" onfocus="(this.type='date')" >
+						
+	</label>
+	
+
+
+
+
+
+
+
+
+
+							<p data-grid-btn class="is--step-2">
+								
+<button type="submit" onsubmit="return false" data-location="./profile.html" class="btn__item  is--success  is--arrow-next  is--page-signup">
+	<span>Войти в личный кабинет</span>
+			<span class="btn__icon  is--success  is--arrow-next  is--page-signup"><svg class="icon-svg icon-arrow-next" role="img">
+	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
+</svg></span>
+	</button>
+
+							</p>
+						</div>
+					</div>	
 				</div>
 				<div class="form__step-pane  is--signup  " id="f_signup-step3">		
 					<div class="form__row  grid__row  is--signup">				
@@ -245,6 +388,7 @@
 			</div>
 		</div>
 	</form>
+
 
 
 

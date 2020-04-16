@@ -26,7 +26,6 @@
 	"page":{
 		"index":"./",
 		"signin":"./signin.html",
-		"signin":"#",
 		"signup":"./signup.html",
 		"notice":"./notice.html",
 		"notice":"#",
@@ -35,9 +34,7 @@
 		"calculation":"./calculation.html",
 		"calculation":"#",
 		"calculation_add":"./calculation-add.html",
-		"calculation_add":"#",
 		"calc_form":"./calculation-form.html",
-		"calc_form":"#",
 		"deal":"./deal.html"
 	},
 	"prefix":{
