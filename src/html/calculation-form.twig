@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Создание расчета"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {
+            view:"navbar_enter",
+            navbar_prefix:"navbar__",
+        } %}
+
+        <main class="content-block__panel  is--bg-dark">            
+            {% include "../block/page/calculation.twig" with {
+                view:"calc_form", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-signup",
+                heading_mod:"is--h2  fw--700  is--page-calc-form", 
+                heading_level:"h1", 
+                heading:"Создание расчета"           
+            } %}  
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {% include "../block/common/modals/include.twig"%}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

@@ -1,5 +1,10 @@
 {% include "tpl.twig" with {
 	prefix:"modal__", 
-	mod:"is--leasing", 
-	ID: "modal-leasing" 
+	mod:"", 
+	ID: "modal-calc-calculation", 
+	heading: "Формируем расчет", 
+	heading_mod: "fw--700  is--h2  align--center  is--modal-result", 
+	note: "Это может занять около 20 секунд, подождите, пожалуйста!",
+	content_mod: "is--modal-result", 
+    preview:[path.img,"/default/modal-calc-calc.svg"].join(""),
 } %}

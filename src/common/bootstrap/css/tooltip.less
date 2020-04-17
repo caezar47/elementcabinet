@@ -1,14 +1,6 @@
 //
 // Tooltips
 // --------------------------------------------------
-@tt_bg:				fadeout(@white-5f, 75%);
-@tt_color:			@default;
-@tt_fs:				0.88em;
-@tt_lh:				1.55em;
-@tt_zindex:			900;
-@tt_arrow_size:		30px;
-@tt_max_width:		250px;
-@tt_rad:			5px;
 
 // Base class
 .tooltip {
@@ -37,7 +29,7 @@
 // Wrapper for the tooltip content
 .tooltip-inner {
 	max-width: @tt_max_width;
-	padding: 15px 25px;
+	padding: @tt_padding;
 	color: @tt_color;
 	background-color: @tt_bg;
 	color: @default;

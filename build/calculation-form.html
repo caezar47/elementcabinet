@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	<meta charset="utf-8">	
+<title>Создание расчета | lk.ulh.ru</title>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#F24F00">
+<link rel="shortcut icon" href="./favicon/favicon.ico">
+<meta name="msapplication-config" content="./favicon/browserconfig.xml">
+<meta name="apple-mobile-web-app-title" content="lk.ulh.ru">
+<meta name="application-name" content="lk.ulh.ru">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<link href="./css/style.css" rel="stylesheet">	</head>
+	<body>
+    	<nav class="navbar__block  ">
+	<div class="navbar__header">
+		<div class="navbar__container container  is--header">
+			<div class="navbar__header-row row">
+				<div class="navbar__header-cols cols  is--logotip">
+					<a class="navbar__logotip" href="./">
+						<svg class="icon-svg icon-logotip" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip"></use>
+</svg>					</a>
+				</div>
+				<div class="navbar__header-cols cols  is--hamb">
+					<button class="navbar__hamburger" data-name="Меню" data-hamburger>
+						<span class="navbar__hamburger-icon">
+							<span class="navbar__hamburger-line  is--left"></span>
+							<span class="navbar__hamburger-line  is--center"></span>
+							<span class="navbar__hamburger-line  is--right"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar__collapse" >
+		<div class="navbar__collapse-inner">	
+			<div class="navbar__container  container  is--collapse">
+				<div class="navbar__collapse-row">
+					<div class="navbar__collapse-cols" data-grid-logotip>
+						<a class="navbar__logotip" href="./">
+							<svg class="icon-svg icon-logotip" role="img">
+	<use xlink:href="./img/svg/sprite.svg#logotip"></use>
+</svg>						</a>
+					</div>
+					<div class="navbar__collapse-cols" data-grid-btn>
+						<div class="navbar__icon-row  row">
+							<div class="cols">
+								<a href="./profile.html" class="navbar__icon-group">
+									<span class="navbar__icon-name">
+										Константинов К. К.
+									</span>
+									<span class="navbar__icon">
+										<svg class="icon-svg icon-profile" role="img">
+	<use xlink:href="./img/svg/sprite.svg#profile"></use>
+</svg>									</span>
+								</a>
+							</div>
+							<div class="cols">
+								<a href="#" class="navbar__icon  is--notice">
+									<svg class="icon-svg icon-notice" role="img">
+	<use xlink:href="./img/svg/sprite.svg#notice"></use>
+</svg>									<span class="navbar__icon-notice">2</span>
+								</a>
+							</div> 
+							<div class="cols">
+								<a href="./signin.html" class="navbar__icon"><svg class="icon-svg icon-login" role="img">
+	<use xlink:href="./img/svg/sprite.svg#login"></use>
+</svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="navbar__collapse-cols"  data-grid-navbar>
+						<ul class="navbar__nav">
+													    							<li class="navbar__nav-item  "><a href="./calculation-add.html" class="navbar__nav-link"><span>Создать расчет</span></a></li>
+						    							<li class="navbar__nav-item  "><a href="#" class="navbar__nav-link"><span>Мои расчеты</span></a></li>
+						    							<li class="navbar__nav-item  "><a href="./deal.html" class="navbar__nav-link"><span>Мои сделки</span></a></li>
+						    							<li class="navbar__nav-item  "><a href="./faq.html" class="navbar__nav-link"><span>Вопросы и ответы</span></a></li>
+						    							<li class="navbar__nav-item">
+								<button type="button" class="navbar__nav-btn">
+									<span class="navbar__nav-btn-name">Обратный звонок</span>
+									<span class="navbar__nav-btn-icon">
+										<svg class="icon-svg icon-phone" role="img">
+	<use xlink:href="./img/svg/sprite.svg#phone"></use>
+</svg>									</span>
+								</button> 
+							</li>
+						</ul>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+        <main class="content-block__panel  is--bg-dark">            
+            
+
+	<section class="content-block__panel  is--page-signup">
+		<div class="content-block__container container  is--page-signup">			
+				
+	<h1 class="page-header__heading  is--h2  fw--700  is--page-calc-form  " >Создание расчета</h1>
+			
+
+
+	<form action="#" class="form__panel  is--calc-form"  data-step-form>
+		<div class="form__row  grid__row  is--calc-form  is--wrap">			
+			<ol class="form__step  is--calc-form">
+				<li class="form__step-item  is--calc-form">
+					<a href="#f_calcform-step1" disabled class="form__step-link  is--calc-form  is--active">1. Общая информация</a> 	
+				</li>
+				<li class="form__step-item  is--calc-form">
+					<a href="#f_calcform-step2" disabled class="form__step-link  is--calc-form">2. Условия лизинга</a> 	
+				</li>
+				<li class="form__step-item  is--calc-form">
+					<a href="#f_calcform-step3"  class="form__step-link  is--calc-form">3. Оформление лизинга</a> 	
+				</li>
+			</ol>
+			<div class="form__step-pane  is--calc-form" id="f_calcform-step1">
+				<div class="form__wrap  is--calc-form">
+					<div class="form__row  grid__row  is--step  is--calc-form">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full  is--mb">Заполните данные</h2>
+								
+	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
+						<input type="text" class="form__control    is--calc-form   " required placeholder="Контактное лицо"  >
+						
+	</label>
+	
+
+
+
+
+
+
+
+
+
+
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[city]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Ближайший город</option>
+							<option value="" >Абакан</option>
+							<option value="" >Архангельск</option>
+							<option value="" >Астрахань</option>
+							<option value="" >Барнаул</option>
+							<option value="" >Белгород</option>
+							<option value="" >Благовещенск</option>
+							<option value="" >Брянск</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+								
+	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
+						<input type="text" class="form__control    is--calc-form   " required placeholder="Дата регистрации ИП" onfocus="(this.type='date')" >
+						
+	</label>
+		
+	<label class="form__item  is--calc-form  is--abs"  data-error="Обязательно к заполнению">
+						<div class="form__control-wrap  is--calc-form">
+			<p class="form__control-ruble  is--calc-form">₽</p>
+				<input type="number" class="form__control    is--calc-form   is--ruble" required placeholder="Ежемесячная выручка"  >
+				</div>
+							<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="top" title="Данные, предоставленные в налоговую службу за последний отчетный период">?</p>
+				
+	</label>
+	
+
+
+
+
+
+
+
+
+
+
+						<hr class="form__line  is--calc-form  is--lg  is--full">
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[brand]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Марка ТС</option>
+							<option value="" >Марка 1</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[model]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Модель</option>
+							<option value="" >Модель 1</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+								
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+						<div class="form__control-wrap  is--calc-form">
+			<p class="form__control-ruble  is--calc-form">₽</p>
+				<input type="cost" class="form__control    is--calc-form   is--ruble" required placeholder="Стоимость"  >
+				</div>
+						
+	</label>
+	
+
+
+
+
+
+
+
+
+
+
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[supplier]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Поставщик</option>
+							<option value="" >Поставщик 1</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+						<p data-grid-btn class="is--mt">
+							
+<button type="button"    data-step-next class="btn__item  is--calc-form  ">
+	<span>Продолжить</span>
+	</button>
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="form__step-pane  is--calc-form" id="f_calcform-step2">
+				<div class="form__wrap  is--calc-form  is--full">		
+					<div class="form__row  grid__row  is--step  is--calc-form">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full  is--mb">Заполните необходимые поля</h2>
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[products]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Лизинговый продукт</option>
+							<option value="" >продукт 1</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+								
+	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
+						<input type="number" class="form__control    is--calc-form   " required placeholder="Минимальный аванс"  >
+						
+	</label>
+	
+
+
+
+
+
+
+
+
+
+
+						
+	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--calc-form  " id="f_calcform[liz-date]" name="f[]"  data-select-default  required>
+							<option value="" disabled selected>Максимальный срок лизинга</option>
+							<option value="" >36 месяцев</option>
+							<option value="" >24 месяца</option>
+							<option value="" >12 месяцев</option>
+				
+		</select>
+	</label>
+
+
+
+
+
+
+
+
+
+
+
+						<hr class="form__line  is--calc-form  is--lg  is--full">
+
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full">Выберите график платежей</h2>
+
+						<div class="is--full">
+							<table class="form__table  is--calc-form">
+	<caption>
+							 		<p>Выкупная стоимость: 1 500,00 ₽</p>
+							 		<p>Комиссия за оформление: 0,00 ₽</p>
+							 		<p>Оплата КАСКО и ОСАГО обязательна на весь срок лизинга.</p></caption>
+	<thead>
+		<tr>
+			<th class="is--left">Вид графика</th>
+			<th></th>
+			<th class="is--right-xs">Средний ежемес. платеж</th>
+			<th class="is--hidden">Удорожание</th>
+			<th class="is--right  is--hidden">Итого</th>
+		</tr>
+	</thead> 
+	<tbody> 
+			
+		<tr> 
+			<td class="is--left">
+				<label class="form__radio">
+					<input class="form__radio-input" type="radio" id="f_calcform[item1]" name="radio">
+					<span class="form__radio-box"></span>
+					Платежи с дегрессией
+				</label>
+			</td> 
+			<td>
+				<a href="#" class="question__icon is--sm">!</a>
+			</td> 
+			<td class="is--right-xs">385 693,00 ₽</td> 
+			<td class="is--hidden">5,86%</td> 
+			<td class="is--right  is--hidden"><b>17 634 948,00 ₽</b></td> 
+		</tr>
+			
+		<tr> 
+			<td class="is--left">
+				<label class="form__radio">
+					<input class="form__radio-input" type="radio" id="f_calcform[item2]" name="radio">
+					<span class="form__radio-box"></span>
+					Равные платежи
+				</label>
+			</td> 
+			<td>
+				<a href="#" class="question__icon is--sm">!</a>
+			</td> 
+			<td class="is--right-xs">447 227,00 ₽</td> 
+			<td class="is--hidden">10,78%</td> 
+			<td class="is--right  is--hidden"><b>19 850 172,00 ₽</b></td> 
+		</tr>
+			
+		<tr> 
+			<td class="is--left">
+				<label class="form__radio">
+					<input class="form__radio-input" type="radio" id="f_calcform[item3]" name="radio">
+					<span class="form__radio-box"></span>
+					Плавно убывающие платежи
+				</label>
+			</td> 
+			<td>
+				<a href="#" class="question__icon is--sm">!</a>
+			</td> 
+			<td class="is--right-xs">403 329,97 ₽</td> 
+			<td class="is--hidden">7,27%</td> 
+			<td class="is--right  is--hidden"><b>18 269 879,00 ₽</b></td> 
+		</tr>
+			
+		<tr> 
+			<td class="is--left">
+				<label class="form__radio">
+					<input class="form__radio-input" type="radio" id="f_calcform[item4]" name="radio">
+					<span class="form__radio-box"></span>
+					Резко убывающие платежи
+				</label>
+			</td> 
+			<td>
+				<a href="#" class="question__icon is--sm">!</a>
+			</td> 
+			<td class="is--right-xs">420 930,42 ₽</td> 
+			<td class="is--hidden">8,67%</td> 
+			<td class="is--right  is--hidden"><b>18 903 495,00 ₽</b></td> 
+		</tr>
+			</tbody>
+</table>
+
+
+
+						</div>
+						
+						<p data-grid-btn class="is--mt">
+							
+<button type="button"   data-error="Выберите график платежей, чтобы продолжить" data-step-next class="btn__item  is--calc-form  ">
+	<span>Продолжить</span>
+	</button>
+
+	
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="form__step-pane  is--calc-form" id="f_calcform-step3">
+				<div class="form__wrap  is--calc-form">		
+					<div class="form__row  grid__row  is--docs  is--calc-form">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100">Необходимые документы</h2>
+						
+
+
+
+
+
+
+		
+		<label class="form__item  is--file-group  is--calc-form    ">
+			<input type="file"  class="form__file-input  is--calc-form  "  multiple  required>
+			<p class="form__file-label  is--calc-form  ">Копии всех страниц паспорта</p>
+			<p class="form__file-count  is--calc-form  "></p>
+			<p class="form__file-btn  is--calc-form  ">Загрузить</p>
+		</label>
+		
+		<label class="form__item  is--file-group  is--calc-form    ">
+			<input type="file"  class="form__file-input  is--calc-form  "  multiple  required>
+			<p class="form__file-label  is--calc-form  ">Копии налоговых деклараций с отметкой налогового органа</p>
+			<p class="form__file-count  is--calc-form  "></p>
+			<p class="form__file-btn  is--calc-form  ">Загрузить</p>
+		</label>
+		
+		<label class="form__item  is--file-group  is--calc-form  is--mt  ">
+			<input type="file"  class="form__file-input  is--calc-form  "  multiple  required>
+			<p class="form__file-label  is--calc-form  ">Оригинал справки из банка об оборотах по счету за последние 12 месяцев</p>
+			<p class="form__file-count  is--calc-form  "></p>
+			<p class="form__file-btn  is--calc-form  ">Загрузить</p>
+		</label>
+	
+
+
+
+
+						<p data-grid-btn>
+							
+<button type="submit" onsubmit="return false"  data-error="Загрузите все документы, чтобы продолжить"data-modal="#modal-calc-calculation"  class="btn__item  is--success  is--arrow-next  is--page-signup">
+	<span>Оставить заявку</span>
+			<span class="btn__icon  is--success  is--arrow-next  is--page-signup"><svg class="icon-svg icon-arrow-next" role="img">
+	<use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
+</svg></span>
+	</button>
+
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</section> 
+
+  
+        </main>
+
+    	<footer class="footer__block">	
+	<div class="footer__container container">
+		<div class="footer__row">
+			<div class="footer__cols  is--tel">
+				<a href="tel:+74959372780" class="footer__tel">+7 495 937 27 80</a>
+			</div>
+			<div class="footer__cols  is--copyright">
+				<p class="footer__city">Москва</p>
+				<p class="footer__logo"><img src="./img/default/logo-footer.jpg" class="img-responsive" alt=""></p>
+				<div>
+					<p class="footer__copyright">© Элемент Лизинг, 2010-2020</p>
+					<p class="footer__copyright"><a href="http://playhard.agency/" target="_blank">Разработка сайта – Playhard</a></p>
+				</div>
+			</div>
+			<div class="footer__cols  is--nav-default">
+				<ul class="footer__nav">
+					<li><a href="#">Мои расчеты</a></li>
+					<li><a href="./deal.html">Мои сделки</a></li>
+					<li><a href="#">Акции</a></li>
+					<li><a href="./faq.html">Вопросы и ответы</a></li>
+				</ul>
+			</div>
+			<div class="footer__cols">
+				<ul class="footer__nav">
+					<li><a href="#">Техническая поддержка</a></li>
+					<li><a href="#">Карта сайта</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+</footer>
+        <div class="modal__block modals  fade  " id="modal-calc-calculation" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  ">
+		<div class="modal__body  " >
+			<button type="button" class="modal__btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+			<div class="modal__content  ">
+								<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Формируем расчет</h3>
+												<div class="modal__note  is--modal-result">Это может занять около 20 секунд, подождите, пожалуйста!</div>
+												<picture class="modal__preview  is--modal-result"><img src="./img/default/modal-calc-calc.svg" class="img-responsive" alt=""></picture>
+							</div> 
+		</div>
+	</div>
+</div>    	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="./js/jquery-3.2.1.min.js" ></script>
+<script src="./js/document-ready.js" ></script>
+<script src="./js/svg4everybody.min.js" ></script>
+<script>
+svg4everybody();
+document.createElement("picture");
+</script> 	</body>
+</html> 

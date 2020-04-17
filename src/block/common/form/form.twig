@@ -343,6 +343,305 @@
 	</form>
 {% endif %}
 
+
+{% if view=="calc_form" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}"  {{form_data}}>
+		<div class="{{prefix}}row  grid__row  {{mod}}  is--wrap">			
+			<ol class="{{prefix}}step  {{mod}}">
+				<li class="{{prefix}}step-item  {{mod}}">
+					<a href="#{{ID}}-step1" disabled class="{{prefix}}step-link  {{mod}}  is--active">1. Общая информация</a> 	
+				</li>
+				<li class="{{prefix}}step-item  {{mod}}">
+					<a href="#{{ID}}-step2" disabled class="{{prefix}}step-link  {{mod}}">2. Условия лизинга</a> 	
+				</li>
+				<li class="{{prefix}}step-item  {{mod}}">
+					<a href="#{{ID}}-step3"  class="{{prefix}}step-link  {{mod}}">3. Оформление лизинга</a> 	
+				</li>
+			</ol>
+			<div class="{{prefix}}step-pane  {{mod}}" id="{{ID}}-step1">
+				<div class="{{prefix}}wrap  {{mod}}">
+					<div class="{{prefix}}row  grid__row  is--step  {{mod}}">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full  is--mb">Заполните данные</h2>
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"text", 
+								"id":"item", 
+								"form_id":ID,
+								"required": "required",
+								"name":"Контактное лицо", 
+								"placeholder":"Контактное лицо"
+							}
+						]} %}
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color,
+							form_id:ID,
+							id:"city",  
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Ближайший город", "status":"disabled selected"},
+								{"name": "Абакан"},
+								{"name": "Архангельск"},
+								{"name": "Астрахань"},
+								{"name": "Барнаул"},
+								{"name": "Белгород"},
+								{"name": "Благовещенск"},
+								{"name": "Брянск"}
+							]
+						} %}
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"view":"date", 
+								"type":"text", 
+								"id":"item", 
+								"form_id":ID,
+								"required": "required",
+								"name":"Дата регистрации ИП", 
+								"placeholder":"Дата регистрации ИП"
+							},
+							{
+								"type":"number", 
+								"required": "required",
+								"placeholder":"Ежемесячная выручка",
+								"group":"is--abs",
+								"tooltip":"Данные, предоставленные в налоговую службу за последний отчетный период",
+								"tooltip_placement":"top",
+								"ruble":"is--ruble"
+							},
+						]} %}
+						<hr class="{{prefix}}line  {{mod}}  is--lg  is--full">
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color,
+							form_id:ID,
+							id:"brand",  
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Марка ТС", "status":"disabled selected"},
+								{"name": "Марка 1"},
+							]
+						} %}
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color,
+							form_id:ID,
+							id:"model",  
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Модель", "status":"disabled selected"},
+								{"name": "Модель 1"},
+							]
+						} %}
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"cost", 
+								"required": "required",
+								"placeholder":"Стоимость",
+								"group":"  ",
+								"ruble":"is--ruble"
+							},
+						]} %}
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color,
+							form_id:ID,
+							id:"supplier",  
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Поставщик", "status":"disabled selected"},
+								{"name": "Поставщик 1"},
+							]
+						} %}
+						<p data-grid-btn class="is--mt">
+							{% include "../button/btn.twig" with {
+								view:"btn",
+								prefix:"btn__", 
+								type:'button', 
+								data_attr:'data-step-next',
+								name:"Продолжить" 
+							} %}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="{{prefix}}step-pane  {{mod}}" id="{{ID}}-step2">
+				<div class="{{prefix}}wrap  {{mod}}  is--full">		
+					<div class="{{prefix}}row  grid__row  is--step  {{mod}}">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full  is--mb">Заполните необходимые поля</h2>
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color, 
+							form_id:ID,
+							id:"products", 
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Лизинговый продукт", "status":"disabled selected"},
+								{"name": "продукт 1"},
+							]
+						} %}
+						{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"number", 
+								"required": "required",
+								"placeholder":"Минимальный аванс",
+								"group":"",
+							}
+						]} %}
+						{% include "elem-tpl.twig" with {
+							view: "select", 
+							prefix:prefix, 
+							mod:mod, 
+							required:"required",
+							color:color, 
+							form_id:ID,
+							id:"liz-date", 
+							attr:"data-select-default",
+							group:"", 
+							list: [
+								{"name": "Максимальный срок лизинга", "status":"disabled selected"},
+								{"name": "36 месяцев"},
+								{"name": "24 месяца"},
+								{"name": "12 месяцев"},
+							]
+						} %}
+
+						<hr class="{{prefix}}line  {{mod}}  is--lg  is--full">
+
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full">Выберите график платежей</h2>
+
+						<div class="is--full">
+							{% include "../table/tpl.twig" with {
+							 	view: "calc_form", 
+							 	mod:"is--calc-form", 
+							 	caption:"
+							 		<p>Выкупная стоимость: 1 500,00 ₽</p>
+							 		<p>Комиссия за оформление: 0,00 ₽</p>
+							 		<p>Оплата КАСКО и ОСАГО обязательна на весь срок лизинга.</p>", 
+								list: [
+									{
+										"form_id": ID, 
+										"ID": "item1", 
+										"name": "radio", 
+										"label": "Платежи с дегрессией", 
+										"payment": "385 693,00", 
+										"rise": "5,86%", 
+										"cost": "17 634 948,00", 
+									},
+									{
+										"form_id": ID, 
+										"ID": "item2", 
+										"name": "radio", 
+										"label": "Равные платежи", 
+										"payment": "447 227,00", 
+										"rise": "10,78%", 
+										"cost": "19 850 172,00", 
+									},
+									{
+										"form_id": ID, 
+										"ID": "item3",
+										"name": "radio",  
+										"label": "Плавно убывающие платежи", 
+										"payment": "403 329,97", 
+										"rise": "7,27%", 
+										"cost": "18 269 879,00", 
+									},
+									{
+										"form_id": ID, 
+										"ID": "item4", 
+										"name": "radio", 
+										"label": "Резко убывающие платежи", 
+										"payment": "420 930,42", 
+										"rise": "8,67%", 
+										"cost": "18 903 495,00", 
+									},
+								]
+							} %}
+						</div>
+						
+						<p data-grid-btn class="is--mt">
+							{% include "../button/btn.twig" with {
+								view:"btn",
+								prefix:"btn__", 
+								type:'button', 
+								data_attr:'data-step-next',
+								error: "Выберите график платежей, чтобы продолжить",
+								name:"Продолжить" 
+							} %}	
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="{{prefix}}step-pane  {{mod}}" id="{{ID}}-step3">
+				<div class="{{prefix}}wrap  {{mod}}">		
+					<div class="{{prefix}}row  grid__row  is--docs  {{mod}}">
+						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100">Необходимые документы</h2>
+						{% include "elem-tpl.twig" with {view: "file_group", prefix:prefix, mod:mod, color:color, list: [
+							{
+								"type":"file", 
+								"required": "required",
+								"attr": "multiple",
+								"label":"Копии всех страниц паспорта",
+								"btn":"Загрузить",
+							},
+							{
+								"type":"file", 
+								"required": "required",
+								"attr": "multiple",
+								"label":"Копии налоговых деклараций с отметкой налогового органа",
+								"btn":"Загрузить",
+							},
+							{
+								"group":"is--mt", 
+								"type":"file", 
+								"required": "required",
+								"attr": "multiple",
+								"label":"Оригинал справки из банка об оборотах по счету за последние 12 месяцев",
+								"btn":"Загрузить",
+							}
+						]} %}
+
+						<p data-grid-btn>
+							{% include "../button/btn.twig" with {
+								view:"btn",
+								prefix:"btn__", 
+								type:'submit', 
+								arrow: "true",
+								error: "Загрузите все документы, чтобы продолжить",
+								icon: "arrow-next",
+								group:content_mod, 
+								onsubmit:'return false', 
+								modal:'#modal-calc-calculation', 
+								mod:"is--success  is--arrow-next", 
+								name:"Оставить заявку" 
+							} %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endif %}
+
 {% if view == "profile_info" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [

@@ -342,12 +342,6 @@
 @range_btn_bg_hover 		: 	@primary;
 @range_btn_color 			: 	@white;
 
-//=== radio ===
-@radio_gutter 				: 	4px;
-@radio_bg 					: 	@primary;
-@radio_bg_hover 			: 	@success;
-@radio_bg_active 			: 	@b-color;
-
 //=== error ===
 @form_error_bg 				: 	@primary;
 @form_error_bg_pass 		: 	@success;
@@ -362,11 +356,11 @@
 
 //=== radio ===
 @radio_color 				: 	@default;
-@radio_size 				: 	20px;
+@radio_size 				: 	16px;
 @radio_gutter 				: 	4px;
 @radio_bg 					: 	@white;
 @radio_border_width 		: 	1px;
-@radio_border_color 		: 	@default;
+@radio_border_color 		: 	@custom;
 @radio_icon 				: 	transparent;
 @radio_radius 				: 	50%;
 
@@ -376,9 +370,9 @@
 
 //= focus =
 @radio_focus_color 			: 	@primary;
-@radio_focus_bg 			: 	@primary;
+@radio_focus_bg 			: 	@green;
 @radio_focus_shadow	 		:	@success;
-@radio_focus_border_color	: 	@primary;
+@radio_focus_border_color	: 	@white-e9;
 @radio_focus_icon 			: 	@white;
 
 //=== check ===
@@ -474,8 +468,8 @@
 //===== end's breadcrumb =====//
 
 //===== modals =====//
-@modal_backdrop 			:	@default;
-@modal_backdrop_fade 		:	0.9;
+@modal_backdrop 			:	@black;
+@modal_backdrop_fade 		:	0.6;
 @modal_bg 					:	@white;
 @modal_border_rad 			:	5px;
 @modal_width 				:	590px;
@@ -540,3 +534,15 @@
 
 @slider_dots_bg_active 		: 	@white-6f;
 //===== end's slider slick =====// 
+
+//===== tooltip =====// 
+@tt_bg:				fadeout(@white-5f, 75%);
+@tt_color:			@default;
+@tt_fs:				0.88em;
+@tt_lh:				1.55em;
+@tt_zindex:			900;
+@tt_arrow_size:		30px;
+@tt_max_width:		250px;
+@tt_rad:			5px;
+@tt_padding: 		15px 25px;
+//===== end's tooltip =====// 

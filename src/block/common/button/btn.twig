@@ -3,7 +3,7 @@
 {% endif %}
 
 {% if view == "btn" %}
-<button type="{{type}}" {% if onsubmit %}onsubmit="{{onsubmit}}"{% endif %} {% if location %}data-location="{{location}}"{% endif %} class="{{prefix}}item  {{mod}}  {{group}}">
+<button type="{{type}}" {% if onsubmit %}onsubmit="{{onsubmit}}"{% endif %} {% if location %}data-location="{{location}}"{% endif %} {% if error %}data-error="{{error}}"{% endif %}{% if modal %}data-modal="{{modal}}"{% endif %} {{data_attr}} class="{{prefix}}item  {{mod}}  {{group}}">
 	<span>{{name}}</span>
 	{% if icon %}
 		<span class="{{prefix}}icon  {{mod}}  {{group}}">{% include "../svg-sprite/svg.twig" with {icon:icon} %}</span>

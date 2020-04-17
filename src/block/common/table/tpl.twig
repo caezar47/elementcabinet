@@ -26,6 +26,39 @@
 	</tbody>
 </table>
 {% endif %}
+{% if view == "calc_form" %}
+<table class="form__table  {{mod}}">
+	<caption>{{caption}}</caption>
+	<thead>
+		<tr>
+			<th class="is--left">Вид графика</th>
+			<th></th>
+			<th class="is--right-xs">Средний ежемес. платеж</th>
+			<th class="is--hidden">Удорожание</th>
+			<th class="is--right  is--hidden">Итого</th>
+		</tr>
+	</thead> 
+	<tbody> 
+		{% for value in list %}	
+		<tr> 
+			<td class="is--left">
+				<label class="form__radio">
+					<input class="form__radio-input" type="radio" id="{{value.form_id}}[{{value.ID}}]" name="{{value.name}}">
+					<span class="form__radio-box"></span>
+					{{value.label}}
+				</label>
+			</td> 
+			<td>
+				<a href="#" class="question__icon is--sm">!</a>
+			</td> 
+			<td class="is--right-xs">{{value.payment}} ₽</td> 
+			<td class="is--hidden">{{value.rise}}</td> 
+			<td class="is--right  is--hidden"><b>{{value.cost}} ₽</b></td> 
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
 
 
 {# old #}

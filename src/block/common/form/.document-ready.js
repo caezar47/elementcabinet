@@ -98,6 +98,9 @@ phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 var file = $('.form__file-input');
 file.on('change', function(e) {
     $(this).siblings('.form__file-name').html($(this).val().replace(/.*(\/|\\)/, '')+'<br> Заменить файл');
+    $(this).siblings('.form__file-count').html("Прикреплено " + $(this).prop('files').length +' файла').addClass('is--change');
+    $(this).siblings('.form__file-label').addClass('is--change');
+    $(this).closest(".form__row").find($('button[type="submit"]')).removeClass("is--error");
 });
 
 
@@ -130,11 +133,14 @@ allNextBtn.click(function(){
 		stepWizard = $('.form__step-link[href="#' + curStepBtn + '"]'),
 		curInputs = curStep.find("input,select"),
 		curTabs = curStep.find(".tabs__link"),
+		curRadio = curStep.find(".form__radio-input"),
 		isValid = true,
+		isValidRadio = true,
 		isValidTabs = true;
 
 	$(".form__item").removeClass("is--error");
 	$(".tabs__nav").removeClass("is--error");
+	
 	for(var i=0; i<curInputs.length; i++){
 		if (!curInputs[i].validity.valid){
 			isValid = false;
@@ -153,9 +159,26 @@ allNextBtn.click(function(){
 			}	
 		}
 	}
+	if(curRadio.length > 0){
+		for(var i=0; i<curRadio.length; i++){
+			if ($(curRadio[i]).prop("checked") == false){
+				isValidRadio = false;
+				$(curRadio[i]).closest(".form__row").find(allNextBtn).addClass("is--error");
+			} else {
+				isValidRadio = true;
+				$(curRadio[i]).closest(".form__row").find(allNextBtn).removeClass("is--error");
+				break;
+			}	
+		}
+	}
 
 	if(curTabs.length > 0){
 		if (isValid && isValidTabs){
+			nextStepWizard.removeAttr('disabled').trigger('click');
+			stepWizard.addClass('is--checked');
+		}
+	} else if(curRadio.length > 0){
+		if (isValid && isValidRadio){
 			nextStepWizard.removeAttr('disabled').trigger('click');
 			stepWizard.addClass('is--checked');
 		}
@@ -170,18 +193,34 @@ allResultBtn.click(function(e){
 	e.preventDefault();
 	var curStep = $(this).closest(".form__row"),
 		link = $(this).data("location"),
+		modal = $(this).data("modal"),
 		curInputs = curStep.find("input,select"),
 		isValid = true;
 
+	$('button[type="submit"]').removeClass("is--error");
 	$(".form__item").removeClass("is--error");
 	for(var i=0; i<curInputs.length; i++){
+		console.log(curInputs[i]);
 		if (!curInputs[i].validity.valid){
 			isValid = false;
 			$(curInputs[i]).closest(".form__item").addClass("is--error");
-		}		
+			$(curInputs[i]).closest(".form__row").find('button[type="submit"]').addClass("is--error");
+		} else {
+			isValid = true;
+			$(curInputs[i]).closest(".form__row").find('button[type="submit"]').removeClass("is--error");
+			break;
+		}
 	}
 	if (isValid){
-		location.href = link;
+		if (link){
+			location.href = link;
+		} else {
+			$(modal).modal('show');
+			setTimeout(function() {
+				location.href = 'calculation.html';
+			}, 10000);
+
+		}
 	}
 	
 });

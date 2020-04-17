@@ -73,6 +73,7 @@
 		</div>
 	</section>
 {% endif %}
+
 {% if view == "calc_add_page" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -146,6 +147,28 @@
 		</div>
 	</section>
 {% endif %}
+
+{% if view == "calc_form" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">			
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/form/form.twig" with {
+				view: 			"calc_form", 
+				prefix:			prefix.form,
+				mod:			"is--calc-form", 
+				color:			"", 
+				ID: 			"f_calcform", 
+				form_data: 		"data-step-form", 
+			} %}
+		</div>
+	</section> 
+{% endif %}
+
 {% if view == "calc_block" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">				{% include "../common/page-header/tpl.twig" with {

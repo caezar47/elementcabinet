@@ -78,9 +78,20 @@
 
 {% if view == "file" %}
 	<label class="{{prefix}}file  {{mod}}  {{color}}">
-		<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+		<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  >
 		<span class="{{prefix}}file-name  {{mod}}  {{color}}" data-heading="Прикрепить резюме">Прикрепить резюме</span>
 	</label>
+{% endif %}
+
+{% if view == "file_group" %}
+	{% for value in list %}	
+		<label class="{{prefix}}item  is--file-group  {{mod}}  {{value.group}}  {{color}}">
+			<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}"  {{value.attr}}  {{value.required}}>
+			<p class="{{prefix}}file-label  {{mod}}  {{color}}">{{value.label}}</p>
+			<p class="{{prefix}}file-count  {{mod}}  {{color}}"></p>
+			<p class="{{prefix}}file-btn  {{mod}}  {{color}}">{{value.btn}}</p>
+		</label>
+	{% endfor %}
 {% endif %}
 
 

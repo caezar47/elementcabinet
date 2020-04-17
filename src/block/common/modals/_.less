@@ -25,58 +25,84 @@
 		//background: @black;
 	}
 	&dialog {
-		transition: all 0.5s;
 		position: relative;
-		width: auto;	
+		transition: all 0.5s;
+		display: flex;
+		width: 100%;	
+		max-height: 100%;
 		margin: 0px auto;
-		max-width: @modal_width;
-		.modal__block.fade &{
-			left: -100%;
-		}
+		max-width: @modal_width + 30px;
+		top: 50%;
+		left: -100%;
+		transform: translateY(-50%);
+		padding: 20px 15px;	
 		.modal__block.in &{
 			left: 0;
+			top: 50%;
 		}
-		.media-breakpoint-up(@md; {		
-			.modal__block.fade &{
-				top: 0;
-				left: inherit;
-			}
-			.modal__block.in &{
-				top: 5%;
-				left: inherit;
-			}
-		});
-		/*
 		.media-breakpoint-up(@md; {	
-			margin: 10px auto;
-		});
-		.media-breakpoint-up(@lg; {
-			width: @modal_width;	
-			margin: 0px auto;
-			&.is--lg{
-				width: @modal_width + 320;
+			top: 0%;	
+			left: inherit;
+			.modal__block.in &{
+				left: inherit;
 			}
-		});*/
+		});
 	}
 	&body {
 		position: relative;
-		/*background: @white;
-		padding: 35px 40px;
-		.media-breakpoint-up(@md; {	
-			border-radius: @modal_border_rad;	
-			padding: 70px 60px 50px;		
+		background-color: @white;
+		overflow: auto;
+		width: 100%;
+    	max-height: 100%;
+    	padding: 30px 15px;
+		.media-breakpoint-up(@md; {
+			padding: 57px;
 		});
-		.media-breakpoint-up(@lg; {
-			padding: 3.8vw 5vw;
-		});*/
 	}
 	&content{}
+	&heading{
+		&.is--modal-result{
+			margin-bottom: 15px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 20px;
+			});
+		}
+	}
+	&note{
+		font-weight: 100;
+		font-size: 1em;
+		line-height: 1.667em;
+		color: @black;
+		&.is--modal-result{	
+			text-align: center;
+			margin-bottom: 20px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 35px;		
+				max-width: 295px;
+				margin-left: auto;
+				margin-right: auto;
+			});
+		}
+	}
+	&preview{		
+		&.is--modal-result{	
+			img{		
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.media-breakpoint-down(@md; {
+				img{
+					width: 70%;
+				}
+			});
+		}
+	}
 	&btn-close{
 		.btn-clearfix();
 	    position: absolute;
 	    z-index: 5; 
-		top: 0px;
-		right: 0px;
+		top: 11px;
+    	right: 3px;
 	   	color: @modal_btn_color;
 		width: @modal_btn_width;
 		height: @modal_btn_width;

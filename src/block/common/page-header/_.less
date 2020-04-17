@@ -88,6 +88,22 @@
 			&-calc-add{
     			margin-bottom: 30px;
 			}
+			&-calc-form{
+				margin-bottom: 17px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 30px;
+				});
+			}
+			&-calc-form-sm{
+				font-size: 1em;
+				line-height: 1em;
+				.media-breakpoint-up(@md; {
+					font-size: 1.33em;
+					&.is--mb{
+						margin-bottom: 8px;			
+					}
+				});
+			}
 		}
 		&.is--form{
 			&-signin{
