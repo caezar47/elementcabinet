@@ -4,7 +4,17 @@
 	ID: "modal-calc-calculation", 
 	heading: "Формируем расчет", 
 	heading_mod: "fw--700  is--h2  align--center  is--modal-result", 
-	note: "Это может занять около 20 секунд, подождите, пожалуйста!",
+	note: "Это может занять около 20 секунд,<br> подождите, пожалуйста!",
 	content_mod: "is--modal-result", 
     preview:[path.img,"/default/modal-calc-calc.svg"].join(""),
+} %}
+{% include "tpl.twig" with {
+	prefix:"modal__", 
+	mod:"", 
+	ID: "modal-calc-ready", 
+	heading: "Расчет сформирован!", 
+	heading_mod: "fw--700  is--h2  align--center  is--modal-result", 
+	note: "Спасибо, наше менеджер скоро свяжется с вами, чтобы обсудить детали расчета",
+	content_mod: "is--modal-result", 
+    preview:[path.img,"/default/modal-calc-ready.svg"].join(""),
 } %}

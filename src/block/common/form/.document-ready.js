@@ -215,11 +215,17 @@ allResultBtn.click(function(e){
 		if (link){
 			location.href = link;
 		} else {
-			$(modal).modal('show');
-			setTimeout(function() {
-				location.href = 'calculation.html';
-			}, 10000);
+			if (modal == "#modal-calc-calculation"){
+				$(modal).modal('show');
+				setTimeout(function() {
+					$(modal).modal('hide');
+					$('#modal-calc-ready').modal('show');
+					setTimeout(function() {
+						location.href = 'calculation.html';
+					}, 5000);
+				}, 10000);
 
+			}
 		}
 	}
 	

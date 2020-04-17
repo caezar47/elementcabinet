@@ -349,13 +349,13 @@
 		<div class="{{prefix}}row  grid__row  {{mod}}  is--wrap">			
 			<ol class="{{prefix}}step  {{mod}}">
 				<li class="{{prefix}}step-item  {{mod}}">
-					<a href="#{{ID}}-step1" disabled class="{{prefix}}step-link  {{mod}}  is--active">1. Общая информация</a> 	
+					<a href="#{{ID}}-step1"  class="{{prefix}}step-link  {{mod}}  is--active">1. Общая информация</a> 	
 				</li>
 				<li class="{{prefix}}step-item  {{mod}}">
 					<a href="#{{ID}}-step2" disabled class="{{prefix}}step-link  {{mod}}">2. Условия лизинга</a> 	
 				</li>
 				<li class="{{prefix}}step-item  {{mod}}">
-					<a href="#{{ID}}-step3"  class="{{prefix}}step-link  {{mod}}">3. Оформление лизинга</a> 	
+					<a href="#{{ID}}-step3" disabled class="{{prefix}}step-link  {{mod}}">3. Оформление лизинга</a> 	
 				</li>
 			</ol>
 			<div class="{{prefix}}step-pane  {{mod}}" id="{{ID}}-step1">
@@ -630,7 +630,7 @@
 								icon: "arrow-next",
 								group:content_mod, 
 								onsubmit:'return false', 
-								modal:'#modal-calc-calculation', 
+								modal:'#modal-calc-calculation',  
 								mod:"is--success  is--arrow-next", 
 								name:"Оставить заявку" 
 							} %}

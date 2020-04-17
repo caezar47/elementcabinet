@@ -117,13 +117,13 @@
 		<div class="form__row  grid__row  is--calc-form  is--wrap">			
 			<ol class="form__step  is--calc-form">
 				<li class="form__step-item  is--calc-form">
-					<a href="#f_calcform-step1" disabled class="form__step-link  is--calc-form  is--active">1. Общая информация</a> 	
+					<a href="#f_calcform-step1"  class="form__step-link  is--calc-form  is--active">1. Общая информация</a> 	
 				</li>
 				<li class="form__step-item  is--calc-form">
 					<a href="#f_calcform-step2" disabled class="form__step-link  is--calc-form">2. Условия лизинга</a> 	
 				</li>
 				<li class="form__step-item  is--calc-form">
-					<a href="#f_calcform-step3"  class="form__step-link  is--calc-form">3. Оформление лизинга</a> 	
+					<a href="#f_calcform-step3" disabled class="form__step-link  is--calc-form">3. Оформление лизинга</a> 	
 				</li>
 			</ol>
 			<div class="form__step-pane  is--calc-form" id="f_calcform-step1">
@@ -557,8 +557,22 @@
 </svg>			</button>
 			<div class="modal__content  ">
 								<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Формируем расчет</h3>
-												<div class="modal__note  is--modal-result">Это может занять около 20 секунд, подождите, пожалуйста!</div>
+												<div class="modal__note  is--modal-result">Это может занять около 20 секунд,<br> подождите, пожалуйста!</div>
 												<picture class="modal__preview  is--modal-result"><img src="./img/default/modal-calc-calc.svg" class="img-responsive" alt=""></picture>
+							</div> 
+		</div>
+	</div>
+</div><div class="modal__block modals  fade  " id="modal-calc-ready" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  ">
+		<div class="modal__body  " >
+			<button type="button" class="modal__btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+			<div class="modal__content  ">
+								<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Расчет сформирован!</h3>
+												<div class="modal__note  is--modal-result">Спасибо, наше менеджер скоро свяжется с вами, чтобы обсудить детали расчета</div>
+												<picture class="modal__preview  is--modal-result"><img src="./img/default/modal-calc-ready.svg" class="img-responsive" alt=""></picture>
 							</div> 
 		</div>
 	</div>
