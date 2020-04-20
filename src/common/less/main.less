@@ -90,5 +90,20 @@ p{
 		position: fixed;
 	}
 }
+.visible--{
+	&md{
+		display: none;
+		.media-breakpoint-up(@md; {
+			display: block;
+		});
+	}
+}
+.hidden--{
+	&md{
+		.media-breakpoint-up(@md; {
+			display: none;
+		});
+	}
+}
 .margin_generator();
 .font_weight_generator();

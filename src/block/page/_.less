@@ -218,6 +218,27 @@
 					grid-gap: 105px 23px;
 				});
 			}
+			&-deal-card{
+				grid-gap: 0px;
+				.media-breakpoint-up(@md; {
+					grid-gap: 32px;
+					grid-template-columns: repeat(2, 1fr);		
+					& > [data-grid-manager]{
+					}
+					& > [data-grid-info]{
+					}
+				});
+				.media-breakpoint-up(@lg; {
+					grid-template-columns: 8fr 3.49fr;
+					& > [data-grid-info]{
+					}
+					& > [data-grid-manager]{
+						max-width: 340px;
+						justify-self: flex-end;
+						width: 100%;
+					}
+				});
+			}
 		}
 		&.is--block{
 			&-calc{
@@ -262,6 +283,16 @@
 		}
 	}		  
 	&wrap{
+		&.is--page{
+			&-deal-card{
+				.media-breakpoint-down(@md; {
+					background-color: @white;
+					margin-left: -15px;
+					margin-right: -15px;
+					padding: 30px 15px;
+				});
+			}
+		}
 	}	  
 	&label{
 	}	  

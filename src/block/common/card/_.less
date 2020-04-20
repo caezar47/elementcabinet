@@ -183,6 +183,14 @@
 			height: 24px;
 			margin-right: 15px;
 		}
+		&.is--manager{
+			&-card{
+				width: 50px;
+				height: 50px;
+				color: fadeout(@black-60, 92%);
+				margin-bottom: 20px;
+			}
+		}
 	}
 	&heading{
 		transition: @trs-site;
@@ -313,6 +321,9 @@
 				.media-breakpoint-up(@md; {
 					margin-bottom: 25px;
 				});
+				&.is--tech{
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}
@@ -373,6 +384,9 @@
 						color: @primary;
 					}
 				}
+				&.is--tech{
+					margin-bottom: 30px;
+				}
 			}
 		}
 	}
@@ -413,6 +427,19 @@
 					display: block;
 					border-top: 1px solid @white-f7;
 					margin-bottom: 25px;
+				});
+			}
+		}		
+		&.is--manager{
+			&-card{
+				border-bottom: 1px solid @white-f5;
+			    padding-top: 45px;
+				margin-bottom: 30px;
+				
+				.media-breakpoint-up(@md; {
+					margin-left: -40px;
+					margin-right: -40px;
+					width: ~"calc(100% + 80px)";
 				});
 			}
 		}

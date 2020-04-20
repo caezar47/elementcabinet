@@ -26,6 +26,20 @@
 		</tbody>
 	</table>
 {% endif %}
+
+{% if view == "deal_card" %}
+	<table class="table  {{mod}}">
+		<tbody> 
+			{% for value in list %}	
+			<tr {% if value.link %}onclick="window.location.href='{{value.link}}'; return false"{% endif %}> 
+				<th>{{value.name}}</th> 
+				<td>{{value.val}}</td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+
 {% if view == "calc_form" %}
 	<table class="form__table  {{mod}}">
 		<caption>{{caption}}</caption>

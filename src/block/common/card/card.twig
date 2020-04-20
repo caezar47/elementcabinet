@@ -44,7 +44,19 @@
 		<p class="{{prefix}}email  {{mod}}">
 			<a href="mailto:{{email}}">{{email}}</a>
 		</p>
-		<hr class="{{prefix}}line  {{mod}}">
+		{% if tech %}
+			<hr class="{{prefix}}line  {{mod}}">
+			<p class="{{prefix}}icon  {{mod}}">
+				{% include "../svg-sprite/svg.twig" with {icon:tech_icon} %}
+			</p>
+			<p class="{{prefix}}value  {{mod}}  is--tech">
+				{{tech}}
+			</p>
+			<p class="{{prefix}}email  {{mod}}  is--tech">
+				<a href="tel:{{tech_phone_tel}}">{{tech_phone}}</a>
+			</p>
+
+		{% endif %}
 	</div> 
 {% endif %}
 

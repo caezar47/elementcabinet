@@ -38,6 +38,75 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "deal_card" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div data-grid-info>
+					{% include "../common/tabs/tpl.twig" with {
+						view: 			"deal_card", 
+						prefix:			prefix.tabs, 
+						mod:			"is--default",
+						list:[
+		                    {
+		                        link:page.deal_card,
+		                        status:"active",
+		                        name:'<span class="visible--md">Общие сведения</span><span class="hidden--md">Общее</span>',
+		                    },
+		                    {
+		                        link:page.deal_card_payment,
+		                        status:"",
+		                        name:"Платежи"
+		                    },
+		                    {
+		                        link:page.deal_card_docs,
+		                        status:"",
+		                        name:"Документы"
+		                    }
+		                ],
+					} %}
+					<div class="{{content_prefix}}wrap  {{content_mod}}">
+						{% include "../common/table/tpl.twig" with {
+						 	view: "deal_card", 
+						 	mod:"is--deal-card", 
+						 	list:list
+						} %}
+					</div>
+				</div>
+				<div data-grid-manager>
+					{% include "../common/card/card.twig" with {
+					 	view: "manager_card", 
+					 	prefix:prefix.card,
+					 	mod:"is--manager-card",
+                		preview:[path.img,"/default/avatar-lock.png"].join(""),  
+					 	heading:"Иванов<br> Роман Петрович",
+					 	post:"Старший менеджер <br>лизингового отдела <br>лизинговых проектов ",
+					 	phone:"+7 423 239 07 37",
+					 	phone_tel:"+74232390737",
+					 	email:"ivanovroman@ulh.ru",
+					 	tech: "Техническая поддержка",
+					 	tech_icon: "phone",
+					 	tech_phone: "8 800 937 27 80",
+					 	tech_phone_tel: "88009372780",
+					} %}
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+{% endif %}
 
 {% if view == "deal_block" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">

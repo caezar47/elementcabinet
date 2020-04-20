@@ -34,7 +34,9 @@
 		"calculation":"./calculation.html",
 		"calculation_add":"./calculation-add.html",
 		"calc_form":"./calculation-form.html",
-		"deal":"./deal.html"
+		"deal":"./deal.html",
+		"deal_card":"./deal-card.html",
+		"deal_card":"#"
 	},
 	"prefix":{
 		"content":"content-block__",

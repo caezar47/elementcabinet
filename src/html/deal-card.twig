@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Детали сделки ГАЗ-A31 NEXT"}  %}
+	</head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:"navbar_enter",
+            navbar_prefix:"navbar__"
+        } %}
+
+        <main class="content-block__panel  is--bg-dark">
+            {% include "../block/page/deal.twig" with {
+                view:"deal_card", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-deal-card", 
+                heading_mod:"is--h2  fw--700  is--page-deal-card",  
+                heading_level:"h1", 
+                heading:"Детали сделки ГАЗ-A31 NEXT", 
+                bread_mod:"",
+                bread:[
+                    {name:"Главная", link:page.index},
+                    {name:"Мои сделки", link:page.deal},
+                    {name:"РАС-634009"}
+                ],
+                list:[
+                    {
+                        name:"№ КП и дата создания",
+                        val:"РАС-622532 от 21.03.2019",
+                    },
+                    {
+                        name:"№ ДЛ",
+                        val:"АХ_ЭЛ/Влд-91286/ДЛ",
+                    },
+                    {
+                        name:"Город",
+                        val:"Владивосток",
+                    },
+                    {
+                        name:"Объект лизинга",
+                        val:"ГАЗ-A31 NEXT",
+                    },
+                    {
+                        name:"Количество",
+                        val:"1 ед.",
+                    },
+                    {
+                        name:"Статус сделки",
+                        val:"Предмет лизинга передан от 27.03.2019",
+                    },
+                    {
+                        name:"Валюта сделки",
+                        val:"Российский рубль, ₽",
+                    },
+                    {
+                        name:"Количество платежей",
+                        val:"25",
+                    },
+                    {
+                        name:"Общая сумма",
+                        val:"2 002 684,00 ₽",
+                    },
+                    {
+                        name:"Оплачено",
+                        val:"1 369 928,36 ₽",
+                    },
+                    {
+                        name:"Осталось",
+                        val:"632 755,64 ₽",
+                    },
+                ], 
+            } %}
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

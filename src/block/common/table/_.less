@@ -80,6 +80,52 @@
 					}
 				}
 			});
+		}
+		&-card{
+			tr{	
+				td, th{
+					text-align: left;
+				}
+				th{
+					color: @custom;
+					font-size: 0.75em;
+					width: 44.5%;
+				}
+				td{
+					text-align: left;
+					font-size: 0.88em;
+				}
+			}
+			.media-breakpoint-down(@md; {
+				max-width: ~"calc(100% + 7px + 7px)";
+				width: ~"calc(100% + 7px + 7px)";
+				margin-left: -7px;
+				margin-right: -7px;
+				tr{
+					th, td{
+						padding: 10px 7px;
+					}
+				}
+			});
+			.media-breakpoint-up(@md; {				
+				tr{	
+					th, td{
+						font-size: 0.88em;
+						padding-top: 24px;						
+						padding-bottom: 24px;						
+					}
+					th{
+						width: 30.5%;
+					}
+				}
+			});
+			.media-breakpoint-up(@xxl; {
+				max-width: ~"calc(100% + 45px + 15px)";
+				width: ~"calc(100% + 45px + 15px)";
+				margin-left: -45px;
+				margin-right: -15px;
+			});	
+
 		}	
 	}	
 	thead{ 
