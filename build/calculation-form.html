@@ -83,7 +83,7 @@
 					<div class="navbar__collapse-cols"  data-grid-navbar>
 						<ul class="navbar__nav">
 													    							<li class="navbar__nav-item  "><a href="./calculation-add.html" class="navbar__nav-link"><span>Создать расчет</span></a></li>
-						    							<li class="navbar__nav-item  "><a href="#" class="navbar__nav-link"><span>Мои расчеты</span></a></li>
+						    							<li class="navbar__nav-item  "><a href="./calculation.html" class="navbar__nav-link"><span>Мои расчеты</span></a></li>
 						    							<li class="navbar__nav-item  "><a href="./deal.html" class="navbar__nav-link"><span>Мои сделки</span></a></li>
 						    							<li class="navbar__nav-item  "><a href="./faq.html" class="navbar__nav-link"><span>Вопросы и ответы</span></a></li>
 						    							<li class="navbar__nav-item">
@@ -112,12 +112,11 @@
 	<h1 class="page-header__heading  is--h2  fw--700  is--page-calc-form  " >Создание расчета</h1>
 			
 
-
 	<form action="#" class="form__panel  is--calc-form"  data-step-form>
 		<div class="form__row  grid__row  is--calc-form  is--wrap">			
 			<ol class="form__step  is--calc-form">
 				<li class="form__step-item  is--calc-form">
-					<a href="#f_calcform-step1"  class="form__step-link  is--calc-form  is--active">1. Общая информация</a> 	
+					<a href="#f_calcform-step1"   class="form__step-link  is--calc-form  is--active">1. Общая информация</a> 	
 				</li>
 				<li class="form__step-item  is--calc-form">
 					<a href="#f_calcform-step2" disabled class="form__step-link  is--calc-form">2. Условия лизинга</a> 	
@@ -132,7 +131,7 @@
 						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full  is--mb">Заполните данные</h2>
 								
 	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
-						<input type="text" class="form__control    is--calc-form   " required placeholder="Контактное лицо"  >
+						<input type="text" class="form__control    is--calc-form      " required placeholder="Контактное лицо">
 						
 	</label>
 	
@@ -172,14 +171,14 @@
 
 								
 	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
-						<input type="text" class="form__control    is--calc-form   " required placeholder="Дата регистрации ИП" onfocus="(this.type='date')" >
+						<input type="text" class="form__control    is--calc-form      datepicker-here" required placeholder="Дата регистрации ИП">
 						
 	</label>
 		
 	<label class="form__item  is--calc-form  is--abs"  data-error="Обязательно к заполнению">
 						<div class="form__control-wrap  is--calc-form">
 			<p class="form__control-ruble  is--calc-form">₽</p>
-				<input type="number" class="form__control    is--calc-form   is--ruble" required placeholder="Ежемесячная выручка"  >
+				<input type="number" class="form__control    is--calc-form   is--ruble   " required placeholder="Ежемесячная выручка">
 				</div>
 							<p class="question__icon" data-container="body" data-toggle="tooltip" data-placement="top" title="Данные, предоставленные в налоговую службу за последний отчетный период">?</p>
 				
@@ -236,7 +235,7 @@
 	<label class="form__item  is--calc-form    "  data-error="Обязательно к заполнению">
 						<div class="form__control-wrap  is--calc-form">
 			<p class="form__control-ruble  is--calc-form">₽</p>
-				<input type="cost" class="form__control    is--calc-form   is--ruble" required placeholder="Стоимость"  >
+				<input type="cost" class="form__control    is--calc-form   is--ruble   " required placeholder="Стоимость">
 				</div>
 						
 	</label>
@@ -303,7 +302,7 @@
 
 								
 	<label class="form__item  is--calc-form  "  data-error="Обязательно к заполнению">
-						<input type="number" class="form__control    is--calc-form   " required placeholder="Минимальный аванс"  >
+						<input type="number" class="form__control    is--calc-form      " required placeholder="Минимальный аванс">
 						
 	</label>
 	
@@ -343,87 +342,87 @@
 						<h2 class="page-header__heading  is--page-calc-form-sm  fw--100  is--full">Выберите график платежей</h2>
 
 						<div class="is--full">
-							<table class="form__table  is--calc-form">
-	<caption>
+								<table class="form__table  is--calc-form">
+		<caption>
 							 		<p>Выкупная стоимость: 1 500,00 ₽</p>
 							 		<p>Комиссия за оформление: 0,00 ₽</p>
 							 		<p>Оплата КАСКО и ОСАГО обязательна на весь срок лизинга.</p></caption>
-	<thead>
-		<tr>
-			<th class="is--left">Вид графика</th>
-			<th></th>
-			<th class="is--right-xs">Средний ежемес. платеж</th>
-			<th class="is--hidden">Удорожание</th>
-			<th class="is--right  is--hidden">Итого</th>
-		</tr>
-	</thead> 
-	<tbody> 
-			
-		<tr> 
-			<td class="is--left">
-				<label class="form__radio">
-					<input class="form__radio-input" type="radio" id="f_calcform[item1]" name="radio">
-					<span class="form__radio-box"></span>
-					Платежи с дегрессией
-				</label>
-			</td> 
-			<td>
-				<a href="#" class="question__icon is--sm">!</a>
-			</td> 
-			<td class="is--right-xs">385 693,00 ₽</td> 
-			<td class="is--hidden">5,86%</td> 
-			<td class="is--right  is--hidden"><b>17 634 948,00 ₽</b></td> 
-		</tr>
-			
-		<tr> 
-			<td class="is--left">
-				<label class="form__radio">
-					<input class="form__radio-input" type="radio" id="f_calcform[item2]" name="radio">
-					<span class="form__radio-box"></span>
-					Равные платежи
-				</label>
-			</td> 
-			<td>
-				<a href="#" class="question__icon is--sm">!</a>
-			</td> 
-			<td class="is--right-xs">447 227,00 ₽</td> 
-			<td class="is--hidden">10,78%</td> 
-			<td class="is--right  is--hidden"><b>19 850 172,00 ₽</b></td> 
-		</tr>
-			
-		<tr> 
-			<td class="is--left">
-				<label class="form__radio">
-					<input class="form__radio-input" type="radio" id="f_calcform[item3]" name="radio">
-					<span class="form__radio-box"></span>
-					Плавно убывающие платежи
-				</label>
-			</td> 
-			<td>
-				<a href="#" class="question__icon is--sm">!</a>
-			</td> 
-			<td class="is--right-xs">403 329,97 ₽</td> 
-			<td class="is--hidden">7,27%</td> 
-			<td class="is--right  is--hidden"><b>18 269 879,00 ₽</b></td> 
-		</tr>
-			
-		<tr> 
-			<td class="is--left">
-				<label class="form__radio">
-					<input class="form__radio-input" type="radio" id="f_calcform[item4]" name="radio">
-					<span class="form__radio-box"></span>
-					Резко убывающие платежи
-				</label>
-			</td> 
-			<td>
-				<a href="#" class="question__icon is--sm">!</a>
-			</td> 
-			<td class="is--right-xs">420 930,42 ₽</td> 
-			<td class="is--hidden">8,67%</td> 
-			<td class="is--right  is--hidden"><b>18 903 495,00 ₽</b></td> 
-		</tr>
-			</tbody>
-</table>
+		<thead>
+			<tr>
+				<th class="is--left">Вид графика</th>
+				<th></th>
+				<th class="is--right-xs">Средний ежемес. платеж</th>
+				<th class="is--hidden">Удорожание</th>
+				<th class="is--right  is--hidden">Итого</th>
+			</tr>
+		</thead> 
+		<tbody> 
+				
+			<tr> 
+				<td class="is--left">
+					<label class="form__radio">
+						<input class="form__radio-input" type="radio" id="f_calcform[item1]" name="radio">
+						<span class="form__radio-box"></span>
+						Платежи с дегрессией
+					</label>
+				</td> 
+				<td>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+				</td> 
+				<td class="is--right-xs">385 693,00&nbsp;₽</td> 
+				<td class="is--hidden">5,86%</td> 
+				<td class="is--right  is--hidden"><b>17 634 948,00&nbsp;₽</b></td> 
+			</tr>
+				
+			<tr> 
+				<td class="is--left">
+					<label class="form__radio">
+						<input class="form__radio-input" type="radio" id="f_calcform[item2]" name="radio">
+						<span class="form__radio-box"></span>
+						Равные платежи
+					</label>
+				</td> 
+				<td>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+				</td> 
+				<td class="is--right-xs">447 227,00&nbsp;₽</td> 
+				<td class="is--hidden">10,78%</td> 
+				<td class="is--right  is--hidden"><b>19 850 172,00&nbsp;₽</b></td> 
+			</tr>
+				
+			<tr> 
+				<td class="is--left">
+					<label class="form__radio">
+						<input class="form__radio-input" type="radio" id="f_calcform[item3]" name="radio">
+						<span class="form__radio-box"></span>
+						Плавно убывающие платежи
+					</label>
+				</td> 
+				<td>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+				</td> 
+				<td class="is--right-xs">403 329,97&nbsp;₽</td> 
+				<td class="is--hidden">7,27%</td> 
+				<td class="is--right  is--hidden"><b>18 269 879,00&nbsp;₽</b></td> 
+			</tr>
+				
+			<tr> 
+				<td class="is--left">
+					<label class="form__radio">
+						<input class="form__radio-input" type="radio" id="f_calcform[item4]" name="radio">
+						<span class="form__radio-box"></span>
+						Резко убывающие платежи
+					</label>
+				</td> 
+				<td>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+				</td> 
+				<td class="is--right-xs">420 930,42&nbsp;₽</td> 
+				<td class="is--hidden">8,67%</td> 
+				<td class="is--right  is--hidden"><b>18 903 495,00&nbsp;₽</b></td> 
+			</tr>
+					</tbody>
+	</table>
 
 
 
@@ -533,7 +532,7 @@
 			</div>
 			<div class="footer__cols  is--nav-default">
 				<ul class="footer__nav">
-					<li><a href="#">Мои расчеты</a></li>
+					<li><a href="./calculation.html">Мои расчеты</a></li>
 					<li><a href="./deal.html">Мои сделки</a></li>
 					<li><a href="#">Акции</a></li>
 					<li><a href="./faq.html">Вопросы и ответы</a></li>
@@ -556,10 +555,10 @@
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg>			</button>
 			<div class="modal__content  ">
-								<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Формируем расчет</h3>
+												<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Формируем расчет</h3>
 												<div class="modal__note  is--modal-result">Это может занять около 20 секунд,<br> подождите, пожалуйста!</div>
 												<picture class="modal__preview  is--modal-result"><img src="./img/default/modal-calc-calc.svg" class="img-responsive" alt=""></picture>
-							</div> 
+											</div> 
 		</div>
 	</div>
 </div><div class="modal__block modals  fade  " id="modal-calc-ready" tabindex="-1" role="dialog" aria-hidden="true">
@@ -570,9 +569,271 @@
 	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
 </svg>			</button>
 			<div class="modal__content  ">
-								<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Расчет сформирован!</h3>
+												<h3 class="modal__heading  fw--700  is--h2  align--center  is--modal-result  is--modal-result">Расчет сформирован!</h3>
 												<div class="modal__note  is--modal-result">Спасибо, наше менеджер скоро свяжется с вами, чтобы обсудить детали расчета</div>
 												<picture class="modal__preview  is--modal-result"><img src="./img/default/modal-calc-ready.svg" class="img-responsive" alt=""></picture>
+											</div> 
+		</div>
+	</div>
+</div><div class="modal__block modals  fade  is--modal-payment" id="modal-calc-payment" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  is--modal-payment">
+		<div class="modal__body  is--modal-payment" >
+			<button type="button" class="modal__btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+			<div class="modal__content  is--modal-payment">
+								<div class="modal__panel  is--modal-payment">
+					<h3 class="modal__heading  fw--100  is--h3  is--modal-payment-lg  ">Информация о графике платежей с дегрессией</h3>
+					<table class="modal__table  is--modal-payment-lg">
+						<tr>
+							<th class="is--left">Средний ежемесячный платеж</th>
+							<td class="is--right">385 693,00&nbsp;₽</td>
+						</tr>
+						<tr>
+							<th class="is--left">Удорожание</th>
+							<td class="is--right">5,86%</td>
+						</tr>
+						<tr>
+							<th class="is--left">Итого</th>
+							<td class="is--right">17 634 948,00&nbsp;₽</td>
+						</tr>
+					</table>
+				</div>
+												<h3 class="modal__heading  fw--100  is--h3  is--modal-payment  ">Выберите график платежей</h3>
+																				<table class="modal__table  is--modal-payment">
+					<thead>
+						<tr>
+							<td class="is--left">Период</td>
+							<td>Вид платежа</td>
+							<td class="is--right">Сумма к оплате с НДС</td>
+						</tr>
+					</thead>
+					<tbody>						
+							
+						<tr> 
+							<td class="is--left">0</td>
+							<td>Аванс</td>
+							<td class="is--right">3 750 000,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">1</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">2</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">3</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">4</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">5</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">6</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">7</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">8</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">9</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">10</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">11</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">12</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">13</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">14</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">15</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">16</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">17</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">18</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">19</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">20</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">21</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">22</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">23</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">24</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">25</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">26</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">27</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">28</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">29</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">30</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">31</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">32</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">33</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">34</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">35</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+							
+						<tr> 
+							<td class="is--left">36</td>
+							<td>Лизинговый платеж</td>
+							<td class="is--right">826 484,00</td>
+						</tr>
+											</tbody>
+				</table>
 							</div> 
 		</div>
 	</div>

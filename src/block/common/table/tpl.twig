@@ -1,63 +1,63 @@
 {% if view == "deal_list" %}
-<table class="table  {{mod}}">
-	<thead>
-		<tr>
-			<th>№ КП</th>
-			<th>№ ДЛ</th>
-			<th>Статус</th>
-			<th>Дата КП</th>
-			<th>Марка, модель</th>
-			<th>Общая сумма</th>
-			<th>Выплачено</th>
-		</tr>
-	</thead> 
-	<tbody> 
-		{% for value in list %}	
-		<tr onclick="window.location.href='{{value.link}}'; return false"> 
-			<td data-grid-id>{{value.id}}</td> 
-			<td class="is--hidden">{{value.num}}</td> 
-			<td class="is--hidden">{{value.status}}</td> 
-			<td data-grid-date>{{value.date}}</td> 
-			<td class="is--hidden">{{value.model}}</td> 
-			<td data-grid-cost>{{value.cost}}</td> 
-			<td class="is--hidden">{{value.paid}}</td> 
-		</tr>
-		{% endfor %}
-	</tbody>
-</table>
+	<table class="table  {{mod}}">
+		<thead>
+			<tr>
+				<th>№ КП</th>
+				<th>№ ДЛ</th>
+				<th>Статус</th>
+				<th>Дата КП</th>
+				<th>Марка, модель</th>
+				<th>Общая сумма</th>
+				<th>Выплачено</th>
+			</tr>
+		</thead> 
+		<tbody> 
+			{% for value in list %}	
+			<tr onclick="window.location.href='{{value.link}}'; return false"> 
+				<td data-grid-id>{{value.id}}</td> 
+				<td class="is--hidden">{{value.num}}</td> 
+				<td class="is--hidden">{{value.status}}</td> 
+				<td data-grid-date>{{value.date}}</td> 
+				<td class="is--hidden">{{value.model}}</td> 
+				<td data-grid-cost>{{value.cost}}</td> 
+				<td class="is--hidden">{{value.paid}}</td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endif %}
 {% if view == "calc_form" %}
-<table class="form__table  {{mod}}">
-	<caption>{{caption}}</caption>
-	<thead>
-		<tr>
-			<th class="is--left">Вид графика</th>
-			<th></th>
-			<th class="is--right-xs">Средний ежемес. платеж</th>
-			<th class="is--hidden">Удорожание</th>
-			<th class="is--right  is--hidden">Итого</th>
-		</tr>
-	</thead> 
-	<tbody> 
-		{% for value in list %}	
-		<tr> 
-			<td class="is--left">
-				<label class="form__radio">
-					<input class="form__radio-input" type="radio" id="{{value.form_id}}[{{value.ID}}]" name="{{value.name}}">
-					<span class="form__radio-box"></span>
-					{{value.label}}
-				</label>
-			</td> 
-			<td>
-				<a href="#" class="question__icon is--sm">!</a>
-			</td> 
-			<td class="is--right-xs">{{value.payment}} ₽</td> 
-			<td class="is--hidden">{{value.rise}}</td> 
-			<td class="is--right  is--hidden"><b>{{value.cost}} ₽</b></td> 
-		</tr>
-		{% endfor %}
-	</tbody>
-</table>
+	<table class="form__table  {{mod}}">
+		<caption>{{caption}}</caption>
+		<thead>
+			<tr>
+				<th class="is--left">Вид графика</th>
+				<th></th>
+				<th class="is--right-xs">Средний ежемес. платеж</th>
+				<th class="is--hidden">Удорожание</th>
+				<th class="is--right  is--hidden">Итого</th>
+			</tr>
+		</thead> 
+		<tbody> 
+			{% for value in list %}	
+			<tr> 
+				<td class="is--left">
+					<label class="form__radio">
+						<input class="form__radio-input" type="radio" id="{{value.form_id}}[{{value.ID}}]" name="{{value.name}}">
+						<span class="form__radio-box"></span>
+						{{value.label}}
+					</label>
+				</td> 
+				<td>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+				</td> 
+				<td class="is--right-xs">{{value.payment}}&nbsp;₽</td> 
+				<td class="is--hidden">{{value.rise}}</td> 
+				<td class="is--right  is--hidden"><b>{{value.cost}}&nbsp;₽</b></td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endif %}
 
 

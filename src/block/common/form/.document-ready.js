@@ -208,7 +208,7 @@ allResultBtn.click(function(e){
 		} else {
 			isValid = true;
 			$(curInputs[i]).closest(".form__row").find('button[type="submit"]').removeClass("is--error");
-			break;
+			//break;
 		}
 	}
 	if (isValid){

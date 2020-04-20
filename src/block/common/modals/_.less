@@ -31,11 +31,16 @@
 		width: 100%;	
 		max-height: 100%;
 		margin: 0px auto;
+		padding: 20px 15px;	
 		max-width: @modal_width + 30px;
 		top: 50%;
 		left: -100%;
 		transform: translateY(-50%);
-		padding: 20px 15px;	
+
+		//top: 0;
+		//left: 0;
+		//transform: translateY(0%);
+
 		.modal__block.in &{
 			left: 0;
 			top: 50%;
@@ -47,6 +52,11 @@
 				left: inherit;
 			}
 		});
+		.media-breakpoint-up(@lg; {
+			&.is--modal-payment{
+				max-width: 740px + 30px;
+			}
+		});
 	}
 	&body {
 		position: relative;
@@ -55,17 +65,66 @@
 		width: 100%;
     	max-height: 100%;
     	padding: 30px 15px;
+		&.is--modal-payment{
+    		padding: 20px 15px;
+		}
 		.media-breakpoint-up(@md; {
 			padding: 57px;
+			&.is--modal-payment{
+				padding: 35px 55px 35px 40px;
+			}
 		});
 	}
+	&btn-close{
+		.btn-clearfix();
+	    position: absolute;
+	    z-index: 5; 
+		top: 11px;
+    	right: 3px;
+	   	color: @modal_btn_color;
+		width: @modal_btn_width;
+		height: @modal_btn_width;
+		padding: 13px;
+		svg{display: block;}
+	   	transition: @trs-site;  	 
+		&:hover{
+			color: @modal_btn_color_hover;
+		}
+	}
 	&content{}
+	&panel{
+		&.is--modal{
+			&-payment{
+				border-bottom: 1px solid @white-e9;
+				margin-left: -15px;
+				margin-right: -15px;
+				padding-left: 15px;
+				padding-right: 15px;    
+				padding-bottom: 20px;
+    			margin-bottom: 20px;
+				.media-breakpoint-up(@md; {
+					display: none;
+				});
+			}
+		}
+	}
 	&heading{
-		&.is--modal-result{
-			margin-bottom: 15px;
-			.media-breakpoint-up(@md; {
-				margin-bottom: 20px;
-			});
+		&.is--modal{
+			&-result{
+				margin-bottom: 15px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 20px;
+				});
+			}			
+			&-payment{
+				margin-bottom: 10px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 30px;
+				});
+			}		
+			&-payment-lg{
+				margin-bottom: 17px;
+			}
 		}
 	}
 	&note{
@@ -97,21 +156,60 @@
 			});
 		}
 	}
-	&btn-close{
-		.btn-clearfix();
-	    position: absolute;
-	    z-index: 5; 
-		top: 11px;
-    	right: 3px;
-	   	color: @modal_btn_color;
-		width: @modal_btn_width;
-		height: @modal_btn_width;
-		padding: 13px;
-		svg{display: block;}
-	   	transition: @trs-site;  	 
-		&:hover{
-			color: @modal_btn_color_hover;
+	&table {
+		width: 100%;
+		td, th{
+			font-weight: 100;
+			font-size: 0.75em;
+			line-height: 1em;
+			padding: 10px 10px;
+			&.is--left{
+				text-align: left;
+			}
+			&.is--right{
+				text-align: right;
+			}
+			&:first-child{
+				padding-left: 0;
+			}
+			&:last-child{
+				padding-right: 0;
+			}
 		}
+		thead{
+			td, th{
+				color: @custom;
+				text-align: center;
+				padding: 3px 10px;
+				font-size: 0.625em;
+				line-height: 1em;
+			}
+		}
+		&.is--modal-payment-lg{
+			td, th{
+				font-size: 1em;
+				line-height: 1.33em;
+			}
+			th{
+				color: @custom;
+				font-size: 0.88em;
+				width: 50%;
+			}
+		}
+		.media-breakpoint-up(@md; {
+			td, th{
+				font-size: 0.88em;
+				line-height: 1em;
+				padding: 12px 10px;
+			}
+			thead{
+				td, th{
+					font-size: 0.88em;
+					line-height: 1em;
+					padding: 20px 10px;
+				}
+			}
+		});
 	}
 }
 .modal-backdrop {

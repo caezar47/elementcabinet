@@ -8,7 +8,7 @@
 		<div class="{{prefix}}control-wrap  {{mod}}">
 			<p class="{{prefix}}control-ruble  {{mod}}">₽</p>
 		{% endif %}
-		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}} {{value.ruble}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %} >
+		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}} {{value.ruble}}   {% if value.view == "date" %}datepicker-here{% endif %}" {{value.required}} placeholder="{{value.placeholder}}">
 		{% if value.ruble %}
 		</div>
 		{% endif %}

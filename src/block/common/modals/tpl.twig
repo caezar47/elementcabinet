@@ -5,6 +5,25 @@
 				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
 			</button>
 			<div class="{{prefix}}content  {{mod}}">
+				{% if ID == "modal-calc-payment" %}
+				<div class="{{prefix}}panel  {{mod}}">
+					<h3 class="{{prefix}}heading  {{heading2_mod}}  {{content_mod}}">{{heading2}}</h3>
+					<table class="{{prefix}}table  {{mod}}-lg">
+						<tr>
+							<th class="is--left">Средний ежемесячный платеж</th>
+							<td class="is--right">385 693,00&nbsp;₽</td>
+						</tr>
+						<tr>
+							<th class="is--left">Удорожание</th>
+							<td class="is--right">5,86%</td>
+						</tr>
+						<tr>
+							<th class="is--left">Итого</th>
+							<td class="is--right">17 634 948,00&nbsp;₽</td>
+						</tr>
+					</table>
+				</div>
+				{% endif %}
 				{% if heading %}
 				<h3 class="{{prefix}}heading  {{heading_mod}}  {{content_mod}}">{{heading}}</h3>
 				{% endif %}
@@ -13,6 +32,26 @@
 				{% endif %}
 				{% if preview %}
 				<picture class="{{prefix}}preview  {{content_mod}}"><img src="{{preview}}" class="img-responsive" alt=""></picture>
+				{% endif %}
+				{% if ID == "modal-calc-payment" %}
+				<table class="{{prefix}}table  {{mod}}">
+					<thead>
+						<tr>
+							<td class="is--left">Период</td>
+							<td>Вид платежа</td>
+							<td class="is--right">Сумма к оплате с НДС</td>
+						</tr>
+					</thead>
+					<tbody>						
+						{% for value in list %}	
+						<tr> 
+							<td class="is--left">{{value.count}}</td>
+							<td>{{value.payment}}</td>
+							<td class="is--right">{{value.cost}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
 				{% endif %}
 			</div> 
 		</div>
