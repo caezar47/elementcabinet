@@ -58,30 +58,38 @@
 						view: 			"deal_card", 
 						prefix:			prefix.tabs, 
 						mod:			"is--default",
+						active:			page_active,
 						list:[
 		                    {
 		                        link:page.deal_card,
-		                        status:"active",
 		                        name:'<span class="visible--md">Общие сведения</span><span class="hidden--md">Общее</span>',
 		                    },
 		                    {
 		                        link:page.deal_card_payment,
-		                        status:"",
 		                        name:"Платежи"
 		                    },
 		                    {
 		                        link:page.deal_card_docs,
-		                        status:"",
 		                        name:"Документы"
 		                    }
 		                ],
 					} %}
 					<div class="{{content_prefix}}wrap  {{content_mod}}">
-						{% include "../common/table/tpl.twig" with {
-						 	view: "deal_card", 
-						 	mod:"is--deal-card", 
-						 	list:list
-						} %}
+						{% if view_elem == "deal_card_main" %}
+							{% include "../common/table/tpl.twig" with {
+							 	view: "deal_card", 
+							 	mod:"is--deal-card", 
+							 	list:list
+							} %}
+						{% endif %}
+
+						{% if view_elem == "deal_card_docs" %}
+							{% include "../common/table/tpl.twig" with {
+							 	view: "deal_card_docs", 
+							 	mod:"is--deal-card-docs", 
+							 	list:list
+							} %}
+						{% endif %}
 					</div>
 				</div>
 				<div data-grid-manager>

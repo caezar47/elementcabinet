@@ -10,7 +10,7 @@
 {% if view == "deal_card" %}
 	<ul class="{{prefix}}nav  {{mod}}">
 		{% for value in list %}
-		<li class="{{prefix}}item  {{mod}} {{value.status}}">
+		<li class="{{prefix}}item  {{mod}} {% if value.link == active %}active{% endif %}">
 			<a class="{{prefix}}link  {{mod}}" href="{{value.link}}">{{value.name}}</a>
 		</li>
 		{% endfor %}

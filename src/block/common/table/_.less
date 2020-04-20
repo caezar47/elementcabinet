@@ -127,6 +127,72 @@
 			});	
 
 		}	
+		&-card-docs{
+			thead{
+				tr{
+					td, th{
+						font-size: 0.778em;
+					}
+
+				}
+			}
+			tr{	
+				td, th{
+					text-align: left;
+				}
+				th{
+					color: @custom;
+					font-size: 0.75em;
+					width: 44.5%;
+				}
+				td{
+					text-align: left;
+					font-size: 0.88em;
+				}
+				&:hover{
+					background-color: @table_bg_hover;
+					.is--download{
+						color: @success;
+					}
+				}
+			}
+			.is--download{
+				display: block;
+				width: 26px;
+				height: 24px;
+				color: @custom;
+				transition: @trs-site;
+
+			}
+			.media-breakpoint-down(@md; {
+				max-width: ~"calc(100% + 7px + 7px)";
+				width: ~"calc(100% + 7px + 7px)";
+				margin-left: -7px;
+				margin-right: -7px;
+				thead{display: none;}
+				tr{
+					th, td{
+						padding: 10px 7px;
+					}
+				}
+			});
+			.media-breakpoint-up(@md; {				
+				tr{	
+					th, td{
+						font-size: 0.88em;
+						padding-top: 27px;						
+						padding-bottom: 27px;						
+					}
+				}
+			});
+			.media-breakpoint-up(@xxl; {
+				max-width: ~"calc(100% + 45px + 15px)";
+				width: ~"calc(100% + 45px + 15px)";
+				margin-left: -45px;
+				margin-right: -15px;
+			});	
+
+		}	
 	}	
 	thead{ 
 		tr{

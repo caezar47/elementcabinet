@@ -12,6 +12,8 @@
         <main class="content-block__panel  is--bg-dark">
             {% include "../block/page/deal.twig" with {
                 view:"deal_card", 
+                view_elem:"deal_card_main", 
+                page_active: page.deal_card,
                 content_prefix:"content-block__", 
                 content_mod:"is--page-deal-card", 
                 heading_mod:"is--h2  fw--700  is--page-deal-card",  
