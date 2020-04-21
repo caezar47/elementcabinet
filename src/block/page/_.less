@@ -356,6 +356,22 @@
 	    			padding-right: 0px;
 				});
 			}
+			&-deal-card{
+				display: flex;
+    			justify-content: center;
+    			padding-left: 20px;
+    			padding-right: 20px;
+				padding-top: 45px;
+				& > * + *{
+					margin-left: -1px;
+				}
+				.media-breakpoint-up(@md; {
+					justify-content: flex-start;
+					padding-top: 60px;
+	    			padding-left: 0px;
+	    			padding-right: 0px;
+				});
+			}
 		}
 	}
 	&gallery{

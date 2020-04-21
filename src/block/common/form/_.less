@@ -1296,6 +1296,18 @@
 				//background-color: @check_disabled_bg;
 				border-color: @check_disabled_border_color;
 			}
+			&.is--table{
+				.media-breakpoint-down(@md; {
+					margin-right: 0;
+				});
+			}
+		}
+		&-name{
+			&.is--table{
+				.media-breakpoint-down(@md; {
+					display: none;
+				});
+			}
 		}
 	}
 	//filter

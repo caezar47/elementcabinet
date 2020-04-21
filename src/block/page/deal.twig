@@ -38,6 +38,7 @@
 		</div>
 	</section>
 {% endif %}
+
 {% if view == "deal_card" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -89,6 +90,24 @@
 							 	mod:"is--deal-card-docs", 
 							 	list:list
 							} %}
+							<div class="{{content_prefix}}link  {{content_mod}}">				
+								{% include "../common/button/btn.twig" with {
+									view:"btn",
+									prefix:"btn__", 
+									mod:"is--size-lg  is--success-white-f8", 
+									type:"button", 
+									name:"Скачать все" 
+								} %}			
+								{% include "../common/button/btn.twig" with {
+									view:"btn",
+									prefix:"btn__", 
+									mod:"is--size-lg  is--success", 
+									type:"button", 
+									data_attr:"data-download-docs  disabled", 
+									name:"Скачать выбранные" 
+								} %}
+							</div>
+
 						{% endif %}
 					</div>
 				</div>

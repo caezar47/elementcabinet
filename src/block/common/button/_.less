@@ -143,6 +143,11 @@
 					background-color: @success-a;
 					border-color: @success-a;
 				}
+				&[disabled]{
+					border-color: @custom;
+					color: @custom;
+					background-color: fadeout(@white, 100%);
+				}
 			}
 			&-white{
 				background-color: @white;
@@ -160,7 +165,8 @@
 				}
 			}
 			&-white-f8{
-				background-color: @white-f8;
+				//background-color: @white-f8;
+				background-color: fadeout(@white-f8, 100%);
 				border-color: @success;
 				color: @default;
 				&:hover{
@@ -177,6 +183,11 @@
 		}
 		//size
 		&.is--size{
+			&-lg{
+				.media-breakpoint-up(@lg; {
+					padding: 18px 30px;
+				});				
+			}
 			&-md{
 				font-size: 0.88em;
 				line-height: 1.15em;

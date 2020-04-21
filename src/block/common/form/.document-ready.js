@@ -2,6 +2,7 @@
 var form_submit = $("[data-form-submit]");
 var form_visible = $("[data-form-visible]");
 
+
 form_visible.on('click', function(e) {
 	e.preventDefault();
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');
@@ -245,3 +246,10 @@ allResetBtn.click(function(e){
 
 $('.form__step-link:not([disabled])').trigger('click');
 //Форма запрос лисинга - end's
+
+//Скачивание документа
+var download_btn = $("[data-download-docs]");
+var download_item = $(".form__checkbox-input");
+download_item.on('change', function(e) {
+    $(this).closest(".content-block__wrap").find(download_btn).removeAttr("disabled");
+});
