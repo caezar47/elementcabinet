@@ -36,9 +36,7 @@
 		"calc_form":"./calculation-form.html",
 		"deal":"./deal.html",
 		"deal_card":"./deal-card.html",
-		"deal_card":"#",
-		"deal_card_docs":"./deal-card-docs.html",
-		"deal_card_docs":"#"
+		"deal_card_docs":"./deal-card-docs.html"
 	},
 	"prefix":{
 		"content":"content-block__",
