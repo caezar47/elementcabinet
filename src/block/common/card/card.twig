@@ -1,3 +1,22 @@
+{% if view == "notice_list" %}
+	{% for value in list %}
+	<label class="{{prefix}}item  {{mod}}">
+		<input type="checkbox" class="{{prefix}}input  {{mod}}">
+		<div class="{{prefix}}wrap  {{mod}}  {{value.status}}">
+			<div class="{{prefix}}checkbox  {{mod}}"></div>
+			<div class="{{prefix}}icon  {{mod}}"></div>
+			<div>
+				<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+				<time class="{{prefix}}date  {{mod}}" datetime="{{vaue.date_iso}}">{{value.date}}</time>
+			</div>
+			<p class="{{prefix}}btn  {{mod}}">
+				{% include "../svg-sprite/svg.twig" with {icon:"arrow-next"} %}
+			</p>
+		</div> 
+	</label> 
+	{% endfor %}
+{% endif %}
+
 {% if view == "profile_card" %}
 	<div class="{{prefix}}item  {{mod}}">
 		<p class="{{prefix}}preview  {{mod}}">
@@ -26,6 +45,7 @@
 		</p>
 	</div> 
 {% endif %}
+
 {% if view == "manager_card" %}
 	<div class="{{prefix}}item  {{mod}}">
 		<p class="{{prefix}}label  {{mod}}">Ваш менеджер</p>
@@ -90,6 +110,7 @@
 	</div> 
 	{% endfor %}
 {% endif %}
+
 {% if view == "calc_list" %}
 	{% for value in list %}
 	<div class="{{prefix}}item  {{mod}}">
@@ -119,258 +140,6 @@
 	{% for value in list %}
 	<div class="{{prefix}}group  {{mod}}">
 		<p class="{{prefix}}item  {{mod}}"></p> 
-	</div>
-	{% endfor %}
-{% endif %}
-
-
-{# old #}
-{% if view == "menedzhment" %}
-	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
-		<div class="{{prefix}}preview  {{mod}}">
-			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</div>
-		<div class="{{prefix}}wrap  {{mod}}">
-			<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-			<p class="{{prefix}}heading  {{mod}}-post">{{value.post}}</p>
-			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-		</div> 
-	</div> 
-	{% endfor %}
-{% endif %}
-
-{% if view == "news" %}
-	{% for value in list %}		
-	<article class="{{prefix}}item  {{mod}}">
-		<div class="{{prefix}}wrap  {{mod}}">
-			<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
-			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-			<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
-		</div>	
-		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
-			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</a>
-	</article>
-	{% endfor %}
-{% endif %}
-
-{% if view == "news_sm" %}
-	{% for value in list %}		
-	<article class="{{prefix}}item  {{mod}}">
-		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
-		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
-	</article>
-	{% endfor %}
-{% endif %}
-
-{% if view == "news_card" %}
-	<article class="{{prefix}}item  {{mod}}">
-		{% if img != null %}
-		<picture class="{{prefix}}preview  {{mod}}">
-			<img src="{{img}}" alt="{{heading}}" class="img-responsive">
-		</picture>
-		{% endif %}
-		<h2 class="{{prefix}}heading  {{mod}}  fw--700  margin--narrow">{{heading}}</h2>
-		<time class="{{prefix}}date  {{mod}}" datetime="{{date_iso}}">{{date}}</time>
-		<div class="{{prefix}}note  {{mod}}  text__block">{{note}}</div>
-		<div class="link__group">
-			<a href="#" class="link__item  is--prev">Предыдущая новость</a>
-			<a href="#" class="link__item  is--next">Следующая новость</a>
-		</div>
-	</article>
-{% endif %}
-
-{% if view == "programm" %}
-	{% for value in list %}
-	<div>		
-		<a href="{{link}}" class="{{prefix}}item  {{mod}}">
-			<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p>
-			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-			<p class="{{prefix}}value  {{mod}}">
-				Аванс 
-				<span>{{value.value}}</span>
-			</p>			
-		</a>
-	</div>
-	{% endfor %}
-{% endif %}
-
-{% if view == "reviews" %}
-	{% for value in list %}		
-	<article class="{{prefix}}item  {{mod}}">
-		<div class="{{prefix}}wrap  {{mod}}">
-			<h4 class="{{prefix}}heading  {{mod}}" data-grid-heading>{{value.firm}}</h4>
-			<time class="{{prefix}}date  {{mod}}" data-grid-date datetime="{{value.date_iso}}">{{value.date}}</time>
-			<div class="{{prefix}}note  {{mod}}  text__block" data-grid-note>{{value.note}}</div>
-			<div class="{{prefix}}sign  {{mod}}" data-grid-sign>
-				<p>{{value.name}}</p>
-				{% if value.city %}<p>{{value.city}}</p>{% endif %}
-				{% if value.email %}<p>{{value.email}}</p>{% endif %}
-			</div>
-			{% if value.video %}
-				<p class="{{prefix}}video  {{mod}}" data-grid-video>
-					<a href="#">Смотреть видеоотзыв</a>
-				</p>
-			{% endif %}
-		</div> 
-	</article> 
-	{% endfor %}
-{% endif %}
-
-{% if view == "articles" %}
-	{% for value in list %}		
-	<article class="{{prefix}}item  {{mod}}">
-		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>	
-		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
-		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-	</article>
-	{% endfor %}
-{% endif %}
-
-{% if view == "catalog" %}
-	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
-		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}" data-grid-preview>
-			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</a>
-		<div class="{{prefix}}wrap  {{mod}}"  data-grid-wrap>
-			<h5 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h5>
-			<p class="{{prefix}}value  {{mod}}  is--type">{{value.type}}</p>
-			<p class="{{prefix}}value  {{mod}}">Цена: <span>от {{value.cost}} ₽</span></p>
-			<p class="{{prefix}}value  {{mod}}">Лизинг: <span>{{value.leasing}} ₽/мес.</span></p>
-			<p class="{{prefix}}value  {{mod}}">Срок: <span>{{value.time}}</span></p>
-		</div>	
-		<button type="button" class="{{prefix}}btn  {{mod}}"  data-grid-btn>Запрос на лизинг</button>
-	</div>
-	{% endfor %}
-{% endif %}
-
-{% if view == "catalog_new" %}
-	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}" data-text="Новинка!">
-		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
-			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</a>
-		<p class="{{prefix}}value  {{mod}}  is--sale" data-text="Аванс от&nbsp;" >{{value.sale}}</p>
-		<a href="{{value.link}}" class="{{prefix}}heading  {{mod}}">{{value.heading}}</a>
-	</div>
-	{% endfor %}
-{% endif %}
-
-{% if view == "catalog_promo" %}
-	{% for value in list %}	
-	<div>
-		<div class="{{prefix}}item  {{mod}}">
-			<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
-				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-				<div class="{{prefix}}wrap  {{mod}}">
-					<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
-					<p class="{{prefix}}value  {{mod}}  is--cost">От {{value.cost}} ₽ в месяц</p>
-					<p class="{{prefix}}value  {{mod}}  is--status">{{value.status}}</p>
-				</div>
-			</a>
-			<button type="button" class="{{prefix}}btn  {{mod}}">Запрос на лизинг</button>
-		</div>
-	</div>
-	{% endfor %}
-{% endif %}
-
-{% if view == "catalog_card" %}
-	<div class="{{prefix}}item  {{mod}}">
-		<div  class="{{prefix}}wrap  {{mod}}-desc" data-dropdown>
-			<p class="{{prefix}}heading  {{mod}}-sm">Тип: {{type}}</p>	
-			<h2 class="{{prefix}}heading  {{mod}}">{{heading}}</h2>
-			<p class="{{prefix}}heading  {{mod}}-desc">Дополнительные характеристики объекта:</p>	
-			<div class="{{prefix}}note  text__block  {{mod}}">
-				{{note}}
-				<blockquote>
-					*Информация не является публичной офертой, цена может отличаться от заявленной					
-				</blockquote>
-			</div>
-		</div>
-		<div class="{{prefix}}wrap  {{mod}}">
-			<button type="button" class="{{prefix}}value  {{mod}}  is--desc" data-dropdown-btn>
-				Дополнительные характеристики
-			</button>
-			<p class="{{prefix}}value  {{mod}}">
-				Цена <span>от {{cost}} ₽</span>
-			</p>
-			<p class="{{prefix}}value  {{mod}}">
-				Лизинговый платеж <span>{{leasing}} ₽/мес</span>
-			</p>
-			<p class="{{prefix}}value  {{mod}}">
-				Срок <span>до {{time}}</span>
-			</p>
-			<p class="{{prefix}}value  {{mod}}  is--btn">
-				<a href="#" class="btn__item  is--white  {{mod}}">Оставить заявку на лизинг</a>
-			</p>
-		</div>
-	</div>
-{% endif %}
-
-{% if view == "brand" %}
-	{% for value in list %}	
-	<picture class="{{prefix}}item  {{mod}}">
-		<img src="{{value.img}}" alt="" class="img-responsive">
-	</picture>
-	{% endfor %}
-{% endif %}
-
-{% if view == "partners" %}
-	{% for value in list %}	
-	<div>
-		<picture class="{{prefix}}item  {{mod}}">
-			<img src="{{value.img}}" alt="" class="img-responsive">
-		</picture>
-	</div>
-	{% endfor %}
-{% endif %}
-
-{% if view == "partners_card" %}
-	{% for value in list %}		
-	<a href="//{{value.link}}" target="_blank" rel="nofollow" class="{{prefix}}item  {{mod}}">
-		<div class="{{prefix}}wrap  {{mod}}">
-			<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p>
-			{% if value.img %}	
-			<p class="{{prefix}}preview  {{mod}}">
-				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-			</p>
-			{% endif %}
-		</div>	
-		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-		<div class="{{prefix}}value  {{mod}}">{{value.link}}</div>
-	</a>
-	{% endfor %}
-{% endif %}
-
-{% if view == "docs_card" %}
-	{% for value in list %}	
-	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
-		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-	</a>
-	{% endfor %}
-{% endif %}
-
-{% if view == "docs_download" %}
-	{% for value in list %}	
-	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
-		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>	
-		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-		<p class="{{prefix}}icon  {{mod}}">
-			{% include "../svg-sprite/svg.twig" with {icon:"download"} %}
-		</p>		
-	</a>
-	{% endfor %}
-{% endif %}
-
-{% if view == "finance" %}
-	{% for value in list %}	
-	<div>
-		<div class="{{prefix}}item  {{mod}}">
-			<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-			<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>
-		</div>
 	</div>
 	{% endfor %}
 {% endif %}

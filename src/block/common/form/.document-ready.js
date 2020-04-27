@@ -1,8 +1,20 @@
 //Все формы 
 var form_submit = $("[data-form-submit]");
+var notice_select = $("[data-notice-select]");
 var form_visible = $("[data-form-visible]");
 
 
+notice_select.on('click', function(e) {
+	var text_active = $(this).data('active-text');
+	var t = $(this).data('text');
+	console.log(text_active);
+	console.log(t);
+	$(document).find('.card__item').toggleClass('is--visible');
+	$(this).toggleClass('is--active');
+	$(this).text(function(i, text) {
+		return text === t ? text_active : t;
+	});
+});
 form_visible.on('click', function(e) {
 	e.preventDefault();
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');

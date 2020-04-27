@@ -1,0 +1,41 @@
+{% if view == "notice_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="page-header__panel  {{content_mod}}  row  is--gutter15  is--gap-xs">
+				<div class="cols">					
+					{% include "../common/breadcrumb/tpl.twig" with {
+						prefix:prefix.breadcrumb, 
+						mod:bread_mod, 
+						bread:bread
+					} %}
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+				</div>
+				<div class="cols  is--link  hidden--md">
+					<a href="#" data-notice-select class="link__item  {{content_mod}}"  data-active-text="Отметить, как прочитанные"  data-text="Выбрать">Выбрать</a>
+				</div>
+			</div>
+			<div>
+				{% include "../common/card/card.twig" with {
+				 	view: "notice_list", 
+				 	prefix: "card__",
+				 	mod:"is--notice-list", 
+				 	list:list
+				} %}
+			</div>
+			<div class="{{content_prefix}}link  {{content_mod}}">				
+				{% include "../common/button/btn.twig" with {
+					view:"link",
+					prefix:"btn__", 
+					mod:"is--page-notice  is--success-white-f8", 
+					link:"#", 
+					name:"Загрузить еще" 
+				} %}		
+			</div>
+		</div>
+	</section>
+{% endif %}
