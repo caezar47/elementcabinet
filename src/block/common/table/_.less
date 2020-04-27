@@ -194,6 +194,105 @@
 				margin-right: -15px;
 			});	
 
+		}
+		&-card-payment{
+			tbody{
+				tr{
+					&:hover{
+						th,td{
+							background-color: @white-e8;
+						}
+					}
+				}
+			}
+			.media-breakpoint-down(@md; {
+				max-width: ~"calc(100% + 15px + 15px)";
+				width: ~"calc(100% + 15px + 15px)";
+				margin-left: -15px;
+				margin-right: -15px;
+				thead{
+					tr{
+						td,th{
+							font-size: 0.75em;
+							padding-top: 20px;
+							padding-bottom: 20px;
+						}
+					}
+				}
+				tbody{
+					tr{
+						td,th{
+							font-size: 0.75em;
+							line-height: 1.333em;
+							padding-top: 12px;
+							padding-bottom: 12px;
+							&:nth-child(1){
+								width: 33%;
+							}
+						}
+					}
+				}
+			});
+			.media-breakpoint-up(@md; {
+			thead{
+				tr{
+					td,th{
+						&:last-child{
+							padding-right: 45px;
+						}
+					}
+				}
+			}
+			tbody{
+				tr{
+					td,th{
+						font-size: 0.889em;
+					}
+				}
+			}
+			});
+			.media-breakpoint-up(@xxl; {
+				max-width: ~"calc(100% + 45px + 15px)";
+				width: ~"calc(100% + 45px + 15px)";
+				margin-right: -15px;
+				thead{
+					tr{
+						td,th{
+							&:last-child{
+								padding-right: 15px;
+							}
+						}
+					}
+				}
+			});	
+		}
+		&-card-schedule{
+			.media-breakpoint-up(@md; {
+			tbody{
+				tr{
+					td,th{
+						font-size: 0.889em;
+					}
+				}
+			}
+			});
+		}	
+		&-card-history{
+			.media-breakpoint-up(@md; {
+			tbody{
+				tr{
+					td,th{
+						font-size: 0.889em;
+						line-height: 1.250em;
+						padding-top: 25.5px;
+						padding-bottom: 25.5px;
+						&:last-child{
+							width: 10%;
+						}
+					}
+				}
+			}
+			});
 		}	
 	}	
 	thead{ 
@@ -241,6 +340,9 @@
 			/*&[colspan]{
 				background-color: @table_bg_colspan;
 			}*/
+			&.is--right{
+				text-align: right;
+			}
 			.table-responsive &{
 				.media-breakpoint-down(@md; {
 					white-space: nowrap;					

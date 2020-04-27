@@ -90,7 +90,7 @@
 							 	mod:"is--deal-card-docs", 
 							 	list:list
 							} %}
-							<div class="{{content_prefix}}link  {{content_mod}}">				
+							<div class="{{content_prefix}}link  {{content_mod}}">		
 								{% include "../common/button/btn.twig" with {
 									view:"btn",
 									prefix:"btn__", 
@@ -107,6 +107,23 @@
 									name:"Скачать выбранные" 
 								} %}
 							</div>
+
+						{% endif %}
+
+						{% if view_elem == "deal_card_payment" %}
+							{% include "../common/progress/tpl.twig" with {
+							 	prefix:"progress__",
+							 	heading: 'Баланс&nbsp;&nbsp; <small>от 28.02.2020</small>',
+							 	all: '2002684,00',
+							 	success: '1369928,36',
+							 	danger: '109361,00',
+							 	modulo: '632755,64'
+							} %}
+							{% include "../common/table/tpl.twig" with {
+							 	view: "deal_card_payment", 
+							 	mod:"is--deal-card-payment", 
+							 	list:list
+							} %}
 
 						{% endif %}
 					</div>
@@ -127,8 +144,47 @@
 					 	tech_phone: "8 800 937 27 80",
 					 	tech_phone_tel: "88009372780",
 					} %}
+				</div>
+				{% if view_elem == "deal_card_payment" %}
+				<div data-grid-full>
+					<div class="{{content_prefix}}link  {{content_mod}}-pay  hidden--md">
+						{% include "../common/button/btn.twig" with {
+							view:"btn",
+							prefix:"btn__", 
+							mod:"is--size-md  is--success-white-f8", 
+							type:"button", 
+							name:"Скачать историю платежей" 
+						} %}
+					</div>
+					<div class="dropdown__card  {{content_mod}}  visible--md">
+						<a data-toggle="collapse" href="#deal-payment-schedule" aria-expanded="true" class="dropdown__toggle  {{content_mod}}">График платежей</a>
+						
+						<div id="deal-payment-schedule" class="dropdown__collapse  collapse  in  {{content_mod}}">
+							<div class="dropdown__wrap  {{content_mod}}">
+								{% include "../common/table/tpl.twig" with {
+								 	view: "deal_card_schedule", 
+								 	mod:"is--deal-card-schedule", 
+								 	list:schedule
+								} %}
+							</div>
+						</div>
+					</div>
+					<div class="dropdown__card  {{content_mod}}  visible--md">
+						<a data-toggle="collapse" href="#deal-payment-history" aria-expanded="true" class="dropdown__toggle  {{content_mod}}">История платежей</a>
+						
+						<div id="deal-payment-history" class="dropdown__collapse  collapse  in  {{content_mod}}">
+							<div class="dropdown__wrap  {{content_mod}}">
+								{% include "../common/table/tpl.twig" with {
+								 	view: "deal_card_history", 
+								 	mod:"is--deal-card-history", 
+								 	list:history
+								} %}
+							</div>
+						</div>
+					</div>
 
 				</div>
+				{% endif %}
 			</div>
 
 		</div>

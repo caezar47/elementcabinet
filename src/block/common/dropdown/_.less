@@ -1,5 +1,22 @@
 .dropdown__{
 	&card{
+		&.is--page{
+			&-deal-card{
+				.media-breakpoint-up(@md; {
+					//margin-bottom: 78px;
+					margin-bottom: 30px;
+					.dropdown__wrap{
+						padding-bottom: 48px;
+					}
+					&:last-child{
+						margin-bottom: 0;
+						.dropdown__wrap{
+							padding-bottom: 0px;
+						}
+					}
+				});
+			}
+		}
 	}
 	&toggle{
 		display: inline-flex;
@@ -16,10 +33,44 @@
 			color: @primary;
 			.icon-top(@c: '004d99'; @w: 10px; @h: auto);
 		}
+		.media-breakpoint-up(@md; {
+			font-weight: 700;
+			font-size: 1.33em;
+			line-height: 1em;
+			padding-right: 53px;
+			.icon-bottom(@c: '333'; @w: 16px; @h: auto);
+			&, &:hover{
+				color: @default;
+			}
+			&[aria-expanded="true"]{
+				color: @default;
+				.icon-top(@c: '333'; @w: 16px; @h: auto);
+			}
+		});
 		span{
 			text-overflow: ellipsis;
 		    white-space: nowrap;
 		    overflow: hidden;
+		}
+		&.is--page{
+			&-deal-card{
+				.media-breakpoint-up(@md; {
+					margin-bottom: 40px;
+				});
+			}
+		}
+	}
+	&collapse{		
+		&.is--page{
+			&-deal-card{
+				.media-breakpoint-up(@xxl; {
+					margin-left: -45px;
+					margin-right: -45px;
+					padding-left: 45px;
+					padding-right: 45px;
+				});
+
+			}
 		}
 	}
 	&nav{

@@ -222,11 +222,18 @@
 				grid-gap: 0px;
 				.media-breakpoint-up(@md; {
 					grid-gap: 32px;
-					grid-template-columns: repeat(2, 1fr);		
+					grid-template-columns: repeat(1, 1fr);		
 					& > [data-grid-manager]{
+						justify-self: flex-start;
 					}
 					& > [data-grid-info]{
 					}
+				});
+				.media-breakpoint-down(@lg; {
+					& > [data-grid-manager]{
+						order: 1;
+					}
+					
 				});
 				.media-breakpoint-up(@lg; {
 					grid-template-columns: 8fr 3.49fr;
@@ -236,6 +243,10 @@
 						max-width: 340px;
 						justify-self: flex-end;
 						width: 100%;
+					}
+					& > [data-grid-full]{
+						margin-top: 55px;
+						grid-column: span 2;
 					}
 				});
 			}
@@ -371,6 +382,14 @@
 	    			padding-left: 0px;
 	    			padding-right: 0px;
 				});
+			}
+			&-deal-card-pay{
+				display: flex;
+				padding: 30px;
+    			justify-content: center;
+    			background-color: @white;
+    			margin-left: -15px;
+    			margin-right: -15px;
 			}
 		}
 	}

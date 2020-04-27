@@ -69,6 +69,80 @@
 	</table>
 {% endif %}
 
+{% if view == "deal_card_payment" %}
+	<table class="table  {{mod}}">
+		<thead>
+			<tr>
+				<th>Платеж</th>
+				<th>Сумма</th>
+				<th>Оплатить до</th>
+			</tr>
+		</thead>
+		<tbody> 
+			{% for value in list %}	
+			<tr> 
+				<td>{{value.name}}</td> 
+				<td>{{value.cost}}</td> 
+				<td>{{value.date}}</td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+
+{% if view == "deal_card_schedule" %}
+	<table class="table  {{mod}}">
+		<thead>
+			<tr>
+				<th>Дата</th>
+				<th>Сумма</th>
+				<th>НДС</th>
+				<th class="is--right">Назначение</th>
+			</tr>
+		</thead>
+		<tbody> 
+			{% for value in list %}	
+			<tr> 
+				<td>{{value.date}}</td> 
+				<td>{{value.cost}}</td> 
+				<td>{{value.nds}}</td> 
+				<td class="is--right">{{value.name}}</td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+{% if view == "deal_card_history" %}
+	<table class="table  {{mod}}">
+		<thead>
+			<tr>
+				<th>Дата факт</th>
+				<th>Дата факт</th>
+				<th>Сумма</th>
+				<th>Опл. сумма</th>
+				<th>Пени</th>
+				<th>Опл. пени</th>
+				<th>Способ оплаты</th>
+				<th class="is--right">Назначение</th>
+			</tr>
+		</thead>
+		<tbody> 
+			{% for value in list %}	
+			<tr> 
+				<td>{{value.cel1}}</td> 
+				<td>{{value.cel2}}</td> 
+				<td>{{value.cel3}}</td> 
+				<td>{{value.cel4}}</td> 
+				<td>{{value.cel5}}</td> 
+				<td>{{value.cel6}}</td> 
+				<td>{{value.cel7}}</td> 
+				<td class="is--right">{{value.cel8}}</td> 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+
 {% if view == "calc_form" %}
 	<table class="form__table  {{mod}}">
 		<caption>{{caption}}</caption>

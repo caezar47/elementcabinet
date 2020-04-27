@@ -126,10 +126,10 @@
 				<li class="tabs__item  is--default ">
 			<a class="tabs__link  is--default" href="./deal-card.html"><span class="visible--md">Общие сведения</span><span class="hidden--md">Общее</span></a>
 		</li>
-				<li class="tabs__item  is--default ">
+				<li class="tabs__item  is--default active">
 			<a class="tabs__link  is--default" href="./deal-card-payment.html">Платежи</a>
 		</li>
-				<li class="tabs__item  is--default active">
+				<li class="tabs__item  is--default ">
 			<a class="tabs__link  is--default" href="./deal-card-docs.html">Документы</a>
 		</li>
 			</ul>
@@ -140,173 +140,50 @@
 
 					<div class="content-block__wrap  is--page-deal-card">
 						
-													
+						
+													<div class="progress__panel">
+	<p class="progress__heading">Баланс&nbsp;&nbsp; <small>от 28.02.2020</small></p>
+	<div class="progress__bar">
+		<div class="progress__elem  is--success" style="width: calc( (( 1 * 1369928,36 ) / 2002684,00) * 100% ) ">1369928,36 ₽</div>
+		<div class="progress__elem  is--danger" style="width: calc( (( 1 * 109361,00 ) / 2002684,00) * 100% ) "></div>
+		<div class="progress__elem  is--modulo" data-container=".progress__panel"  data-html="true" data-toggle="tooltip" data-placement="top" title='Осталось внести 25 платежей <p class="hidden--md">632755,64 ₽</p>'>632755,64 ₽</div>
+	</div>
+	<p class="progress__cost">Общая сумма: 2 002 684,00 ₽</p>
+</div>							
 
-	<table class="table  is--deal-card-docs">
+
+	<table class="table  is--deal-card-payment">
 		<thead>
 			<tr>
-				<th>Вид</th>
-				<th>Тип&nbsp;документа</th>
-				<th>Дата&nbsp;загрузки</th>
-				<th></th>
+				<th>Платеж</th>
+				<th>Сумма</th>
+				<th>Оплатить до</th>
 			</tr>
 		</thead>
 		<tbody> 
 				
 			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
+				<td>Текущий лизинговый платеж</td> 
+				<td>109 361,00 ₽</td> 
+				<td>16.03.2020</td> 
 			</tr>
 				
 			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
+				<td>Просроченные платежи</td> 
+				<td>-109 361,00 ₽</td> 
+				<td>16.03.2020</td> 
 			</tr>
 				
 			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">Страхование</span>						
-					</label>
-				</td> 
-				<td>Полис ОСАГО</td> 
-				<td>27.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">Страхование</span>						
-					</label>
-				</td> 
-				<td>Полис ОСАГО</td> 
-				<td>27.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">ПТС</span>						
-					</label>
-				</td> 
-				<td>ПТС</td> 
-				<td>18.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
-			</tr>
-				
-			<tr> 
-				<td>
-					<label class="form__checkbox  is--table">
-						<input type="checkbox" class="form__checkbox-input">
-						<span class="form__checkbox-icon  is--table"></span>
-						<span class="form__checkbox-name  is--table">Страхование</span>						
-					</label>
-				</td> 
-				<td>Полис ОСАГО</td> 
-				<td>27.03.2019</td> 
-				<td><a href="#" class="is--download"><svg class="icon-svg icon-download" role="img">
-	<use xlink:href="./img/svg/sprite.svg#download"></use>
-</svg></a></td> 
+				<td>Пени по платежам</td> 
+				<td>0,00 ₽</td> 
+				<td>-</td> 
 			</tr>
 					</tbody>
 	</table>
 
 
 
-							<div class="content-block__link  is--page-deal-card">		
-								
-<button type="button"     class="btn__item  is--size-lg  is--success-white-f8  ">
-	<span>Скачать все</span>
-	</button>
-
-			
-								
-<button type="button"    data-download-docs  disabled class="btn__item  is--size-lg  is--success  ">
-	<span>Скачать выбранные</span>
-	</button>
-
-							</div>
-
-						
 											</div>
 				</div>
 				<div data-grid-manager>
@@ -361,6 +238,157 @@
 
 
 
+
+				</div>
+								<div data-grid-full>
+					<div class="content-block__link  is--page-deal-card-pay  hidden--md">
+						
+<button type="button"     class="btn__item  is--size-md  is--success-white-f8  ">
+	<span>Скачать историю платежей</span>
+	</button>
+
+					</div>
+					<div class="dropdown__card  is--page-deal-card  visible--md">
+						<a data-toggle="collapse" href="#deal-payment-schedule" aria-expanded="true" class="dropdown__toggle  is--page-deal-card">График платежей</a>
+						
+						<div id="deal-payment-schedule" class="dropdown__collapse  collapse  in  is--page-deal-card">
+							<div class="dropdown__wrap  is--page-deal-card">
+								
+
+
+
+	<table class="table  is--deal-card-schedule">
+		<thead>
+			<tr>
+				<th>Дата</th>
+				<th>Сумма</th>
+				<th>НДС</th>
+				<th class="is--right">Назначение</th>
+			</tr>
+		</thead>
+		<tbody> 
+				
+			<tr> 
+				<td>01.11.2019</td> 
+				<td>10 937,00 ₽</td> 
+				<td>1 822,00 ₽</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+				
+			<tr> 
+				<td>01.11.2019</td> 
+				<td>10 937,00 ₽</td> 
+				<td>1 822,00 ₽</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+				
+			<tr> 
+				<td>01.11.2019</td> 
+				<td>10 937,00 ₽</td> 
+				<td>1 822,00 ₽</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+					</tbody>
+	</table>
+
+							</div>
+						</div>
+					</div>
+					<div class="dropdown__card  is--page-deal-card  visible--md">
+						<a data-toggle="collapse" href="#deal-payment-history" aria-expanded="true" class="dropdown__toggle  is--page-deal-card">История платежей</a>
+						
+						<div id="deal-payment-history" class="dropdown__collapse  collapse  in  is--page-deal-card">
+							<div class="dropdown__wrap  is--page-deal-card">
+								
+
+
+
+	<table class="table  is--deal-card-history">
+		<thead>
+			<tr>
+				<th>Дата факт</th>
+				<th>Дата факт</th>
+				<th>Сумма</th>
+				<th>Опл. сумма</th>
+				<th>Пени</th>
+				<th>Опл. пени</th>
+				<th>Способ оплаты</th>
+				<th class="is--right">Назначение</th>
+			</tr>
+		</thead>
+		<tbody> 
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">КАСКО</td> 
+			</tr>
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">КАСКО</td> 
+			</tr>
+				
+			<tr> 
+				<td>17.02.2020</td> 
+				<td>16.01.2020</td> 
+				<td>109 361,00</td> 
+				<td>1 557,00</td> 
+				<td>0,00</td> 
+				<td>0,00</td> 
+				<td>Расчетный счет</td> 
+				<td class="is--right">Лизинговый платеж</td> 
+			</tr>
+					</tbody>
+	</table>
+
+							</div>
+						</div>
+					</div>
 
 				</div>
 							</div>
