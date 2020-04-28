@@ -8,6 +8,7 @@
 	z-index: @tt_zindex;
 	display: block;
 	font-size: @tt_fs;
+	opacity: 0;
 	// Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
 	// So reset our font and text properties to avoid inheriting weird values.
 	//.reset-text();
@@ -15,15 +16,25 @@
 
 	//.opacity(0);
 
-	&.in     { .opacity(@tooltip-opacity); }
+	&.in     {
+		opacity: @tt_opacity; 
+	}
 	&.top    {
 		margin-top: -3px;
 		padding-bottom: @tt_arrow_size;
 	}
+	&.bottom { 
+		margin-top:   3px; 
+		padding-top: @tt_arrow_size;
+	}
 	&.right  { margin-left:  3px; padding: 0 @tooltip-arrow-width; }
-	&.bottom { margin-top:   3px; padding: @tooltip-arrow-width 0; }
 	&.left   { margin-left: -3px; padding: 0 @tooltip-arrow-width; }
-
+	//custom
+	.navbar__icon &{
+		min-width: 250px;
+		width: 250px;
+		padding-right: 10px;		
+	}
 }
 
 // Wrapper for the tooltip content
@@ -36,6 +47,13 @@
 	font-weight: 100;
 	.tooltip.top &{
 		border-radius: @tt_rad @tt_rad @tt_rad 0;
+	}
+	.tooltip.bottom &{
+		border-radius: 0 @tt_rad @tt_rad @tt_rad;
+		.navbar__icon &{
+			transform: translateX(-50%);
+			border-radius: @tt_rad 0 @tt_rad @tt_rad;
+		}
 	}
 }
 
@@ -50,13 +68,22 @@
 // Note: Deprecated .top-left, .top-right, .bottom-left, and .bottom-right as of v3.3.1
 .tooltip {
   &.top .tooltip-arrow {
-  	//display: none;
 	bottom: 0;
 	left: 50%;
-	//margin-left: -@tooltip-arrow-width;
 	border-width: @tt_arrow_size 20px 0 0;
 	border-top-color: @tt_bg;
   }
+  &.bottom .tooltip-arrow {
+	top: 0;
+	left: 50%;
+	border-width: 0 20px @tt_arrow_size 0;
+	border-bottom-color: @tt_bg;
+	.navbar__icon &{
+		transform: translateX(500%);
+		border-width: 0 0 @tt_arrow_size 20px;
+	}
+  }
+  //old
   &.top-left .tooltip-arrow {
 	bottom: 0;
 	right: @tooltip-arrow-width;
@@ -84,13 +111,6 @@
 	margin-top: -@tooltip-arrow-width;
 	border-width: @tooltip-arrow-width 0 @tooltip-arrow-width @tooltip-arrow-width;
 	border-left-color: @tooltip-arrow-color;
-  }
-  &.bottom .tooltip-arrow {
-	top: 0;
-	left: 50%;
-	margin-left: -@tooltip-arrow-width;
-	border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
-	border-bottom-color: @tooltip-arrow-color;
   }
   &.bottom-left .tooltip-arrow {
 	top: 0;

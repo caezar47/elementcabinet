@@ -3,7 +3,6 @@ var form_submit = $("[data-form-submit]");
 var notice_select = $("[data-notice-select]");
 var form_visible = $("[data-form-visible]");
 
-
 notice_select.on('click', function(e) {
 	var text_active = $(this).data('active-text');
 	var t = $(this).data('text');
@@ -19,29 +18,6 @@ form_visible.on('click', function(e) {
 	e.preventDefault();
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');
 });
-/*/рубль
-function addRub (val) {
-	return val + " ₽";
-}
-function removeRub (val) {
-	val = val.replace(" ₽", "");
-    val = val.replace("₽", "");
-    val = val.replace(" ", "");
-    return val;
-}
-$("input[data-rub]").on("input", function () {
-	var $this = $(this);
-    var val = $this.prop("value");
-    var newVal = removeRub(val);
-    newVal = addRub(newVal);
-    $this.prop("value", newVal); 
-});*/
-
-
-//сброс функции кнопки submit
-/*$('form button[type="submit"]').on('click', function(e) {
-	e.preventDefault();
-});*/
 
 form_submit.on('click', function(e) {
 	e.preventDefault();
@@ -79,29 +55,6 @@ var select_default = $("[data-select-default]");
 select_default.select2({
 	minimumResultsForSearch: -1,
 });
-
-var select_primary = $("[data-select-primary]");
-select_primary.select2({
-	minimumResultsForSearch: -1,
-	containerCssClass: "is--primary",
-	dropdownCssClass: "is--primary"
-});
-
-var select_primary_l = $("[data-select-primary-l]");
-select_primary_l.select2({
-	minimumResultsForSearch: -1,
-	containerCssClass: "is--primary-light",
-	dropdownCssClass: "is--primary-light"
-});
-
-var select_inline = $("[data-select-inline]");
-select_inline.select2({
-	minimumResultsForSearch: -1,
-	containerCssClass: "is--inline",
-	dropdownCssClass: "is--inline"
-});
-// подключение плагина select2 - end's
-
 
 // маска для поля ввода телефона
 var phone = $(".form__control[type='tel']");
@@ -243,6 +196,7 @@ allResultBtn.click(function(e){
 	}
 	
 });
+/*
 allResetBtn.click(function(e){
 	e.preventDefault();
 	var $item = $(this);
@@ -254,7 +208,7 @@ allResetBtn.click(function(e){
 	$item.closest('.form__panel').find('.form__bg').removeClass('is--result');
 	$item.closest('.form__panel').find('.form__step-link').removeClass('is--active').attr({'disabled':''});
 	$item.closest('.form__panel').find('.form__step-item').eq(0).children("a").addClass('is--active').removeAttr('disabled');
-});
+});*/
 
 $('.form__step-link:not([disabled])').trigger('click');
 //Форма запрос лисинга - end's
