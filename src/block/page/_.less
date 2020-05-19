@@ -216,6 +216,9 @@
 				});
 				.media-breakpoint-up(@lg; {
 					grid-gap: 105px 23px;
+					& > [data-grid-btn]{
+						display: none;
+					}
 				});
 			}
 			&-deal-card{
@@ -231,9 +234,8 @@
 				});
 				.media-breakpoint-down(@lg; {
 					& > [data-grid-manager]{
-						order: 1;
-					}
-					
+						display: none;
+					}					
 				});
 				.media-breakpoint-up(@lg; {
 					grid-template-columns: 8fr 3.49fr;

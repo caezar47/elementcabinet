@@ -137,6 +137,28 @@
     				font-size: 1.33em;
     			});
 			}
+
+			&-call{
+				&{
+					margin-bottom: 25px;
+					.media-breakpoint-up(@lg; {
+						border-bottom: 1px solid @white-e9;
+						padding-bottom: 10px;					
+					});
+				}
+				&-result{
+					margin-bottom: 15px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 10px;
+					});
+				}
+				&-result-note{
+					max-width: 450px;
+					font-size: .88em;
+    				line-height: 1.55em;
+    				margin-bottom: 20px;
+				}
+			}
 		}
 	}
 }

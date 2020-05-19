@@ -112,6 +112,7 @@
 		</tbody>
 	</table>
 {% endif %}
+
 {% if view == "deal_card_history" %}
 	<table class="table  {{mod}}">
 		<thead>
@@ -166,7 +167,8 @@
 					</label>
 				</td> 
 				<td>
-					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__icon is--sm">!</a>
+					<a href="#" data-toggle="modal" data-target="#modal-calc-payment" class="question__info">
+				{% include "../svg-sprite/svg.twig" with {icon:"icon-info"} %}</a>
 				</td> 
 				<td class="is--right-xs">{{value.payment}}&nbsp;₽</td> 
 				<td class="is--hidden">{{value.rise}}</td> 

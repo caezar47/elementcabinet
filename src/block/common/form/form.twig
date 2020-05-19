@@ -689,7 +689,8 @@
 		} %}
 		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 			{
-				"type":"date", 
+				"view":"date", 
+				"type":"text", 
 				"required":"", 
 				"label":"Дата регистрации ИП", 
 				"placeholder":"Дата регистрации ИП",
@@ -713,6 +714,23 @@
 				"group":"is--inline"
 			}
 		]} %}
+
+		{% include "elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			required:"",
+			label:"Правовая форма", 
+			color:color, 
+			attr:"data-select-default",
+			group:"is--inline", 
+			list: [
+				{"name": "Правовая форма", "status":"disabled selected"},
+				{"name": "Физ. лицо"},
+				{"name": "Юр. лицо"},
+				{"name": "ИП"}
+			]
+		} %}
 		<div data-grid-submit>
 			{% include "../button/btn.twig" with {
 				view:"btn",
@@ -727,21 +745,8 @@
 {% endif %}
 
 
-
-
-
-
-
-
-
-
-{# old #}
-
-{% if view=="leasing_base" %}
-	{% if open=="true" %}
-		<button type="button" data-form-visible class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
-	{% endif %}
-	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
+{% if view=="call" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}  is--sm"  {{form_data}}>
 		<div class="{{prefix}}wrap  {{mod}}  {{group}}">
 			{% include "../../common/page-header/tpl.twig" with {
 				heading_view:heading_view, 
@@ -749,41 +754,36 @@
 				mod:heading_mod, 
 				group:heading_group, 
 				level:heading_level, 
-				heading:heading} %}
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_sm_mod, 
-				group:heading_sm_group, 
-				level:heading_sm_level, 
-				heading:heading_sm} %}
+				heading:heading} %}			
 			<div class="{{prefix}}row  grid__row  {{mod}}">				
 				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-					{"type":"text", "id":"fio", "form_id":ID, "required": "required", "name":"fio", "placeholder":"Имя"},
-					{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"}
+					{
+						"type":"text", 
+						"id":"fio", 
+						"form_id":ID,
+						"required": "required", 
+						"name":"ФИО", 
+						"placeholder":"ФИО"
+					},
+					{
+						"type":"tel", 
+						"id":"tel",
+						"form_id":ID, 
+						"required": "required", 
+						"name":"Телефон", 
+						"placeholder":"Ваш телефон"
+					},
+					{
+						"view": "time",
+						"type":"text", 
+						"id":"time",
+						"form_id":ID, 
+						"required": "required", 
+						"name":"Время звонка", 
+						"placeholder":"Время звонка"
+					}
 				]} %}
-				{% include "elem-tpl.twig" with {
-					view: "select", 
-					prefix:prefix, 
-					mod:mod, 
-					form_id:ID,
-					id:"city", 
-					required: "required",
-					name:"Город", 
-					color:color, 
-					attr:"data-select-primary-l", 
-					list: [
-						{"name": "Город", "status":"disabled selected"},
-						{"name": "Абакан"},
-						{"name": "Архангельск"},
-						{"name": "Астрахань"},
-						{"name": "Барнаул"},
-						{"name": "Белгород"},
-						{"name": "Благовещенск"},
-						{"name": "Брянск"}
-					]
-				} %}
-				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить</button>	
 			</div>
 		</div>
 		<div class="{{prefix}}result  {{mod}}  {{group}}">
@@ -802,403 +802,6 @@
 				level:heading_r_sm_level, 
 				heading:heading_r_sm} 
 			%}
-			<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-success.svg" alt=""></div>
-		</div>
-	</form>
-{% endif %}
-
-
-{% if view=="leasing" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}">
-		<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train.svg" alt=""></div>
-		<div class="{{prefix}}container  container">
-			<div class="{{prefix}}wrap  {{mod}}">
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_mod, 
-					group:heading_group, 
-					level:heading_level, 
-					heading:heading} %}
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_sm_mod, 
-					group:heading_sm_group, 
-					level:heading_sm_level, 
-					heading:heading_sm} %}
-				<div class="{{prefix}}row  grid__row  {{mod}}">				
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"text", "id":"fio", "form_id":ID, "required": "required", "name":"fio", "placeholder":"Имя"}
-					]} %}	
-					{% include "elem-tpl.twig" with {
-						view: "select", 
-						prefix:prefix, 
-						mod:mod, 
-						color:color, 
-						form_id:ID, 
-						required: "required",
-						id:"city", 
-						name:"Город", 
-						attr:"data-select-primary", 
-						placeholder:"Город", 
-						list: [
-							{"name": "Город", "status":"disabled selected"},
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
-						]
-					} %}	
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"},
-						{"type":"email", "id":"email", "form_id":ID, "required": "required", "name":"Email", "placeholder":"E-mail"}
-					]} %}
-					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
-				</div>
-			</div>
-			<div class="{{prefix}}result  {{mod}}">
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_r_mod, 
-					group:heading_r_group, 
-					level:heading_r_level, 
-					heading:heading_r} %}
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_r_sm_mod, 
-					group:heading_r_sm_group, 
-					level:heading_r_sm_level, 
-					heading:heading_r_sm} %}
-			</div>
-		</div>	
-	</form>
-{% endif %}
-
-{% if view=="leasing_order" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}"  {{form_data}}>
-		<div class="{{prefix}}wrap  {{mod}}  {{group}}">
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_mod, 
-				group:heading_group, 
-				level:heading_level, 
-				heading:heading} %}
-			<ol class="{{prefix}}step  {{mod}}">
-				<li class="{{prefix}}step-item  {{mod}}">
-					<a href="#{{ID}}-step1" class="{{prefix}}step-link  {{mod}}  is--active">Основная информация</a> 	
-				</li>
-				<li class="{{prefix}}step-item  {{mod}}">
-					<a href="#{{ID}}-step2" disabled class="{{prefix}}step-link  {{mod}}  {{active_two}}">Данные компании</a> 	
-				</li>
-				<li class="{{prefix}}step-item  {{mod}}">
-					<a href="#{{ID}}-step3" disabled class="{{prefix}}step-link  {{mod}}  {{active_three}}">Ваши контакты</a> 	
-				</li>
-			</ol>
-			<div class="{{prefix}}step-pane  {{mod}}  {{active_one}}" id="{{ID}}-step1">			
-				<div class="{{prefix}}row  grid__row  {{mod}}">				
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{
-							"type":"text", 
-							"id":"item", 
-							"form_id":ID,
-							"required": "required",
-							"name":"Объект лизинга", 
-							"placeholder":"Объект лизинга"
-						},
-					]} %}
-					{% include "elem-tpl.twig" with {
-						view: "select", 
-						prefix:prefix, 
-						mod:mod, 
-						form_id:ID,
-						id:"time", 
-						name:"Срок лизинга", 
-						color:color, 
-						required: "required",
-						attr:"data-select-primary-l", 
-						list: [
-							{"name": "Срок лизинга", "status":"disabled selected"},
-							{"name": "36 месяцев"},
-							{"name": "24 месяца"},
-							{"name": "12 месяцев"}
-						]
-					} %}	
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{
-							"type":"number", 
-							"id":"payment", 
-							"form_id":ID, 
-							"required": "required",
-							"name":"Размер аванса в рублях", 
-							"placeholder":"Размер аванса в рублях"
-						}
-					]} %}
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
-				</div>
-			</div>
-			<div class="{{prefix}}step-pane  {{mod}}  {{active_two}}" id="{{ID}}-step2">			
-				<div class="{{prefix}}row  grid__row  {{mod}}">				
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{
-							"type":"text", 
-							"id":"fio", 
-							"form_id":ID,
-							"required": "required", 
-							"name":"ФИО", 
-							"placeholder":"ФИО"
-						},
-						{
-							"type":"text", 
-							"id":"company", 
-							"form_id":ID, 
-							"required": "required", 
-							"name":"Название компании", 
-							"placeholder":"Название компании"
-						}
-					]} %} 
-					{% include "elem-tpl.twig" with {
-						view: "select", 
-						prefix:prefix, 
-						mod:mod, 
-						form_id:ID,
-						id:"legal", 
-						name:"", 
-						color:color, 
-						required: "required", 
-						attr:"data-select-primary-l",
-						list: [
-							{"name": "Правовая форма", "status":"disabled selected"},
-							{"name": "Юридическое лицо"},
-							{"name": "ИП"},
-							{"name": "Физическое лицо"}
-						]
-					} %}
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
-				</div>
-			</div>
-			<div class="{{prefix}}step-pane  {{mod}}  {{active_three}}" id="{{ID}}-step3">		
-				<div class="{{prefix}}row  grid__row  {{mod}}">				
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{
-							"type":"email", 
-							"id":"email", 
-							"form_id":ID, 
-							"required": "required", 
-							"name":"E-mail", 
-							"placeholder":"Ваш E-mail"
-						},
-						{
-							"type":"tel", 
-							"id":"tel",
-							"form_id":ID, 
-							"required": "required", 
-							"name":"Телефон", 
-							"placeholder":"Ваш телефон"
-						}
-					]} %} 
-					{% include "elem-tpl.twig" with {
-						view: "select", 
-						prefix:prefix, 
-						mod:mod, 
-						form_id:ID,
-						required: "required", 
-						id:"city", 
-						name:"", 
-						color:color, 
-						attr:"data-select-primary-l", 
-						list: [
-							{"name": "Ваш город", "status":"disabled selected"},
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
-						]
-					} %}
-					<button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
-					{% include "elem-tpl.twig" with {
-						view:"checkbox", 
-						prefix:prefix, 
-						mod:"is--sm  is--agreement", 
-						color:"is--success", 
-						list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
-				</div>
-			</div>
-		</div>
-		<div class="{{prefix}}result  {{mod}}  {{group}}">
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_r_mod, 
-				group:heading_r_group, 
-				level:heading_r_level, 
-				heading:heading_r} %}
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_r_sm_mod, 
-				group:heading_r_sm_group, 
-				level:heading_r_sm_level, 
-				heading:heading_r_sm} 
-			%}
-			<button class="btn__item" type="reset" data-step-reset>В начало</button>
-			<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-success.svg" alt=""></div>
-		</div>
-	</form>
-{% endif %}
-
-{% if view=="search" %}
-	<form action="#" class="{{prefix}}search  {{mod}}  {{group}}">
-		<p class="{{prefix}}search-input  {{mod}}">
-			<input type="text" class="{{prefix}}control  {{mod}}  {{color}}" placeholder="{{placeholder}}">
-		</p>		
-		<p class="{{prefix}}search-btn  {{mod}}">
-			<button type="submit" class="btn__item  {{btn_mod}}">{{btn_name}}</button>
-		</p>
-		<button type="submit" class="{{prefix}}search-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</button>
-	</form>
-{% endif %}
-
-{% if view=="partners" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">			
-		<div class="{{prefix}}row  {{mod}}">
-			{% include "elem-tpl.twig" with {
-				view: "select", 
-				prefix:prefix, 
-				mod:mod, 
-				form_id:ID,
-				id:"city", 
-				name:"Город", 
-				color:color, 
-				attr:"data-select-primary-l", 
-				list: [
-					{"name": "Город", "status":"disabled selected"},
-					{"name": "Абакан"},
-					{"name": "Архангельск"},
-					{"name": "Астрахань"},
-					{"name": "Барнаул"},
-					{"name": "Белгород"},
-					{"name": "Благовещенск"},
-					{"name": "Брянск"}
-				]
-			} %}	
-			{% include "elem-tpl.twig" with {
-				view: "select", 
-				prefix:prefix, 
-				mod:mod, 
-				form_id:ID,
-				id:"type", 
-				name:"Марка", 
-				color:color, 
-				attr:"data-select-primary-l", 
-				list: [
-					{"name": "Марка", "status":"disabled selected"},
-					{"name": "Volvo"},
-					{"name": "КамАз"},
-					{"name": "IVECO"},
-					{"name": "Scania"},
-					{"name": "MAN"},
-					{"name": "DAF"},
-					{"name": "МАЗ"},
-					{"name": "Renault"},
-					{"name": "УРАЛ"},
-					{"name": "Mercedes-Benz"},
-					{"name": "HOWO"}
-				]
-			} %}		
-			<button type="submit" class="btn__item  is--arrow  is--primary  is--submit">Поиск</button>	
-			<button type="reset" class="btn__item    is--reset">Сброс настроек</button>	
-		</div>
-	</form>
-{% endif %}
-
-{% if view=="vacancies" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}">
-		<div class="{{prefix}}container  container  {{mod}}">
-			<div class="{{prefix}}wrap  {{mod}}">
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_mod, 
-					group:heading_group, 
-					level:heading_level, 
-					heading:heading} %}
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_sm_mod, 
-					group:heading_sm_group, 
-					level:heading_sm_level, 
-					heading:heading_sm} %}	
-
-				<div class="{{prefix}}row  grid__row  {{mod}}">
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"text", "id":"fio", "form_id":ID,"required": "required", "name":"fio", "placeholder":"Фамилия и Имя"},
-						{view: "date","type":"text", "id":"bithday", "form_id":ID,"required": "required", "name":"bithday", "placeholder":"Дата рождения"}
-					]} %}
-
-					{% include "elem-tpl.twig" with {
-						view: "select", 
-						prefix:prefix, 
-						mod:mod, 
-						color:color, 
-						form_id:ID, 
-						required: "required",
-						id:"city", 
-						name:"Город", 
-						attr:"data-select-primary", 
-						placeholder:"Город планируемой работы", 
-						list: [
-							{"name": "Город планируемой работы", "status":"disabled selected"},
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
-						]
-					} %}
-
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"email", "id":"email", "form_id":ID,"required": "required", "name":"Email", "placeholder":"E-mail"},
-						{"type":"tel", "id":"tel", "form_id":ID,"required": "required", "name":"Телефон", "placeholder":"Телефон"}
-					]} %}
-					{% include "elem-tpl.twig" with {view:"file", prefix:prefix, mod:mod, color:color, id:"file", form_id:ID, name:"Загрузите сюда резюме" } %}
-					{% include "elem-tpl.twig" with {view: "textarea", prefix:prefix, mod:mod, color:color, id:"comments", "form_id":ID, name:"Расскажите, почему вы хотите у нас работать?", placeholder:"Расскажите, почему вы хотите у нас работать?"} %}	
-						
-					{% include "elem-tpl.twig" with {view:"checkbox", prefix:prefix, mod:"is--sm", color:color, list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
-					<button type="submit" data-form-submit class="btn__item  is--success">Отправить</button>
-				</div>
-			</div>
-			<div class="{{prefix}}result  {{mod}}">
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_r_mod, 
-					group:heading_r_group, 
-					level:heading_r_level, 
-					heading:heading_r} %}
-				{% include "../../common/page-header/tpl.twig" with {
-					heading_view:heading_view, 
-					prefix:"page-header__", 
-					mod:heading_r_sm_mod, 
-					group:heading_r_sm_group, 
-					level:heading_r_sm_level, 
-					heading:heading_r_sm} %}
-				<div class="{{prefix}}result-img  {{mod}}">
-					{% include "../svg-sprite/svg.twig" with {icon:"checked"} %}
-				</div>
-			</div>
 		</div>
 	</form>
 {% endif %}

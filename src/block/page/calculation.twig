@@ -96,6 +96,20 @@
 				<picture data-grid-preview>
 					<img src="{{preview}}" class="img-responsive" alt="">
 				</picture>
+
+				<div data-grid-btn>
+					{% include "../common/button/btn.twig" with {
+						view:"link",
+						prefix:"btn__", 
+						arrow: "true",
+						icon: "arrow-next",
+						group:"is--index-header", 
+						mod:"is--success", 
+						link:link_add, 
+						name:"Сделать первый расчет" 
+					} %}
+				</div>
+
 				<div data-grid-list>
 				{% if list %}
 					<div class="{{content_prefix}}slider  is--block-calc" data-slick-calc-block>

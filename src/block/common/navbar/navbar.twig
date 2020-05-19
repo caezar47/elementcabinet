@@ -97,7 +97,7 @@
 							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
 						    {% endfor %}
 							<li class="{{navbar_prefix}}nav-item">
-								<button type="button" class="{{navbar_prefix}}nav-btn">
+								<button type="button" data-toggle="modal"  data-target="#modal-call" class="{{navbar_prefix}}nav-btn">
 									<span class="{{navbar_prefix}}nav-btn-name">Обратный звонок</span>
 									<span class="{{navbar_prefix}}nav-btn-icon">
 										{% include "../svg-sprite/svg.twig" with {icon:"phone"} %}
